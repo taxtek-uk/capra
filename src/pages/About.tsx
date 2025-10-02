@@ -178,68 +178,72 @@ export const About = () => {
     <div className="pt-16 md:pt-26 overflow-hidden">
       {/* Enhanced Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <img
-            src="https://d64gsuwffb70l.cloudfront.net/68dc5e5981e3945a0583e0bf_1759272697697_5e948d76.jpg"
-            alt="CAPRA Manufacturing"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-blue-900/60 to-transparent"></div>
-        </div>
+  {/* Background Elements */}
+      <div className="absolute inset-0">
+        <img
+          src="https://d64gsuwffb70l.cloudfront.net/68dc5e5981e3945a0583e0bf_1759272697697_5e948d76.jpg"
+          alt="CAPRA Manufacturing"
+          className="w-full h-full object-cover opacity-20"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-blue-900/60 to-transparent"></div>
+      </div>
 
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+      {/* Animated Background Elements (smaller on mobile) */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-5 w-40 h-40 sm:w-72 sm:h-72 bg-blue-500/10 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-5 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      </div>
 
-        <Container className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <FadeIn>
-                
-                
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
-                  <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
-                    About CAPRA
-                  </span>
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-                  Established in 2019, Salman Industries designs, develops, manufactures and markets 
-                  high-grade vacuum flasks, bottles and tableware. CAPRA and PHOENIX product lines 
-                  are trusted across multiple countries.
-                </p>
+      <Container className="relative z-10 px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+          <div>
+            <FadeIn>
+              <h1 className="font-black mb-6 sm:mb-8 leading-tight text-[clamp(2.2rem,6vw,4.5rem)]">
+                <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
+                  About CAPRA
+                </span>
+              </h1>
 
-                <div className="flex flex-col sm:flex-row gap-6 mb-12 hidden">
-                  
-                  <a
-                    href="#team"
-                    className="group px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3"
-                  >
-                    Meet Our Team
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+              <p className="text-[clamp(1rem,2.5vw,1.5rem)] text-blue-100 mb-6 sm:mb-8 leading-relaxed max-w-2xl">
+                Established in 2019, Salman Industries designs, develops, manufactures and markets 
+                high-grade vacuum flasks, bottles and tableware. CAPRA and PHOENIX product lines 
+                are trusted across multiple countries.
+              </p>
+
+              {/* Optional Button - Hidden for now */}
+              <div className="flex flex-col sm:flex-row gap-6 mb-12 hidden">
+                <a
+                  href="#team"
+                  className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl sm:rounded-2xl font-bold text-[clamp(1rem,2.5vw,1.25rem)] hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
+                >
+                  Meet Our Team
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            {stats.map((stat, index) => (
+              <FadeIn key={index} delay={0.2 + index * 0.1}>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <stat.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${stat.color} mb-3 sm:mb-4 group-hover:scale-110 transition-transform`} />
+                  <div className="font-bold text-white mb-1 sm:mb-2 text-[clamp(1.4rem,3vw,2rem)]">
+                    {stat.value}
+                  </div>
+                  <div className="text-blue-200 text-[clamp(0.75rem,1.8vw,0.9rem)]">
+                    {stat.label}
+                  </div>
                 </div>
               </FadeIn>
-            </div>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <FadeIn key={index} delay={0.2 + index * 0.1}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                    <stat.icon className={`w-8 h-8 ${stat.color} mb-4 group-hover:scale-110 transition-transform`} />
-                    <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                    <div className="text-blue-200 text-sm">{stat.label}</div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+            ))}
           </div>
-        </Container>
-      </section>
+        </div>
+      </Container>
+    </section>
+
 
       {/* Enhanced Content Tabs */}
       <Section className="bg-white -mt-20 pt-32 relative z-10">
