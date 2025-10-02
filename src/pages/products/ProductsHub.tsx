@@ -143,20 +143,7 @@ export const ProductsHub = () => {
               </p>
 
               {/* Example Call to Action (optional) */}
-              <div className="flex flex-col sm:flex-row gap-6">
-                <a
-                  href="#catalog"
-                  className="group px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-2xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3"
-                >
-                  View Catalog
-                </a>
-                <a
-                  href="#contact"
-                  className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-2xl font-semibold text-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3"
-                >
-                  Get a Quote
-                </a>
-              </div>
+             
             </FadeIn>
           </div>
 
