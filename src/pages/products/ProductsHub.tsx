@@ -111,63 +111,66 @@ export const ProductsHub = () => {
     <div className="pt-16 md:pt-26 overflow-hidden">
       {/* 14. Enhanced Hero Section with Video Background */}
       <section
-      id="products"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden"
-    >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl animate-spin-slow" />
+  id="products"
+  className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden py-16 sm:py-20"
+>
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0 -z-10" aria-hidden="true">
+    <div className="absolute top-10 left-5 w-40 h-40 sm:w-72 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+    <div className="absolute bottom-10 right-5 w-56 h-56 sm:w-96 sm:h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl animate-spin-slow" />
+  </div>
+
+  <Container className="relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Left Content */}
+      <div className="text-center lg:text-left">
+        <FadeIn>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent drop-shadow-2xl">
+              Our Products
+            </span>
+          </h1>
+
+          <p className="text-lg sm:text-xl md:text-2xl mb-3 text-blue-100 font-light">
+            Premium Thermal Solutions
+          </p>
+
+          <p className="text-base sm:text-lg md:text-xl mb-8 text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Explore our comprehensive range of premium vacuum flasks, bottles,
+            and thermal solutions designed for everyday performance and built to
+            last a lifetime.
+          </p>
+
+          {/* Example CTA */}
+          {/* <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg transition">
+            Shop Now
+          </button> */}
+        </FadeIn>
       </div>
 
-      <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div>
-            <FadeIn>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent drop-shadow-2xl">
-                  Our Products
-                </span>
-              </h1>
+      {/* Right Stats Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 sm:gap-6">
+        {stats.map((stat, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 + index * 0.1 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group text-center"
+          >
+            <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-300 mb-3 group-hover:scale-110 transition-transform" />
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+              {stat.value}
+            </div>
+            <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
 
-              <p className="text-2xl md:text-3xl mb-4 text-blue-100 font-light">
-                Premium Thermal Solutions
-              </p>
-
-              <p className="text-lg md:text-xl mb-10 text-white/80 max-w-2xl leading-relaxed">
-                Explore our comprehensive range of premium vacuum flasks,
-                bottles, and thermal solutions designed for everyday performance
-                and built to last a lifetime.
-              </p>
-
-              {/* Example Call to Action (optional) */}
-             
-            </FadeIn>
-          </div>
-
-          {/* Right Stats Grid */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group"
-              >
-                <stat.icon className="w-8 h-8 text-blue-300 mb-4 group-hover:scale-110 transition-transform" />
-                <div className="text-3xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-blue-200 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Container>
-    </section>
 
       {/* 19. Search and Filter Section */}
       <Section className="bg-gradient-to-b from-gray-50 via-white to-gray-50 -mt-20 pt-32 relative z-10">

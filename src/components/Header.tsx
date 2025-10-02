@@ -61,7 +61,7 @@ export const Header = () => {
             </div>
             <div className="flex items-center gap-4">
               <a 
-                href="tel:+1234567890" 
+                href="tel:+92554253697" 
                 className="hover:text-blue-200 transition-colors flex items-center gap-1"
               >
                 <Phone className="w-4 h-4" />
@@ -346,11 +346,11 @@ export const Header = () => {
                 <p className="font-semibold text-gray-900 mb-2">Get in Touch</p>
                 <p className="flex items-center gap-2 mb-1">
                   <Phone className="w-4 h-4" />
-                  +1 (234) 567-8900
+                  +92 55 4253697
                 </p>
                 <p className="flex items-center gap-2">
                   <MessageSquare className="w-4 h-4" />
-                  info@capra.com
+                  info@capra.pk
                 </p>
               </div>
             </div>
