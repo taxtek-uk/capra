@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-primary: 37 99 235;
+    --brand-secondary: 30 58 138;
+    --brand-accent: 245 158 11;
+    --brand-gold: 217 119 6;
+    --brand-muted: 100 116 139;
+    --brand-bg: 250 250 249;
+    --brand-fg: 30 41 59;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-brand-bg text-brand-fg antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "CAPRA — Make Life Easy",
+  "short_name": "CAPRA",
+  "description": "Premium vacuum flasks, bottles, and thermal jugs manufacturer. High-grade stainless steel products to keep drinks hot or cold.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#2f4cf0",
+  "icons": [
+    {
+      "src": "/android-icon-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ms-icon-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
