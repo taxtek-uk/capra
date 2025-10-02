@@ -49,7 +49,7 @@ export const Home = () => {
   return (
     <div className="pt-16 md:pt-26 overflow-hidden">
       {/* Enhanced Hero Section with Carousel */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
+     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
         {/* Background Image Carousel */}
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
@@ -67,81 +67,82 @@ export const Home = () => {
             </div>
           ))}
         </div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl animate-spin-slow"></div>
-        </div>
 
-        <Container className="relative z-10">
-          <div className="max-w-4xl text-white">
-             
-            
-            <FadeIn delay={0.1}>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent drop-shadow-2xl">
-                  CAPRA
-                </span>
-                <br />
-                <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-white/90">
-                  Thermos Vacuum Flask
-                </span>
-              </h1>
-            </FadeIn>
-            
-            <FadeIn delay={0.2}>
-              <p className="text-2xl md:text-3xl mb-4 text-blue-100 font-light">
-                Premium Hot & Cool Bottles Manufacturer
-              </p>
-              <p className="text-lg md:text-xl mb-10 text-white/80 max-w-2xl leading-relaxed">
-                Experience unmatched temperature retention with our revolutionary vacuum insulation technology. 
-                Built for life, designed for excellence.
-              </p>
-            </FadeIn>
-            
-            <FadeIn delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-6 mb-12">
-                <Link
-                  to="/products"
-                  className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
-                >
-                  Explore Products
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                
-              </div>
-            </FadeIn>
+      {/* Animated Background Elements (smaller on mobile) */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-5 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/10 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-5 w-40 h-40 sm:w-96 sm:h-96 bg-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl animate-spin-slow"></div>
+      </div>
 
-            {/* Hero Stats */}
-            <FadeIn delay={0.6}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="text-center group">
-                    <achievement.icon className="w-8 h-8 mx-auto mb-2 text-blue-300 group-hover:text-white transition-colors" />
-                    <div className="text-2xl md:text-3xl font-bold text-white mb-1">{achievement.value}</div>
-                    <div className="text-sm text-white/70">{achievement.label}</div>
+      <Container className="relative z-10 px-4 sm:px-6">
+        <div className="max-w-full sm:max-w-4xl text-white text-center sm:text-left">
+          <FadeIn delay={0.1}>
+            <h1 className="font-black mb-4 sm:mb-8 leading-tight">
+              <span className="block bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent drop-shadow-2xl text-[clamp(2.5rem,6vw,6rem)]">
+                CAPRA
+              </span>
+              <span className="block font-bold text-white/90 text-[clamp(1.5rem,4vw,3.5rem)] mt-2">
+                Thermos Vacuum Flask
+              </span>
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <p className="text-[clamp(1rem,2.5vw,1.75rem)] mb-3 sm:mb-4 text-blue-100 font-light">
+              Premium Hot & Cool Bottles Manufacturer
+            </p>
+            <p className="text-[clamp(0.9rem,2vw,1.25rem)] mb-6 sm:mb-10 text-white/80 max-w-2xl mx-auto sm:mx-0 leading-relaxed">
+              Experience unmatched temperature retention with our revolutionary vacuum insulation technology. 
+              Built for life, designed for excellence.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-12 justify-center sm:justify-start">
+              <Link
+                to="/products"
+                className="group px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl sm:rounded-2xl font-bold text-[clamp(1rem,2.5vw,1.25rem)] hover:from-blue-700 hover:to-indigo-700 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 sm:gap-3"
+              >
+                Explore Products
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </FadeIn>
+
+          {/* Hero Stats */}
+          <FadeIn delay={0.6}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="text-center group">
+                  <achievement.icon className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-1 sm:mb-2 text-blue-300 group-hover:text-white transition-colors" />
+                  <div className="font-bold text-white mb-1 text-[clamp(1.1rem,2.5vw,2rem)]">
+                    {achievement.value}
                   </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </Container>
-
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
-              }`}
-            />
-          ))}
+                  <div className="text-[clamp(0.7rem,1.8vw,0.9rem)] text-white/70">
+                    {achievement.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
-      </section>
+      </Container>
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3 z-20">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+
 
       {/* Enhanced Stats Section */}
       <Section className="bg-gradient-to-b from-white to-gray-50 -mt-20 pt-32 relative z-10">
