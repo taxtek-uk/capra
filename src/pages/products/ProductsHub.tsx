@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Section } from '@/components/Section';
+import { motion } from 'framer-motion';
 import { Container } from '@/components/Container';
 import { FadeIn, ScaleIn, SlideIn } from '@/components/Motion';
 import { 
