@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────────────────────────
+   Warm palette: ink for depth, bone for air, brass for the
+   CAPRA markhor gold. Every colour has a job; nothing decorative for its own sake. */
+@theme {
+  --color-ink-950: #0b0a09;
+  --color-ink-900: #141210;
+  --color-ink-800: #1f1c19;
+  --color-ink-700: #2c2824;
+  --color-ink-600: #3d3833;
+
+  --color-bone-50: #faf8f4;
+  --color-bone-100: #f4efe8;
+  --color-bone-200: #eae2d8;
+  --color-bone-300: #d9cec1;
+
+  /* One muted text colour (600) where there were two near-identical ones; 4.7:1 or better on every bone. */
+  --color-stone-400: #a99d90;
+  --color-stone-600: #6a6157;
+  /* Warm, so a stray text-stone-700 no longer falls back to Tailwind's cool default. */
+  --color-stone-700: #4f463e;
+
+  --color-clay-300: #d5b9a5;
+  --color-clay-400: #c2a084;
+  --color-clay-500: #ac8968;
+  --color-clay-700: #7a5d4a;
+
+  --color-brass-300: #e3cc9c;
+  --color-brass-400: #d6b982;
+  --color-brass-500: #c9a96e;
+  --color-brass-600: #a98b56;
+
+  /* Status colours: each clears 4.9:1 as text on bone and on its own 10% tint. */
+  --color-success: #2f6f4e;
+  --color-danger: #a13d2d;
+  --color-warning: #8a5300;
+  --color-info: #2b5c7e;
+  /* WhatsApp's own green, darkened to #1da851 so the white glyph clears 3:1. */
+  --color-whatsapp: #1da851;
+  /* Focus ring: at least 3.4:1 on every bone and ink surface (WCAG 2.4.11 / 1.4.11), unlike brass-500 at 2.1:1. */
+  --color-focus: #94723f;
+
+  /* Named steps between Tailwind's own sizes. 12px (text-xs) is the floor; nothing smaller ships.
+     No line-height of their own, so each inherits it exactly as the one-off pixel values did. */
+  --text-label: 0.8125rem;     /* 13px: chips, small links */
+  --text-ui: 0.9375rem;        /* 15px: navigation and short supporting copy */
+  --text-display-sm: 2.25rem;  /* phone headings */
+  --text-display-md: 2.5rem;
+  --text-display-lg: 3.25rem;
+  --text-display-xl: 3.5rem;   /* inner-page H1 ceiling */
+
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+
+  --shadow-lift: 0 1px 2px rgb(11 10 9 / 0.06), 0 12px 32px -12px rgb(11 10 9 / 0.25);
+  --shadow-deep: 0 30px 80px -30px rgb(11 10 9 / 0.55);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--color-bone-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--color-brass-300); color: var(--color-ink-950); }
+  :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; border-radius: 4px; }
+  /* Programmatic focus targets (skip link, back to top) need no ring of their own. */
+  [tabindex="-1"]:focus { outline: none; }
+  h1, h2, h3, .display { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  img, video { display: block; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Admin dashboard: a neutral product UI rather than the warm editorial site. */
+  .dash { background: #fafafa; color: #18181b; font-feature-settings: normal; }
+  .dash h1, .dash h2, .dash h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.011em; }
+  /* Windows high-contrast: glass panels and icon buttons lose their backgrounds, so give them edges. */
+  @media (forced-colors: active) {
+    .glass, .glass-dark, button, [role="button"] { border: 1px solid CanvasText; }
+    :focus-visible { outline-color: Highlight; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+/* ─── Utilities (layering system) ─────────────────────────────────────────── */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: "";
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    opacity: 0.07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+@utility glass {
+  background: rgb(250 248 244 / 0.72);
+  /* Prefixed first: the CSS optimiser keeps only the last of the pair, and Chrome ignores the -webkit- one. */
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgb(11 10 9 / 0.08);
+}
+@utility glass-dark {
+  background: rgb(20 18 16 / 0.6);
+  /* Prefixed first: the CSS optimiser keeps only the last of the pair, and Chrome ignores the -webkit- one. */
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgb(250 248 244 / 0.12);
+}
+@utility hairline { border-color: rgb(11 10 9 / 0.1); }
+@utility hairline-light { border-color: rgb(250 248 244 / 0.14); }
+@utility bloom-brass {
+  background: radial-gradient(60% 60% at 50% 50%, rgb(201 169 110 / 0.35), transparent 70%);
+}
+@utility bloom-clay {
+  background: radial-gradient(60% 60% at 50% 50%, rgb(172 137 104 / 0.35), transparent 70%);
+}
+@utility text-gradient-brass {
+  background: linear-gradient(120deg, #e3cc9c 0%, #c9a96e 45%, #a98b56 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+@utility tnum { font-variant-numeric: tabular-nums lining-nums; }
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+/* Two soft radial lights that slowly inhale and exhale behind a dark section.
+   Tune per instance with inline custom properties:
+     --breathe-a / --breathe-b   the two colours (any colour value)
+     --breathe-a-pos / -b-pos    their positions, e.g. "18% 12%"
+     --breathe-size              radius of each light
+     --breathe-duration          one full breath
+     --breathe-min / --breathe-max   opacity at rest and at full inhale
+     --breathe-scale             how far it swells */
+@utility breathe-radial {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(var(--breathe-size, 55% 65%) at var(--breathe-a-pos, 18% 12%), var(--breathe-a, rgb(201 169 110 / 0.22)), transparent 70%),
+      radial-gradient(var(--breathe-size, 55% 65%) at var(--breathe-b-pos, 84% 88%), var(--breathe-b, rgb(172 137 104 / 0.20)), transparent 70%);
+    animation: breathe var(--breathe-duration, 16s) ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: var(--breathe-min, 0.6); }
+  50% { transform: scale(var(--breathe-scale, 1.14)); opacity: var(--breathe-max, 1); }
+}
+
+/* A rounded hairline that traces the top edge of a panel and fades out down the
+   sides — a lifted card edge rather than a full box. Sits on its own absolutely
+   positioned child, so it needs no pseudo-element and cuts nothing out of the
+   panel it decorates.
+     --rim-color    the hairline at its brightest
+     --rim-fade     how far down the sides it survives
+     --rim-radius   corner radius
+     --rim-width    line thickness */
+@utility rim-top {
+  border: var(--rim-width, 1px) solid transparent;
+  border-bottom: 0;
+  border-radius: var(--rim-radius, 2rem) var(--rim-radius, 2rem) 0 0;
+  background: linear-gradient(to bottom, var(--rim-color, rgb(250 248 244 / 0.28)), transparent var(--rim-fade, 65%)) border-box;
+  /* Longhands, not the `mask` shorthand: the shorthand resets mask-composite,
+     and the minifier is free to reorder it after this declaration. */
+  mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  mask-clip: padding-box, border-box;
+  mask-composite: exclude;
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+@utility safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+
+/* Defaults live below utilities so a component's light-text override always wins. */
+@layer components {
+  .lede { color: var(--color-stone-600); }
+  .eyebrow { color: var(--color-clay-700); }
+}
+
+/* A product page's bottom action bar carries WhatsApp itself, so the floating bubble steps aside below lg. */
+@media (width < 64rem) { body:has(.mobile-action-bar) .wa-float { display: none; } }
+
+/* Print: plain paper. Decoration, motion and shadows go; text prints black on white. Fixed bars and
+   chrome hide themselves with print:hidden; the order receipt has its own print layout. */
+@media print {
+  @page { margin: 14mm; }
+  body { background: #fff; color: #000; }
+  *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; animation: none !important; }
+  .grain::after, .hero-aurora, .breathe-radial::before, canvas, video { display: none !important; }
+  .glass, .glass-dark { background: transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+  h1, h2, h3 { break-after: avoid; }
+  table, li, dl > div { break-inside: avoid; }
+}
+
+/* Progressive scroll motion: no opacity-zero server HTML or hydration dependency. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .scroll-reveal {
+      animation: reveal-shift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+  .menu-enter { animation: menu-enter 180ms ease-out; }
+  .panel-enter { animation: panel-enter 250ms ease-out; }
+}
+/* Keep the initial hero paint still on phones; scrolling must not defer its LCP candidate. */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .hero-scene { view-timeline: --hero block; }
+    .hero-parallax { animation: hero-shift linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+  }
+}
+/* SVG turbulence and blend compositing are costly across a full mobile viewport. */
+@media (max-width: 1023px) { .grain::after { display: none; } }
+@keyframes reveal-shift { from { translate: 0 var(--reveal-y, 20px); } to { translate: 0 0; } }
+@keyframes hero-shift { from { transform: translateY(0) scale(1); } to { transform: translateY(18%) scale(1.08); } }
+@keyframes menu-enter { from { opacity: 0; } to { opacity: 1; } }
+/* Homepage hero: three soft lights in the site palette drifting behind the heading, faded out towards the photo.
+   Radial gradients rather than filter: blur, and transform-only motion, so it stays on the compositor. */
+.hero-aurora { -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent); mask-image: linear-gradient(to bottom, #000 45%, transparent); }
+.hero-aurora > span { position: absolute; border-radius: 9999px; will-change: transform; animation: aurora-drift 24s ease-in-out infinite alternate; }
+.hero-aurora > span:nth-child(1) { width: 56rem; height: 56rem; left: -16rem; top: -22rem; background: radial-gradient(closest-side, rgb(227 204 156 / 0.55), transparent); }
+.hero-aurora > span:nth-child(2) { width: 48rem; height: 48rem; right: -14rem; top: -16rem; background: radial-gradient(closest-side, rgb(213 185 165 / 0.5), transparent); animation-duration: 30s; animation-direction: alternate-reverse; }
+.hero-aurora > span:nth-child(3) { width: 40rem; height: 40rem; left: 38%; top: 4rem; background: radial-gradient(closest-side, rgb(238 214 198 / 0.55), transparent); animation-duration: 36s; animation-delay: -12s; }
+@keyframes aurora-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8%, 6%, 0) scale(1.1); }
+  100% { transform: translate3d(-6%, 10%, 0) scale(0.95); }
+}
+/* The hero chip's progress line, one frame at a time: --from and --to are set on the element. */
+@keyframes hero-progress { from { transform: scaleX(var(--from, 0)); } to { transform: scaleX(var(--to, 1)); } }
+@keyframes panel-enter { from { transform: translateY(8px); } to { transform: translateY(0); } }
+
+
+/* Above-the-fold headings: a short lift with no opacity change, so the text paints (and counts for LCP) at once. */
+@media (prefers-reduced-motion: no-preference) { .rise { animation: rise 700ms cubic-bezier(0.16, 1, 0.3, 1) both; } }
+@keyframes rise { from { translate: 0 14px; } to { translate: 0 0; } }

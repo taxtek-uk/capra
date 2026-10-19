@@ -1,0 +1,2685 @@
+{
+  "date": "2026-10-19",
+  "environment": "Local Next.js production server at localhost:3100, Lighthouse 13.5.0, Chrome 155. Mobile simulated slow 4G and 4x CPU slowdown; desktop official Lighthouse desktop configuration. Lab data, not deployed field Core Web Vitals.",
+  "budget": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "baseline_home": {
+    "performance": 84,
+    "lcp_ms": 4124.217199999999
+  },
+  "public_mobile_full_sweep": {
+    "auditedAt": "2026-10-19T12:22:44.929Z",
+    "lighthouseVersion": "13.5.0",
+    "base": "http://localhost:3100",
+    "device": "mobile",
+    "results": [
+      {
+        "route": "/",
+        "device": "mobile",
+        "scores": {
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3807.892,
+        "tbtMs": 76.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.55,
+            "value": "3.8\u00a0s"
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.99,
+            "value": "2.2\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.89,
+            "value": "3.9\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/shop",
+        "device": "mobile",
+        "scores": {
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3206.2585500000005,
+        "tbtMs": 82.99999999999977,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.72,
+            "value": "3.2\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.72,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs",
+        "device": "mobile",
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2675.4778000000006,
+        "tbtMs": 78.99999999999977,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.86,
+            "value": "2.7\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.64,
+            "value": "210\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.9,
+            "value": "3.7\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/insulated-bottles",
+        "device": "mobile",
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2601.8520249999997,
+        "tbtMs": 70.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.87,
+            "value": "2.6\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.71,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/prices",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2359.40715,
+        "tbtMs": 108.49999999999977,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98,
+            "value": "110\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.51,
+            "value": "240\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.9,
+            "value": "3.7\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs/sld-vacuum-jug",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2358.62695,
+        "tbtMs": 63.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.75,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs/rit-push-button-flask",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2499.89895,
+        "tbtMs": 64.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.9,
+            "value": "2.5\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs/cpr-vacuum-pot",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2424.98055,
+        "tbtMs": 66.49999999999977,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs/skm-vacuum-coffee-pot",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2347.3561499999996,
+        "tbtMs": 72,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.69,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs/ykc-vacuum-jug",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2417.853,
+        "tbtMs": 58.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.78,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/insulated-bottles/ms-sports-bottle",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2428.1135750000003,
+        "tbtMs": 73.99999999999955,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.72,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.9,
+            "value": "3.7\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/insulated-bottles/bm-bullet-flask",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2504.2775,
+        "tbtMs": 83.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89,
+            "value": "2.5\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.77,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/wholesale",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2523.1937499999995,
+        "tbtMs": 107,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89,
+            "value": "2.5\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98,
+            "value": "110\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.45,
+            "value": "260\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/blog",
+        "device": "mobile",
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3050.5620249999997,
+        "tbtMs": 74.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.76,
+            "value": "3.1\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/dealers",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2343.9477,
+        "tbtMs": 64.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2349.7239,
+        "tbtMs": 61,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/1-litre",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2582.3819999999996,
+        "tbtMs": 67.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.88,
+            "value": "2.6\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.72,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.7\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/2-litre",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2431.590825,
+        "tbtMs": 81.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.62,
+            "value": "210\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/3-litre",
+        "device": "mobile",
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2190.7567,
+        "tbtMs": 62,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.95,
+            "value": "2.2\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/tea",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2430.3995999999997,
+        "tbtMs": 59,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/coffee",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2425.3352999999997,
+        "tbtMs": 60.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.77,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/hot-water",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2438.66695,
+        "tbtMs": 70,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.7,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/office",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2422.6037,
+        "tbtMs": 77.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.66,
+            "value": "200\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/travel",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2502.6026999999995,
+        "tbtMs": 72.49999999999977,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89,
+            "value": "2.5\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.68,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/school",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2427.2138999999997,
+        "tbtMs": 74.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.75,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/gifts",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2431.7873500000005,
+        "tbtMs": 70.00000000000023,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.71,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/punjab",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2349.9521999999997,
+        "tbtMs": 66.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.72,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/sindh",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2348.18235,
+        "tbtMs": 63.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.75,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/khyber-pakhtunkhwa",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2347.0653,
+        "tbtMs": 65.00000000000023,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/balochistan",
+        "device": "mobile",
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2990.41895,
+        "tbtMs": 82.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.78,
+            "value": "3.0\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.66,
+            "value": "200\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/islamabad",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2350.00215,
+        "tbtMs": 61.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/gilgit-baltistan",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2346.88665,
+        "tbtMs": 63.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.75,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/azad-kashmir",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2343.6456,
+        "tbtMs": 59,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.78,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/blog/thermos-price-in-pakistan",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2368.612975,
+        "tbtMs": 67.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.72,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/blog/how-to-choose-a-vacuum-flask",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2391.2456250000005,
+        "tbtMs": 69.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.71,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/blog/how-long-does-a-vacuum-flask-keep-tea-hot",
+        "device": "mobile",
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2988.32725,
+        "tbtMs": 70,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.78,
+            "value": "3.0\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.7,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/blog/how-to-clean-a-thermos-flask",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2351.40995,
+        "tbtMs": 63.00000000000023,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.75,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.94,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2492.0161500000004,
+        "tbtMs": 55,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.9,
+            "value": "2.5\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.8,
+            "value": "160\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.94,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/help",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2340.4938,
+        "tbtMs": 76.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "80\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.7,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/care-guide",
+        "device": "mobile",
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3050.1190500000002,
+        "tbtMs": 65,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.77,
+            "value": "3.1\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.94,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/warranty",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2492.1655499999997,
+        "tbtMs": 56,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.9,
+            "value": "2.5\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.8,
+            "value": "160\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.94,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/about",
+        "device": "mobile",
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3068.6770500000007,
+        "tbtMs": 71.49999999999977,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.76,
+            "value": "3.1\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.78,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/contact",
+        "device": "mobile",
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2419.73985,
+        "tbtMs": 68.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.71,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/privacy-policy",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2343.5412,
+        "tbtMs": 64,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.74,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.94,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/terms-of-service",
+        "device": "mobile",
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2342.25195,
+        "tbtMs": 65.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.92,
+            "value": "2.3\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.73,
+            "value": "180\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      }
+    ]
+  },
+  "homepage_repeat_checks": {
+    "auditedAt": "2026-10-19T12:23:23.682Z",
+    "lighthouseVersion": "13.5.0",
+    "base": "http://localhost:3100",
+    "device": "mobile",
+    "results": [
+      {
+        "route": "/",
+        "device": "mobile",
+        "scores": {
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3407.9604999999997,
+        "tbtMs": 147,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.66,
+            "value": "3.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.95,
+            "value": "150\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.42,
+            "value": "280\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.89,
+            "value": "3.8\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/",
+        "device": "mobile",
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 2678.9625,
+        "tbtMs": 103.00624999999945,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.86,
+            "value": "2.7\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98,
+            "value": "100\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.72,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/",
+        "device": "mobile",
+        "scores": {
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 3300.0890499999996,
+        "tbtMs": 61.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.7,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91,
+            "value": "3.6\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      }
+    ]
+  },
+  "homepage_repeat_performance_median": 93,
+  "desktop_sample": {
+    "auditedAt": "2026-10-19T12:27:23.238Z",
+    "lighthouseVersion": "13.5.0",
+    "base": "http://localhost:3100",
+    "device": "desktop",
+    "privatePages": false,
+    "results": [
+      {
+        "route": "/",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 708.0695999999998,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99,
+            "value": "0.7\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/shop",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 718.83665,
+        "tbtMs": 1.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99,
+            "value": "0.7\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/prices",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 527.4256999999999,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/vacuum-jugs/sld-vacuum-jug",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 734.9610499999999,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98,
+            "value": "0.7\u00a0s"
+          },
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/thermos-flasks/3-litre",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 580.5131000000001,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "lcp-discovery-insight",
+            "title": "LCP request discovery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/delivery/punjab",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 513.6336499999999,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/dealers",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 534.39685,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/contact",
+        "device": "desktop",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 663.5414000000001,
+        "tbtMs": 0,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99,
+            "value": "0.7\u00a0s"
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      }
+    ]
+  },
+  "private_entry_screens": {
+    "auditedAt": "2026-10-19T12:28:01.457Z",
+    "lighthouseVersion": "13.5.0",
+    "base": "http://localhost:3100",
+    "device": "mobile",
+    "privatePages": true,
+    "results": [
+      {
+        "route": "/cart",
+        "device": "mobile",
+        "scores": {
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100
+        },
+        "lcpMs": 2904.79,
+        "tbtMs": 232.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.8,
+            "value": "2.9\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.86,
+            "value": "230\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.66,
+            "value": "200\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.93,
+            "value": "3.3\u00a0s"
+          },
+          {
+            "id": "bf-cache",
+            "title": "Page prevented back/forward cache restoration",
+            "score": 0,
+            "value": "3 failure reasons"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/checkout",
+        "device": "mobile",
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100
+        },
+        "lcpMs": 1818.3479000000002,
+        "tbtMs": 71.5,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98,
+            "value": "1.8\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.99,
+            "value": "70\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.69,
+            "value": "190\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.92,
+            "value": "3.5\u00a0s"
+          },
+          {
+            "id": "bf-cache",
+            "title": "Page prevented back/forward cache restoration",
+            "score": 0,
+            "value": "3 failure reasons"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/account/sign-in",
+        "device": "mobile",
+        "scores": {
+          "performance": 95,
+          "accessibility": 100,
+          "best-practices": 100
+        },
+        "lcpMs": 2414.4900000000002,
+        "tbtMs": 173,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91,
+            "value": "2.4\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.92,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.66,
+            "value": "200\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.95,
+            "value": "3.1\u00a0s"
+          },
+          {
+            "id": "bf-cache",
+            "title": "Page prevented back/forward cache restoration",
+            "score": 0,
+            "value": "3 failure reasons"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "route": "/admin/login",
+        "device": "mobile",
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100
+        },
+        "lcpMs": 1669.6227,
+        "tbtMs": 112.09432500000003,
+        "cls": 0,
+        "failedAudits": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99,
+            "value": "1.7\u00a0s"
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.97,
+            "value": "110\u00a0ms"
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.78,
+            "value": "170\u00a0ms"
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.95,
+            "value": "3.1\u00a0s"
+          },
+          {
+            "id": "bf-cache",
+            "title": "Page prevented back/forward cache restoration",
+            "score": 0,
+            "value": "1 failure reason"
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "The first 45-page mobile sweep had one performance failure: homepage 88. The other 44 routes scored 93\u201399. Three subsequent isolated homepage runs scored 90, 96 and 93. All original and repeated measurements are retained.",
+    "SEO is intentionally excluded from noindex private-entry screens. Authenticated dashboard, account history, signed order receipts, OTP/email delivery, payment processing and live order creation were not Lighthouse-audited.",
+    "Final browser verification passed after the last city-search change. No production deployment or Search Console account action was performed."
+  ]
+}

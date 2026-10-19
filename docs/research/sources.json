@@ -1,0 +1,46 @@
+{
+  "retrieved": "2026-10-19",
+  "method": "All populated urban locality rows in PBS Census 2023 Table 2 district workbooks. Municipal suffix MC/TC removed for display; subdivisions and cantonments retained. No locality inferred to have a dealer or guaranteed courier service. GB/AJK are selected destinations, not exhaustive urban census lists.",
+  "sources": [
+    {
+      "region": "Punjab",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_punjab_districts.xlsx",
+      "records": 287
+    },
+    {
+      "region": "Sindh",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_sindh_districts.xlsx",
+      "records": 236
+    },
+    {
+      "region": "Khyber Pakhtunkhwa",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_kp_districts.xlsx",
+      "records": 67
+    },
+    {
+      "region": "Balochistan",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_balochistan_districts.xlsx",
+      "records": 66
+    },
+    {
+      "region": "Islamabad",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_islamabad.xlsx",
+      "records": 1
+    },
+    {
+      "region": "Gilgit-Baltistan",
+      "url": "https://visitgilgitbaltistan.gov.pk/pages/our-districts",
+      "records": 11
+    },
+    {
+      "region": "Azad Kashmir",
+      "url": "https://ajk.gov.pk/helplines/",
+      "records": 10
+    }
+  ],
+  "catalogue": {
+    "filename": "CAPRA Dealer Catalogue 2026.pdf",
+    "pages": 11,
+    "sha256": "9d43d4c21f7c8b7d89c55d14aeab72c0ab3295b26ca99230bc1e82d1271a08f4"
+  }
+}

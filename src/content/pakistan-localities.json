@@ -1,0 +1,2763 @@
+[
+  {
+    "slug": "punjab",
+    "name": "Punjab",
+    "source": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_punjab_districts.xlsx",
+    "localities": [
+      {
+        "name": "Attock",
+        "district": "Attock"
+      },
+      {
+        "name": "Fateh Jang",
+        "district": "Attock"
+      },
+      {
+        "name": "Hasan Abdal",
+        "district": "Attock"
+      },
+      {
+        "name": "Jand",
+        "district": "Attock"
+      },
+      {
+        "name": "Kamra Cantonment",
+        "district": "Attock"
+      },
+      {
+        "name": "Pindi Gheb",
+        "district": "Attock"
+      },
+      {
+        "name": "Attock Cantonment",
+        "district": "Attock"
+      },
+      {
+        "name": "Hazro",
+        "district": "Attock"
+      },
+      {
+        "name": "Mirza",
+        "district": "Attock"
+      },
+      {
+        "name": "Ghur Ghushti",
+        "district": "Attock"
+      },
+      {
+        "name": "Sanjwal Cantonment",
+        "district": "Attock"
+      },
+      {
+        "name": "Bahawalnagar",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Chishtian",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Haroonabad",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Faqir Wali",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Fort Abbas",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Minchinabad",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Ahmed Pur Mecleod Gunj",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Daharanwala",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Donga Bonga",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Khichi Wala",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Mandi Sadiq Ganj",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Maroot",
+        "district": "Bahawalnagar"
+      },
+      {
+        "name": "Bahawalpur",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Ahmadpur East",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Hasilpur",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Bahawalpur Cantonment",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Uch Sharif",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Yazman",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Chani Goth",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Khairpur Tamewali",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Khanqah Sharif",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Mubarak Pur",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Qaim Pur",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Samasatta",
+        "district": "Bahawalpur"
+      },
+      {
+        "name": "Bhakkar",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Darya Khan",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Dullewala",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Hyderabad",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Kalur Kot",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Kotla Jam Dagger",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Jandanwala",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Mankera",
+        "district": "Bhakkar"
+      },
+      {
+        "name": "Chakwal",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Talagang",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Choa Saidan Shah",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Dhudial",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Kallar Kahar",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Bhaun",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Lawa",
+        "district": "Chakwal"
+      },
+      {
+        "name": "Chiniot",
+        "district": "Chiniot"
+      },
+      {
+        "name": "Chenab Nagar",
+        "district": "Chiniot"
+      },
+      {
+        "name": "Lalian",
+        "district": "Chiniot"
+      },
+      {
+        "name": "Bhawana",
+        "district": "Chiniot"
+      },
+      {
+        "name": "Dera Ghazi Khan",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Taunsa",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Kot Chhuta",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Choti Zareen",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Shadan Lund",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Vehowa",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Sakhi Sarwar",
+        "district": "Dera Ghazi Khan"
+      },
+      {
+        "name": "Faisalabad",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Jaranwala",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Sammundari",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Chak Jhumra",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Dijkot",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Khurian Wala",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Mamu Kanjan",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Tandlian Wala",
+        "district": "Faisalabad"
+      },
+      {
+        "name": "Gujranwala",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Kamoke",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Gujranwala Cantonment",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Ludhewala Waraich",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Wazirabad",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Ali Pur Chatha",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Ghakkhar",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Nowshera Virkan",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Qila Didar Singh",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Eminabad",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Dhonkal",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Rasool Nagar",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Sohdhra",
+        "district": "Gujranwala"
+      },
+      {
+        "name": "Gujrat",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Jalalpur Jattan",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Lala Musa",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Dinga",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Kharian Cantonment",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Kunjah",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Mangowal",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Sarai Alamgir",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Kharian",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Shadiwal",
+        "district": "Gujrat"
+      },
+      {
+        "name": "Hafizabad",
+        "district": "Hafizabad"
+      },
+      {
+        "name": "Pindi Bhattian",
+        "district": "Hafizabad"
+      },
+      {
+        "name": "Sukheke",
+        "district": "Hafizabad"
+      },
+      {
+        "name": "Jalalpur Bhattian",
+        "district": "Hafizabad"
+      },
+      {
+        "name": "Vanike Tarar",
+        "district": "Hafizabad"
+      },
+      {
+        "name": "Jhang",
+        "district": "Jhang"
+      },
+      {
+        "name": "18-Hazari",
+        "district": "Jhang"
+      },
+      {
+        "name": "Ahmadpur Sial",
+        "district": "Jhang"
+      },
+      {
+        "name": "Garh Maharaja",
+        "district": "Jhang"
+      },
+      {
+        "name": "Shorkot",
+        "district": "Jhang"
+      },
+      {
+        "name": "Bagh",
+        "district": "Jhang"
+      },
+      {
+        "name": "Shorkot Cantonment (Part Of Shorkot Tehsil)",
+        "district": "Jhang"
+      },
+      {
+        "name": "Jhelum",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Dina",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Khewra",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Pind Dadan Khan",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Sohawa",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Domeli",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Jhelum Cantonment",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Mangla Cantonment",
+        "district": "Jhelum"
+      },
+      {
+        "name": "Kasur",
+        "district": "Kasur"
+      },
+      {
+        "name": "Kot Radha Kishan",
+        "district": "Kasur"
+      },
+      {
+        "name": "Pattoki",
+        "district": "Kasur"
+      },
+      {
+        "name": "Phool Nagar",
+        "district": "Kasur"
+      },
+      {
+        "name": "Alahabad",
+        "district": "Kasur"
+      },
+      {
+        "name": "Chunian",
+        "district": "Kasur"
+      },
+      {
+        "name": "Mustafabad",
+        "district": "Kasur"
+      },
+      {
+        "name": "Raja Jang",
+        "district": "Kasur"
+      },
+      {
+        "name": "Kanganpur",
+        "district": "Kasur"
+      },
+      {
+        "name": "Khadian",
+        "district": "Kasur"
+      },
+      {
+        "name": "Khanewal",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Mian Channu",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Abdul Hakim",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Jahanian",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Kabirwala",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Makhdoompur Pahoran",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Tulamba",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Sarai Sidhu",
+        "district": "Khanewal"
+      },
+      {
+        "name": "Jauharabad",
+        "district": "Khushab"
+      },
+      {
+        "name": "Khushab",
+        "district": "Khushab"
+      },
+      {
+        "name": "Hadali",
+        "district": "Khushab"
+      },
+      {
+        "name": "Mitha Tawana",
+        "district": "Khushab"
+      },
+      {
+        "name": "Girote",
+        "district": "Khushab"
+      },
+      {
+        "name": "Noor Pur",
+        "district": "Khushab"
+      },
+      {
+        "name": "Nowshera",
+        "district": "Khushab"
+      },
+      {
+        "name": "Quaidabad",
+        "district": "Khushab"
+      },
+      {
+        "name": "Lahore Metropolitan Corporation (Part Of Lahore Cantonment Tehsil)",
+        "district": "Lahore"
+      },
+      {
+        "name": "Lahore Metropolitan Corporation (Part Of Lahore City Tehsil)",
+        "district": "Lahore"
+      },
+      {
+        "name": "Lahore Metropolitan Corporation (Part Of Model Town Tehsil)",
+        "district": "Lahore"
+      },
+      {
+        "name": "Lahore Metropolitan Corporation (Part Of Raiwind Tehsil)",
+        "district": "Lahore"
+      },
+      {
+        "name": "Lahore Metropolitan Corporation (Part Of Shalimar Tehsil)",
+        "district": "Lahore"
+      },
+      {
+        "name": "Walton Cantonment",
+        "district": "Lahore"
+      },
+      {
+        "name": "Lahore Cantonment",
+        "district": "Lahore"
+      },
+      {
+        "name": "Layyah",
+        "district": "Layyah"
+      },
+      {
+        "name": "Chaubara",
+        "district": "Layyah"
+      },
+      {
+        "name": "Chowk Azam",
+        "district": "Layyah"
+      },
+      {
+        "name": "Fateh Pur",
+        "district": "Layyah"
+      },
+      {
+        "name": "Karor Lal Esan",
+        "district": "Layyah"
+      },
+      {
+        "name": "Lodhran",
+        "district": "Lodhran"
+      },
+      {
+        "name": "Dunyapur",
+        "district": "Lodhran"
+      },
+      {
+        "name": "Kahror Pacca",
+        "district": "Lodhran"
+      },
+      {
+        "name": "Dhanote",
+        "district": "Lodhran"
+      },
+      {
+        "name": "Mandi Bahauddin",
+        "district": "Mandi Bahauddin"
+      },
+      {
+        "name": "Malakwal",
+        "district": "Mandi Bahauddin"
+      },
+      {
+        "name": "Phalia",
+        "district": "Mandi Bahauddin"
+      },
+      {
+        "name": "Mianwali",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Daud Khel",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Isa Khel",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Kalabagh",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Kamar Mashani",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Kundian",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Liaqatabad",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Harnoli",
+        "district": "Mianwali"
+      },
+      {
+        "name": "Multan",
+        "district": "Multan"
+      },
+      {
+        "name": "Shujabad",
+        "district": "Multan"
+      },
+      {
+        "name": "Jalalpur Pirwala",
+        "district": "Multan"
+      },
+      {
+        "name": "Multan Cantonment",
+        "district": "Multan"
+      },
+      {
+        "name": "Qadirpur Ran",
+        "district": "Multan"
+      },
+      {
+        "name": "Makhdoom Rashid",
+        "district": "Multan"
+      },
+      {
+        "name": "Muzaffargarh",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Jatoi",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Kot Addu",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Alipur",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Chowk Sarwar Shaheed",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Shehr Sultan",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Daira Din Panah",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Ghalwan",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Khair Pur Sadat",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Khangarh",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Seet Pur",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Sinawan",
+        "district": "Muzaffargarh"
+      },
+      {
+        "name": "Sangla Hill",
+        "district": "Nankana Sahib"
+      },
+      {
+        "name": "Nankana",
+        "district": "Nankana Sahib"
+      },
+      {
+        "name": "Shahkot",
+        "district": "Nankana Sahib"
+      },
+      {
+        "name": "Warburton",
+        "district": "Nankana Sahib"
+      },
+      {
+        "name": "Narowal",
+        "district": "Narowal"
+      },
+      {
+        "name": "Shakargarh",
+        "district": "Narowal"
+      },
+      {
+        "name": "Zafarwal",
+        "district": "Narowal"
+      },
+      {
+        "name": "Badhomalhi",
+        "district": "Narowal"
+      },
+      {
+        "name": "Qila Sobha Singh",
+        "district": "Narowal"
+      },
+      {
+        "name": "Okara",
+        "district": "Okara"
+      },
+      {
+        "name": "Depalpur",
+        "district": "Okara"
+      },
+      {
+        "name": "Haveli Lakha Wasawewala",
+        "district": "Okara"
+      },
+      {
+        "name": "Renala Khurd",
+        "district": "Okara"
+      },
+      {
+        "name": "Basirpur",
+        "district": "Okara"
+      },
+      {
+        "name": "Hujra Shah Muqeem",
+        "district": "Okara"
+      },
+      {
+        "name": "Mandi Ahmad Abad",
+        "district": "Okara"
+      },
+      {
+        "name": "Okara Cantonment",
+        "district": "Okara"
+      },
+      {
+        "name": "Bangla Gogera",
+        "district": "Okara"
+      },
+      {
+        "name": "Pakpattan",
+        "district": "Pakpattan"
+      },
+      {
+        "name": "Arif Wala",
+        "district": "Pakpattan"
+      },
+      {
+        "name": "Qabula",
+        "district": "Pakpattan"
+      },
+      {
+        "name": "Malka Hans",
+        "district": "Pakpattan"
+      },
+      {
+        "name": "Rahim Yar Khan",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Khanpur",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Sadiqabad",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Liaquatpur",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Zahirpir",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Ahmadpur Lumma",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Khan Bela",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Kot Samaba",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Trinda Sawai Khan",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Sanjar Pur Nao",
+        "district": "Rahim Yar Khan"
+      },
+      {
+        "name": "Jampur",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Rajanpur",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Fazalpur",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Kot Mithan",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Dajal",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Haji Pur",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Kotla Mughlan",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Mohammad Pur",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Rojhan",
+        "district": "Rajanpur"
+      },
+      {
+        "name": "Rawalpindi Cantonment",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Rawalpindi",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Chaklala Cantonment",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Wah Cantonment",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Gujar Khan",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Kahuta",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Kallar Syedan",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Taxila Cantonment",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Taxila",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Daultala",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Kotli Sattian",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Murree",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Murree Hills Cantonment",
+        "district": "Rawalpindi"
+      },
+      {
+        "name": "Sahiwal",
+        "district": "Sahiwal"
+      },
+      {
+        "name": "Chichawatni",
+        "district": "Sahiwal"
+      },
+      {
+        "name": "Harappa",
+        "district": "Sahiwal"
+      },
+      {
+        "name": "Kameer",
+        "district": "Sahiwal"
+      },
+      {
+        "name": "Sargodha",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Bhalwal",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Sargodha Cantonment",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Bhera",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Kot Momin",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Sahiwal",
+        "district": "Sargodha"
+      },
+      {
+        "name": "46-Adda",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Bhagtan Wala",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Dharema",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Farooka",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Jhawarian",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Miani",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Phularwan",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Shahpur City",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Shahpur Saddar",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Sillanwali",
+        "district": "Sargodha"
+      },
+      {
+        "name": "Sheikhupura",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Muridke",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Farooq Abad",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Ferozewala",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Kot Abdul Malik",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Manawala Jodh Singh",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Narang Mandi",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Safdarabad",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Khanqah Dogran",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Sharak Pur",
+        "district": "Sheikhupura"
+      },
+      {
+        "name": "Sialkot",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Daska",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Pasrur",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Sambrial",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Sialkot Cantonment",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Chawinda",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Jamke Cheema",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Kotli Loharan",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Bhopalwala",
+        "district": "Sialkot"
+      },
+      {
+        "name": "Gojra",
+        "district": "Toba Tek Singh"
+      },
+      {
+        "name": "Kamalia",
+        "district": "Toba Tek Singh"
+      },
+      {
+        "name": "Toba Tek Singh",
+        "district": "Toba Tek Singh"
+      },
+      {
+        "name": "Pir Mahal",
+        "district": "Toba Tek Singh"
+      },
+      {
+        "name": "Shorkot Cantonment (Part Of Pirmahal Tehsil)",
+        "district": "Toba Tek Singh"
+      },
+      {
+        "name": "Burewala",
+        "district": "Vehari"
+      },
+      {
+        "name": "Vehari",
+        "district": "Vehari"
+      },
+      {
+        "name": "Mailsi",
+        "district": "Vehari"
+      },
+      {
+        "name": "Jalla Jeem",
+        "district": "Vehari"
+      },
+      {
+        "name": "Karampur",
+        "district": "Vehari"
+      },
+      {
+        "name": "Tibba Sultanpur",
+        "district": "Vehari"
+      }
+    ]
+  },
+  {
+    "slug": "sindh",
+    "name": "Sindh",
+    "source": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_sindh_districts.xlsx",
+    "localities": [
+      {
+        "name": "Badin",
+        "district": "Badin"
+      },
+      {
+        "name": "Matli",
+        "district": "Badin"
+      },
+      {
+        "name": "Khoski",
+        "district": "Badin"
+      },
+      {
+        "name": "Shaheed Fazal Rahu",
+        "district": "Badin"
+      },
+      {
+        "name": "Talhar",
+        "district": "Badin"
+      },
+      {
+        "name": "Tando Ghulam Ali",
+        "district": "Badin"
+      },
+      {
+        "name": "Kadhan",
+        "district": "Badin"
+      },
+      {
+        "name": "Kario Ghanwar",
+        "district": "Badin"
+      },
+      {
+        "name": "Nindo",
+        "district": "Badin"
+      },
+      {
+        "name": "Pangrio",
+        "district": "Badin"
+      },
+      {
+        "name": "Rajo Khanani",
+        "district": "Badin"
+      },
+      {
+        "name": "Tando Bago",
+        "district": "Badin"
+      },
+      {
+        "name": "Dadu",
+        "district": "Dadu"
+      },
+      {
+        "name": "Khair Pur Nathan Shah",
+        "district": "Dadu"
+      },
+      {
+        "name": "Mehar",
+        "district": "Dadu"
+      },
+      {
+        "name": "Johi",
+        "district": "Dadu"
+      },
+      {
+        "name": "Radhan",
+        "district": "Dadu"
+      },
+      {
+        "name": "Sita Road",
+        "district": "Dadu"
+      },
+      {
+        "name": "Phulji",
+        "district": "Dadu"
+      },
+      {
+        "name": "Thari Mohabat",
+        "district": "Dadu"
+      },
+      {
+        "name": "Ghotki",
+        "district": "Ghotki"
+      },
+      {
+        "name": "Daharki",
+        "district": "Ghotki"
+      },
+      {
+        "name": "Mirpur Mathelo",
+        "district": "Ghotki"
+      },
+      {
+        "name": "Ubauro",
+        "district": "Ghotki"
+      },
+      {
+        "name": "Khangarh",
+        "district": "Ghotki"
+      },
+      {
+        "name": "Adilpur",
+        "district": "Ghotki"
+      },
+      {
+        "name": "Hyderabad Municipal Corporation (Part Of Hyderabad City Taluka)",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Hyderabad Municipal Corporation (Part Of Latifabad Taluka)",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Qasimabad",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Hyderabad Cantonment (Part Of Hyderabad City Taluka)",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Tando Jam",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Husri",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Hyderabad Cantonment (Part Of Latifabad Taluka)",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Hyderabad Cantonment (Part Of Qasimabad Taluka)",
+        "district": "Hyderabad"
+      },
+      {
+        "name": "Jacobabad",
+        "district": "Jacobabad"
+      },
+      {
+        "name": "Thul",
+        "district": "Jacobabad"
+      },
+      {
+        "name": "Garhi Khairo",
+        "district": "Jacobabad"
+      },
+      {
+        "name": "Mirpur Buriro",
+        "district": "Jacobabad"
+      },
+      {
+        "name": "Sohrab Khan Sarki",
+        "district": "Jacobabad"
+      },
+      {
+        "name": "Bolhari",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Kotri",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Jamshoro",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Sehwan",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Bhan",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Sann",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Thano Bula Khan",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Manjhand",
+        "district": "Jamshoro"
+      },
+      {
+        "name": "Kambar",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Shahdad Kot",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Behram",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Nasirabad",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Qubo Saeed Khan",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Warah",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Gaji Khuhawar",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Miro Khan",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "Wagan",
+        "district": "Kambar Shahdad Kot"
+      },
+      {
+        "name": "District Municipal Corporation Karachi Central (Part Of Gulberg Sub-Division)",
+        "district": "Karachi Central"
+      },
+      {
+        "name": "District Municipal Corporation Karachi Central (Part Of Liaquatabad Sub-Division)",
+        "district": "Karachi Central"
+      },
+      {
+        "name": "District Municipal Corporation Karachi Central (Part Of Nazimabad Sub-Division)",
+        "district": "Karachi Central"
+      },
+      {
+        "name": "District Municipal Corporation Karachi Central (Part Of New Karachi Sub-Division)",
+        "district": "Karachi Central"
+      },
+      {
+        "name": "District Municipal Corporation Karachi Central (Part Of North Nazimabad Sub-Division)",
+        "district": "Karachi Central"
+      },
+      {
+        "name": "District Municipal Corporation Karachi East (Part Of Ferozabad Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "District Municipal Corporation Karachi East (Part Of Gulshan-E-Iqbal Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "District Municipal Corporation Karachi East (Part Of Gulzar-E-Hijri Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "District Municipal Corporation Karachi East (Part Of Jamshed Quarters Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "Faisal Cantonment (Part Of Gulshan-E-Iqbal Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "Malir Cantonment (Part Of Gulzar-E-Hijri Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "Karachi Cantonment (Part Of Jamshed Quarters Sub-Division)",
+        "district": "Karachi East"
+      },
+      {
+        "name": "District Municipal Corporation Karachi South (Part Of Garden Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "District Municipal Corporation Karachi South (Part Of Lyari Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "District Municipal Corporation Karachi South (Part Of Aram Bagh Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "District Municipal Corporation Karachi South (Part Of Civil Lines Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "Clifton Cantonment (Part Of Civil Lines Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "Karachi Cantonment (Part Of Sadar Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "Clifton Cantonment (Part Of Saddar Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "District Municipal Corporation Karachi South (Part Of Saddar Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "Karachi Cantonment (Part Of Civil Lines Sub-Division)",
+        "district": "Karachi South"
+      },
+      {
+        "name": "District Municipal Corporation Karachi West (Part Of Manghopir Sub-Division)",
+        "district": "Karachi West"
+      },
+      {
+        "name": "District Municipal Corporation Karachi West (Part Of Mominabad Sub-Division)",
+        "district": "Karachi West"
+      },
+      {
+        "name": "District Municipal Corporation Karachi West (Part Of Orangi Sub-Division)",
+        "district": "Karachi West"
+      },
+      {
+        "name": "Kandhkot",
+        "district": "Kashmore"
+      },
+      {
+        "name": "Kashmore",
+        "district": "Kashmore"
+      },
+      {
+        "name": "Ghouspur",
+        "district": "Kashmore"
+      },
+      {
+        "name": "Guddu",
+        "district": "Kashmore"
+      },
+      {
+        "name": "Karampur",
+        "district": "Kashmore"
+      },
+      {
+        "name": "Tangwani",
+        "district": "Kashmore"
+      },
+      {
+        "name": "Buxapur",
+        "district": "Kashmore"
+      },
+      {
+        "name": "District Municipal Corporation Keamari (Part Of Baldia Sub-Division)",
+        "district": "Keamari"
+      },
+      {
+        "name": "District Municipal Corporation Keamari (Part Of Keamari Sub-Division)",
+        "district": "Keamari"
+      },
+      {
+        "name": "District Municipal Corporation Keamari (Part Of Mauripur Sub-Division)",
+        "district": "Keamari"
+      },
+      {
+        "name": "District Municipal Corporation Keamari (Part Of S.I.T.E. Sub-Division)",
+        "district": "Keamari"
+      },
+      {
+        "name": "Manora Cantonment (Part Of Keamari Sub-Division)",
+        "district": "Keamari"
+      },
+      {
+        "name": "Khairpur",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Gambat",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Kingri (Pirjo Goth)",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Chowndiko",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Faqirabad",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Hingorja",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Kot Diji",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Pacca Chang",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Piryaloi",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Ranipur",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Setharja",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Sobho Dero",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Thari Mirwah",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Agra",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Ahmed Pur",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Babarloi",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Bozdar Wada",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Karondi",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Khuhra",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Kumb",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Tando Mir Ali",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Therhi Ii",
+        "district": "Khairpur"
+      },
+      {
+        "name": "Therhi-I",
+        "district": "Khairpur"
+      },
+      {
+        "name": "District Municipal Corporation Korangi (Part Of Korangi Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "District Municipal Corporation Korangi (Part Of Landhi Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "District Municipal Corporation Korangi (Part Of Shah Faisal Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "District Municipal Corporation Korangi (Part Of Model Colony Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "Korangi Creek Cantonment (Part Of Korangi Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "Faisal Cantonment (Part Of Shah Faisal Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "Clifton Cantonment (Part Of Korangi Sub-Division)",
+        "district": "Korangi"
+      },
+      {
+        "name": "Larkana",
+        "district": "Larkana"
+      },
+      {
+        "name": "Naudero",
+        "district": "Larkana"
+      },
+      {
+        "name": "Ratodero",
+        "district": "Larkana"
+      },
+      {
+        "name": "Arija",
+        "district": "Larkana"
+      },
+      {
+        "name": "Badah",
+        "district": "Larkana"
+      },
+      {
+        "name": "Dokri",
+        "district": "Larkana"
+      },
+      {
+        "name": "Garello",
+        "district": "Larkana"
+      },
+      {
+        "name": "District Municipal Corporation Malir (Part Of Ibrahim Hydri Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "District Municipal Corporation Malir (Part Of Murad Memon Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "District Municipal Corporation Malir (Part Of Airport Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "Malir Cantonment (Part Of Airport Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "Faisal Cantonment (Part Of Airport Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "Korangi Creek Cantonment (Part Of Ibrahim Hydri Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "Malir Cantonment (Part Of Murad Memon Sub-Division)",
+        "district": "Malir"
+      },
+      {
+        "name": "Hala",
+        "district": "Matiari"
+      },
+      {
+        "name": "Bhit Shah",
+        "district": "Matiari"
+      },
+      {
+        "name": "Hala Old",
+        "district": "Matiari"
+      },
+      {
+        "name": "Khyber",
+        "district": "Matiari"
+      },
+      {
+        "name": "Matiari",
+        "district": "Matiari"
+      },
+      {
+        "name": "New Saeedabad",
+        "district": "Matiari"
+      },
+      {
+        "name": "Odero Lal Station",
+        "district": "Matiari"
+      },
+      {
+        "name": "Mirpur Khas",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Digri",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Jhudo",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Kot Ghulam Muhammad",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Naukot",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Tando Jan Muhammad",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Hingorno",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Mirwah",
+        "district": "Mirpur Khas"
+      },
+      {
+        "name": "Moro",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Mehrabpur",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Naushahro Feroze",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Bhiria Road",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Halani",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Kandiaro",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Mithiani",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Padidan",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Tharu Shah",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Bhiria City",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Darya Khan Marri",
+        "district": "Naushahro Feroze"
+      },
+      {
+        "name": "Shahdadpur",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Tando Adam",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Khipro",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Sanghar",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Jatia",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Shahpur Chakar",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Berani",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Jhol",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Kandiari",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Khadro",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Sarhari",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Sinjhoro",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Jam Nawaz Ali",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Perumal",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Tando Mitha Khan",
+        "district": "Sanghar"
+      },
+      {
+        "name": "Nawabshah",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Sakrand",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Bandhi",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Daur",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Kazi Ahmed",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Buchery",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Daulatpur",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Jam Sahib",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Shahpur Jahania",
+        "district": "Shaheed Benazirabad"
+      },
+      {
+        "name": "Shikarpur",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Lakhi",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Chak",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Garhi Yasin",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Khanpur",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Madeji",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Rustam",
+        "district": "Shikarpur"
+      },
+      {
+        "name": "Sujawal",
+        "district": "Sujawal"
+      },
+      {
+        "name": "Chuhar Jamali",
+        "district": "Sujawal"
+      },
+      {
+        "name": "Daro",
+        "district": "Sujawal"
+      },
+      {
+        "name": "Jati",
+        "district": "Sujawal"
+      },
+      {
+        "name": "Mirpur Bathoro",
+        "district": "Sujawal"
+      },
+      {
+        "name": "Sukkur Municipal Corporation (Part Of New Sukkur Taluka)",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Sukkur Municipal Corporation (Part Of Sukkur City Taluka)",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Pano Aqil",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Rohri",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Pano Aqil Cantonment",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Salehpat",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Kandhra",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Bagerji",
+        "district": "Sukkur"
+      },
+      {
+        "name": "Tando Allahyar",
+        "district": "Tando Allahyar"
+      },
+      {
+        "name": "Nasirpur",
+        "district": "Tando Allahyar"
+      },
+      {
+        "name": "Chambar",
+        "district": "Tando Allahyar"
+      },
+      {
+        "name": "Pyaro Lund",
+        "district": "Tando Allahyar"
+      },
+      {
+        "name": "Sanjar Chang",
+        "district": "Tando Allahyar"
+      },
+      {
+        "name": "Sultanabad",
+        "district": "Tando Allahyar"
+      },
+      {
+        "name": "Tando Muhammad Khan",
+        "district": "Tando Muhammad Khan"
+      },
+      {
+        "name": "Tando Ghulam Hyder",
+        "district": "Tando Muhammad Khan"
+      },
+      {
+        "name": "Bulri Shah Karim",
+        "district": "Tando Muhammad Khan"
+      },
+      {
+        "name": "Mithi",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Chachro",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Chelhar",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Diplo",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Islamkot",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Nagar Parkar",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Kheme-Jo-Par",
+        "district": "Tharparkar"
+      },
+      {
+        "name": "Makli",
+        "district": "Thatta"
+      },
+      {
+        "name": "Thatta",
+        "district": "Thatta"
+      },
+      {
+        "name": "Gharo",
+        "district": "Thatta"
+      },
+      {
+        "name": "Garho",
+        "district": "Thatta"
+      },
+      {
+        "name": "Ghorabari",
+        "district": "Thatta"
+      },
+      {
+        "name": "Mirpur Sakro",
+        "district": "Thatta"
+      },
+      {
+        "name": "Umerkot",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Dhoronaro",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Kunri",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Chhore Old",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Nabi Sar Road",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Pithoro",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Samaro",
+        "district": "Umer Kot"
+      },
+      {
+        "name": "Shadi Pali",
+        "district": "Umer Kot"
+      }
+    ]
+  },
+  {
+    "slug": "khyber-pakhtunkhwa",
+    "name": "Khyber Pakhtunkhwa",
+    "source": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_kp_districts.xlsx",
+    "localities": [
+      {
+        "name": "Abbottabad Cantonment",
+        "district": "Abbottabad"
+      },
+      {
+        "name": "Abbottabad",
+        "district": "Abbottabad"
+      },
+      {
+        "name": "Havelian Cantonment",
+        "district": "Abbottabad"
+      },
+      {
+        "name": "Nawan Shehr",
+        "district": "Abbottabad"
+      },
+      {
+        "name": "Havelian",
+        "district": "Abbottabad"
+      },
+      {
+        "name": "Murree Gallies Cantonment",
+        "district": "Abbottabad"
+      },
+      {
+        "name": "Bannu",
+        "district": "Bannu"
+      },
+      {
+        "name": "Bannu Cantonment",
+        "district": "Bannu"
+      },
+      {
+        "name": "Charsadda",
+        "district": "Charsadda"
+      },
+      {
+        "name": "Shabqadar",
+        "district": "Charsadda"
+      },
+      {
+        "name": "Tangi",
+        "district": "Charsadda"
+      },
+      {
+        "name": "Utmanzai",
+        "district": "Charsadda"
+      },
+      {
+        "name": "Dera Ismail Khan",
+        "district": "Dera Ismail Khan"
+      },
+      {
+        "name": "Paharpur",
+        "district": "Dera Ismail Khan"
+      },
+      {
+        "name": "Paroa",
+        "district": "Dera Ismail Khan"
+      },
+      {
+        "name": "Kulachi",
+        "district": "Dera Ismail Khan"
+      },
+      {
+        "name": "Panyala",
+        "district": "Dera Ismail Khan"
+      },
+      {
+        "name": "Dera Ismail Khan Cantonment",
+        "district": "Dera Ismail Khan"
+      },
+      {
+        "name": "Hangu",
+        "district": "Hangu"
+      },
+      {
+        "name": "Tall",
+        "district": "Hangu"
+      },
+      {
+        "name": "Doaba",
+        "district": "Hangu"
+      },
+      {
+        "name": "Haripur",
+        "district": "Haripur"
+      },
+      {
+        "name": "Khalabat",
+        "district": "Haripur"
+      },
+      {
+        "name": "Karak",
+        "district": "Karak"
+      },
+      {
+        "name": "Jamrud",
+        "district": "Khyber"
+      },
+      {
+        "name": "Landi Kotal",
+        "district": "Khyber"
+      },
+      {
+        "name": "Kohat",
+        "district": "Kohat"
+      },
+      {
+        "name": "Kohat Cantonment",
+        "district": "Kohat"
+      },
+      {
+        "name": "Lachi",
+        "district": "Kohat"
+      },
+      {
+        "name": "Shakardara",
+        "district": "Kohat"
+      },
+      {
+        "name": "Sadda",
+        "district": "Kurram"
+      },
+      {
+        "name": "Parachinar",
+        "district": "Kurram"
+      },
+      {
+        "name": "Lakki Marwat",
+        "district": "Lakki Marwat"
+      },
+      {
+        "name": "Naurang",
+        "district": "Lakki Marwat"
+      },
+      {
+        "name": "Chitral",
+        "district": "Lower Chitral"
+      },
+      {
+        "name": "Timargara",
+        "district": "Lower Dir"
+      },
+      {
+        "name": "Batkhela",
+        "district": "Lower Dir"
+      },
+      {
+        "name": "Mansehra",
+        "district": "Mansehra"
+      },
+      {
+        "name": "Baffa",
+        "district": "Mansehra"
+      },
+      {
+        "name": "Mardan",
+        "district": "Mardan"
+      },
+      {
+        "name": "Takht Bhai",
+        "district": "Mardan"
+      },
+      {
+        "name": "Mardan Cantonment",
+        "district": "Mardan"
+      },
+      {
+        "name": "Miran Shah",
+        "district": "North Waziristan"
+      },
+      {
+        "name": "Jehangira",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Nowshera Kalan",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Pabbi",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Akora Khattak",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Amangarh",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Nowshera Cantonment",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Risalpur Cantonment",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Cherat Cantonment",
+        "district": "Nowshera"
+      },
+      {
+        "name": "Peshawar",
+        "district": "Peshawar"
+      },
+      {
+        "name": "Peshawar Cantonment",
+        "district": "Peshawar"
+      },
+      {
+        "name": "Peshawar University",
+        "district": "Peshawar"
+      },
+      {
+        "name": "Swabi",
+        "district": "Swabi"
+      },
+      {
+        "name": "Topi",
+        "district": "Swabi"
+      },
+      {
+        "name": "Kernal Sher Killi",
+        "district": "Swabi"
+      },
+      {
+        "name": "Tordher",
+        "district": "Swabi"
+      },
+      {
+        "name": "Zaida",
+        "district": "Swabi"
+      },
+      {
+        "name": "Mingora",
+        "district": "Swat"
+      },
+      {
+        "name": "Barri Kot",
+        "district": "Swat"
+      },
+      {
+        "name": "Kabal",
+        "district": "Swat"
+      },
+      {
+        "name": "Behrain",
+        "district": "Swat"
+      },
+      {
+        "name": "Khawaza Khela",
+        "district": "Swat"
+      },
+      {
+        "name": "Matta",
+        "district": "Swat"
+      },
+      {
+        "name": "Tank",
+        "district": "Tank"
+      },
+      {
+        "name": "Dir",
+        "district": "Upper Dir"
+      }
+    ]
+  },
+  {
+    "slug": "balochistan",
+    "name": "Balochistan",
+    "source": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_balochistan_districts.xlsx",
+    "localities": [
+      {
+        "name": "Awaran",
+        "district": "Awaran"
+      },
+      {
+        "name": "Gujar Mashkai",
+        "district": "Awaran"
+      },
+      {
+        "name": "Barkhan",
+        "district": "Barkhan"
+      },
+      {
+        "name": "Dalbandin",
+        "district": "Chagai"
+      },
+      {
+        "name": "Chaman",
+        "district": "Chaman"
+      },
+      {
+        "name": "Sui",
+        "district": "Dera Bugti"
+      },
+      {
+        "name": "Dera Bugti",
+        "district": "Dera Bugti"
+      },
+      {
+        "name": "Duki",
+        "district": "Duki"
+      },
+      {
+        "name": "Gwadar",
+        "district": "Gwadar"
+      },
+      {
+        "name": "Jiwani",
+        "district": "Gwadar"
+      },
+      {
+        "name": "Pasni",
+        "district": "Gwadar"
+      },
+      {
+        "name": "Ormara",
+        "district": "Gwadar"
+      },
+      {
+        "name": "Ormara Cantonment",
+        "district": "Gwadar"
+      },
+      {
+        "name": "Harnai",
+        "district": "Harnai"
+      },
+      {
+        "name": "Shahrig",
+        "district": "Harnai"
+      },
+      {
+        "name": "Dera Allah Yar",
+        "district": "Jaffarabad"
+      },
+      {
+        "name": "Usta Muhammad",
+        "district": "Jaffarabad"
+      },
+      {
+        "name": "Gandawa",
+        "district": "Jhal Magsi"
+      },
+      {
+        "name": "Mach",
+        "district": "Kachhi"
+      },
+      {
+        "name": "Bhag",
+        "district": "Kachhi"
+      },
+      {
+        "name": "Dhadar",
+        "district": "Kachhi"
+      },
+      {
+        "name": "Kalat",
+        "district": "Kalat"
+      },
+      {
+        "name": "Turbat",
+        "district": "Kech"
+      },
+      {
+        "name": "Bulaida",
+        "district": "Kech"
+      },
+      {
+        "name": "Tump",
+        "district": "Kech"
+      },
+      {
+        "name": "Kharan",
+        "district": "Kharan"
+      },
+      {
+        "name": "Khuzdar",
+        "district": "Khuzdar"
+      },
+      {
+        "name": "Zehri",
+        "district": "Khuzdar"
+      },
+      {
+        "name": "Nal",
+        "district": "Khuzdar"
+      },
+      {
+        "name": "Wadh",
+        "district": "Khuzdar"
+      },
+      {
+        "name": "Killa Abdullah",
+        "district": "Killa Abdullah"
+      },
+      {
+        "name": "Killa Saifullah",
+        "district": "Killa Saifullah"
+      },
+      {
+        "name": "Muslim Bagh",
+        "district": "Killa Saifullah"
+      },
+      {
+        "name": "Kohlu",
+        "district": "Kohlu"
+      },
+      {
+        "name": "Hub",
+        "district": "Lasbela"
+      },
+      {
+        "name": "Bela",
+        "district": "Lasbela"
+      },
+      {
+        "name": "Uthal",
+        "district": "Lasbela"
+      },
+      {
+        "name": "Winder",
+        "district": "Lasbela"
+      },
+      {
+        "name": "Dureji",
+        "district": "Lasbela"
+      },
+      {
+        "name": "Gaddani",
+        "district": "Lasbela"
+      },
+      {
+        "name": "Loralai",
+        "district": "Loralai"
+      },
+      {
+        "name": "Loralai Cantonment",
+        "district": "Loralai"
+      },
+      {
+        "name": "Mastung",
+        "district": "Mastung"
+      },
+      {
+        "name": "Musakhel",
+        "district": "Musakhel"
+      },
+      {
+        "name": "Dera Murad Jamali",
+        "district": "Nasirabad"
+      },
+      {
+        "name": "Nushki",
+        "district": "Nushki"
+      },
+      {
+        "name": "Tasp",
+        "district": "Panjgur"
+      },
+      {
+        "name": "Chitkan",
+        "district": "Panjgur"
+      },
+      {
+        "name": "Washbood",
+        "district": "Panjgur"
+      },
+      {
+        "name": "Pishin",
+        "district": "Pishin"
+      },
+      {
+        "name": "Hurram Zai",
+        "district": "Pishin"
+      },
+      {
+        "name": "Khanozai",
+        "district": "Pishin"
+      },
+      {
+        "name": "Saranan",
+        "district": "Pishin"
+      },
+      {
+        "name": "Quetta Metropolitan Corporation (Part Of Sub-Division City)",
+        "district": "Quetta"
+      },
+      {
+        "name": "Quetta Metropolitan Corporation (Part Of Sub-Division Saddar Tehsil)",
+        "district": "Quetta"
+      },
+      {
+        "name": "Quetta Cantonment",
+        "district": "Quetta"
+      },
+      {
+        "name": "Quetta Metropolitan Corporation (Part Of Sub-Division Kuchlak)",
+        "district": "Quetta"
+      },
+      {
+        "name": "Quetta Metropolitan Corporation (Part Of Sub-Division Sariab)",
+        "district": "Quetta"
+      },
+      {
+        "name": "Sibi",
+        "district": "Sibi"
+      },
+      {
+        "name": "Sohbatpur",
+        "district": "Sohbatpur"
+      },
+      {
+        "name": "Surab",
+        "district": "Surab"
+      },
+      {
+        "name": "Washuk",
+        "district": "Washuk"
+      },
+      {
+        "name": "Zhob",
+        "district": "Zhob"
+      },
+      {
+        "name": "Zhob Cantonment",
+        "district": "Zhob"
+      },
+      {
+        "name": "Sinjawi",
+        "district": "Ziarat"
+      },
+      {
+        "name": "Ziarat",
+        "district": "Ziarat"
+      }
+    ]
+  },
+  {
+    "slug": "islamabad",
+    "name": "Islamabad",
+    "source": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_2_islamabad.xlsx",
+    "localities": [
+      {
+        "name": "Islamabad",
+        "district": "Islamabad"
+      }
+    ]
+  },
+  {
+    "slug": "gilgit-baltistan",
+    "name": "Gilgit-Baltistan",
+    "source": "https://visitgilgitbaltistan.gov.pk/pages/our-districts",
+    "localities": [
+      {
+        "name": "Gilgit",
+        "district": "Gilgit"
+      },
+      {
+        "name": "Skardu",
+        "district": "Skardu"
+      },
+      {
+        "name": "Karimabad",
+        "district": "Hunza"
+      },
+      {
+        "name": "Aliabad",
+        "district": "Hunza"
+      },
+      {
+        "name": "Chilas",
+        "district": "Diamer"
+      },
+      {
+        "name": "Astore",
+        "district": "Astore"
+      },
+      {
+        "name": "Gahkuch",
+        "district": "Ghizer"
+      },
+      {
+        "name": "Khaplu",
+        "district": "Ghanche"
+      },
+      {
+        "name": "Shigar",
+        "district": "Shigar"
+      },
+      {
+        "name": "Tolti",
+        "district": "Kharmang"
+      },
+      {
+        "name": "Nagar",
+        "district": "Nagar"
+      }
+    ]
+  },
+  {
+    "slug": "azad-kashmir",
+    "name": "Azad Kashmir",
+    "source": "https://ajk.gov.pk/helplines/",
+    "localities": [
+      {
+        "name": "Muzaffarabad",
+        "district": "Muzaffarabad"
+      },
+      {
+        "name": "Mirpur",
+        "district": "Mirpur"
+      },
+      {
+        "name": "Bhimber",
+        "district": "Bhimber"
+      },
+      {
+        "name": "Kotli",
+        "district": "Kotli"
+      },
+      {
+        "name": "Rawalakot",
+        "district": "Poonch"
+      },
+      {
+        "name": "Bagh",
+        "district": "Bagh"
+      },
+      {
+        "name": "Pallandri",
+        "district": "Sudhnoti"
+      },
+      {
+        "name": "Hattian Bala",
+        "district": "Hattian Bala"
+      },
+      {
+        "name": "Athmuqam",
+        "district": "Neelum"
+      },
+      {
+        "name": "Haveli",
+        "district": "Haveli"
+      }
+    ]
+  }
+]
