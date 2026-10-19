@@ -42,9 +42,9 @@ export async function POST(req: Request) {
     if (sql) await sql`insert into enquiries (ref, kind, name, email, phone, city, subject, message, product, page, ip, extra) values (${ref}, ${d.kind}, ${d.name}, ${d.email.toLowerCase()}, ${d.phone}, ${d.city}, ${d.subject}, ${d.message}, ${d.product ?? null}, ${d.page}, ${ip}, ${JSON.stringify(extra)}::jsonb)`;
 
     const mail = buildEnquiryEmails({ ref, ...d, ip });
-    const sends = [sendEmail({ subject: mail.adminSubject, replyTo: d.email || undefined, html: mail.adminHtml })];
-    if (MAIL.sendCustomerCopy && d.email) sends.push(sendEmail({ to: [d.email], subject: mail.customerSubject, html: mail.customerHtml }));
-    await Promise.all(sends);
+    // The customer copy is a courtesy: a bounced address must not fail an enquiry the shop already has.
+    const copy = MAIL.sendCustomerCopy && d.email ? sendEmail({ to: [d.email], subject: mail.customerSubject, html: mail.customerHtml }).catch((err) => console.error("[enquiry] customer copy", err)) : null;
+    await Promise.all([sendEmail({ subject: mail.adminSubject, replyTo: d.email || undefined, html: mail.adminHtml }), copy]);
     return Response.json({ ok: true, ref });
   } catch (err) {
     console.error("[enquiry]", err);

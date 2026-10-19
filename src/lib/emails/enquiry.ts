@@ -36,8 +36,9 @@ ${button(`${BRAND.domain}/shop`, "Browse the range")}
   const adminHtml = emailShell(
     `New ${label.toLowerCase()}`,
     `${section("Contact", table(row("Name", e(d.name)) + row("Phone", d.phone ? `<a href="tel:${e(d.phone)}" style="color:#7a5d4a">${e(d.phone)}</a>` : "—") + row("Email", d.email ? `<a href="mailto:${e(d.email)}" style="color:#7a5d4a">${e(d.email)}</a>` : "—") + row("City", dash(d.city)) + row("Business", dash(d.company))), "Lead")}
-${section("Message", table(row("Reference", e(d.ref)) + row("Type", e(d.kind)) + (detailRows || row("Message", "—"))), "What they asked")}
+${section("Message", table(row("Reference", e(d.ref)) + row("Type", e(label)) + (detailRows || row("Message", "—"))), "What they asked")}
 ${section("Attribution", table(row("Sent from", dash(d.page)) + row("Landing page", dash(d.meta.landingPath)) + row("Referral code", dash(d.meta.ref)) + row("UTM", dash([d.meta.utmSource, d.meta.utmCampaign].filter(Boolean).join(" · "))) + row("IP", e(d.ip))), "Source")}
+${d.phone.startsWith("03") ? button(`https://wa.me/92${d.phone.slice(1)}`, "Reply on WhatsApp") : ""}
 ${button(`${BRAND.domain}/admin/enquiries`, "Open in admin")}`,
     { preheader: `${d.name} · ${label}${d.city ? ` · ${d.city}` : ""}`, meta: [{ label: "Reference", value: d.ref }, { label: "Type", value: label }] },
   );
