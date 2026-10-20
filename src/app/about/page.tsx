@@ -9,7 +9,7 @@ import { BRAND, COMMERCIAL } from "@/lib/brand";
 
 export const metadata = pageMeta({
   title: "About CAPRA – Vacuum Flask Maker, Gujranwala",
-  description: "CAPRA is made by Salman Industries in Gujranwala, Pakistan, since 2019: stainless steel vacuum jugs, flasks and bottles sold at factory prices.",
+  description: "CAPRA has made flasks in its own Gujranwala, Pakistan factory since 2019: stainless steel vacuum jugs, flasks and bottles sold at factory prices.",
   path: "/about",
 });
 
@@ -19,14 +19,14 @@ export default function Page() {
     <>
       <Hero compact image={{ src: "/images/banners/jugs-dark.webp", alt: "CAPRA stainless steel vacuum jugs" }} eyebrow={`Since ${BRAND.founded}`} breadcrumbs={[{ name: "About", path: "/about" }]}
         title={<>Make life easy, <em className="text-gradient-brass italic">one cup at a time.</em></>}
-        lede={`${BRAND.name} is the flask brand of ${BRAND.legalName}, a manufacturer in ${BRAND.address.city}, Punjab.`} />
+        lede={`${BRAND.name} is a flask maker in ${BRAND.address.city}, Punjab.`} />
       <Section>
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <Eyebrow>Our story</Eyebrow>
             <Heading>A Pakistani flask, made in Gujranwala.</Heading>
             <div className="mt-6 space-y-4 leading-relaxed text-stone-700">
-              <p>{BRAND.legalName} was established in {BRAND.founded} in {BRAND.address.city}, one of Pakistan&rsquo;s great manufacturing cities, to design, make and sell vacuum flasks for Pakistani homes, offices and shops.</p>
+              <p>{BRAND.name} was established in {BRAND.founded} in {BRAND.address.city}, one of Pakistan&rsquo;s great manufacturing cities, to design, make and sell vacuum flasks for Pakistani homes, offices and shops.</p>
               <p>Our name and our gold mark come from the markhor, <em>Capra falconeri</em>, Pakistan&rsquo;s national animal: tough, at home in the hardest conditions, and unmistakably from here. That is what we want from a flask too.</p>
               <p>Every {BRAND.name} jug and bottle is double-wall vacuum stainless steel. We sell online at our factory price list and deliver to every city with cash on delivery, so a flask from Gujranwala costs the same in Karachi as it does at our gate.</p>
             </div>

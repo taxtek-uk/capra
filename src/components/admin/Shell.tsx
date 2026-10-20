@@ -28,7 +28,7 @@ const GROUPS: { label: string; items: { href: string; label: string; icon: typeo
   { label: "System", items: [{ href: "/admin/settings", label: "Settings", icon: Settings }] },
 ];
 
-/** Initials for the sidebar avatar: "Salman Khan" → "SK". */
+/** Initials for the sidebar avatar: "Ali Khan" → "AK". */
 const initials = (name: string) =>
   name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]!.toUpperCase()).join("") || "?";
 

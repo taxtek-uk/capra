@@ -3,7 +3,7 @@
 Next.js 16 App Router + React 19 + Tailwind v4 (`@theme` tokens in `src/app/globals.css`). Neon Postgres, Resend, Vercel. See README for the map. Mirrors github/thewallshop's patterns; read it when in doubt.
 
 ## Binding rules
-- **Prices live only in `src/content/products.ts`**: whole rupees, the factory list (owner, 19 Oct 2026: retail = list price). A colour model is the "C" prefix of the same size at +Rs 100. Never write a price in a page, email or JSON-LD; read it through `src/lib/shop.ts`. A price change updates `LIST` in `scripts/check-shop.ts`.
+- **Prices live only in `src/content/products.ts`**: whole rupees, the factory list + Rs 200 per size (owner, 20 Oct 2026). A colour model is the "C" prefix of the same size at +Rs 100. Never write a price in a page, email or JSON-LD; read it through `src/lib/shop.ts`. A price change updates `LIST` in `scripts/check-shop.ts`.
 - The basket holds ids, variants and quantities only. `/api/cart`, `/api/order` and `/api/saved-basket` re-price through `priceWith()`; a client-sent price is never read, stored or emailed. An order row's `lines`/`totals` are read back verbatim, never recalculated.
 - Payments are cash on delivery, bank transfer, JazzCash and Easypaisa (no gateway). Account details come only from `PAYMENT_ACCOUNTS` in `src/lib/brand.ts`; never invent them.
 - Phone is required at checkout and validated as Pakistani (`isPkPhone`); email is optional. An order without email gets no customer email, so the order page (signed link) and WhatsApp confirm it.

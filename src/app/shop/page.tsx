@@ -26,7 +26,7 @@ export default async function Page() {
           <Breadcrumbs items={[{ name: "Shop", path: "/shop" }]} />
           <h1 className="rise mt-4 max-w-3xl font-display text-4xl leading-[1.05] sm:text-5xl">Shop vacuum flasks, thermos jugs and insulated bottles</h1>
           <p className="lede mt-3 max-w-2xl text-base leading-relaxed">
-            {items.length} designs at factory list prices, made in Gujranwala and delivered to your door with cash on delivery. Comparing sizes? See the <Link href="/prices" className="text-clay-700 underline underline-offset-4">full price list</Link>.
+            {items.length} designs at factory prices, made in Gujranwala and delivered to your door with cash on delivery. Comparing sizes? See the <Link href="/prices" className="text-clay-700 underline underline-offset-4">full price list</Link>.
           </p>
           <p className="mt-3 text-sm"><Link href="/thermos-flasks" className="inline-flex min-h-11 items-center text-clay-700 underline underline-offset-4">Choose by capacity, tea, travel or gifting →</Link></p>
         </Container>

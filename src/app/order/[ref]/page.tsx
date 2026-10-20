@@ -53,7 +53,7 @@ function Receipt({ order }: { order: OrderRow }) {
   return (
     <div className="text-xs leading-relaxed text-black">
       <div className="flex justify-between gap-8 border-b border-black/20 pb-5">
-        <div><p className="text-base font-semibold">{BRAND.name} · {BRAND.legalName}</p><p>{BRAND.address.full}</p><p>{CONTACT.phone} · {CONTACT.email}</p></div>
+        <div><p className="text-base font-semibold">{BRAND.name}</p><p>Showroom: {BRAND.showroom}</p><p>Factory: {BRAND.address.full}</p><p>{CONTACT.phone} · {CONTACT.email}</p></div>
         <div className="text-right"><p className="text-base font-semibold">Order receipt</p><p>Order {order.ref}</p><p>Ordered {longDate(order.created_at)}</p><p>{PAYMENT_LABEL[order.payment_method]} · {order.payment_status}</p></div>
       </div>
       <div className="mt-5"><p className="font-semibold">Deliver to</p><p>{order.contact.name} · {order.contact.phone}</p><p>{oneLineAddress(order.address)}</p></div>

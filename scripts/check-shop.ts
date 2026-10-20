@@ -10,7 +10,7 @@ const cat: ShopItem[] = SERIES.map((s) => ({ id: `p:${s.slug}`, slug: s.slug, se
 const byModel = (id: string, variant: string) => priceWith(cat, [{ id, qty: 1, variant }]).lines[0];
 
 // Every size of every series prices at the list price, and the colour models at +Rs 100.
-const LIST: Record<string, number> = { "SLD-1": 1480, "SLD-2": 1585, "SLD-3": 1900, "RIT-010": 1553, "RIT-020": 1658, "CPR-010": 1858, "CPR-020": 1965, "SKM-1": 1858, "SKM-2": 1965, "SKM-3": 2280, "YKC-1": 1660, "YKC-2": 1765, "YKC-3": 2080, "MS-600": 685, "MS-750": 715, BM600: 705, BM1000: 850 };
+const LIST: Record<string, number> = { "SLD-1": 1680, "SLD-2": 1785, "SLD-3": 2100, "RIT-010": 1753, "RIT-020": 1858, "CPR-010": 2058, "CPR-020": 2165, "SKM-1": 2058, "SKM-2": 2165, "SKM-3": 2480, "YKC-1": 1860, "YKC-2": 1965, "YKC-3": 2280, "MS-600": 885, "MS-750": 915, BM600: 905, BM1000: 1050 };
 for (const s of SERIES) for (const z of s.sizes) {
   assert.equal(z.price, LIST[z.model], `${z.model} list price`);
   for (const c of s.colours) {
@@ -20,12 +20,12 @@ for (const s of SERIES) for (const z of s.sizes) {
   }
 }
 assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").sku, "CSLD-2");
-assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").unit, 1685);
+assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").unit, 1885);
 
 // Client-sent prices are ignored; unknown ids are rejected; junk variants fall back to the first option.
 const c1 = priceWith(cat, [{ id: "p:sld-vacuum-jug", qty: 2, variant: "1l/steel", price: 1 }, { id: "p:nope", qty: 1 }, { id: "p:bm-bullet-flask", qty: 1, variant: "x/y" }]);
 assert.deepEqual(c1.rejected, ["p:nope"]);
-assert.equal(c1.subtotal, 2 * 1480 + 705);
+assert.equal(c1.subtotal, 2 * 1680 + 905);
 assert.equal(c1.delivery, 250);
 assert.equal(c1.total, c1.subtotal + 250);
 

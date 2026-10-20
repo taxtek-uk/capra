@@ -41,7 +41,7 @@ export default function Page() {
           <div className="mt-6 max-w-3xl">
             <Eyebrow>Price list · updated {new Date().toLocaleDateString("en-PK", { month: "long", year: "numeric" })}</Eyebrow>
             <h1 className="rise font-display text-4xl leading-[1.05] sm:text-5xl">CAPRA price list: every flask, jug and bottle compared.</h1>
-            <p className="lede mt-5 text-base leading-relaxed sm:text-lg">Prices in Pakistani rupees, straight from our factory list. Steel is the base price; a colour finish adds Rs 100. Delivery Rs {COMMERCIAL.deliveryFee}, free over Rs {COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}.</p>
+            <p className="lede mt-5 text-base leading-relaxed sm:text-lg">Prices in Pakistani rupees, direct from our factory. Steel is the base price; a colour finish adds Rs 100. Delivery Rs {COMMERCIAL.deliveryFee}, free over Rs {COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}.</p>
           </div>
 
           {(["vacuum-jugs", "insulated-bottles"] as const).map((f) => (

@@ -1,19 +1,21 @@
 /** Single source of truth for brand, contact and legal identity. */
 export const BRAND = {
   name: "CAPRA",
-  legalName: "Salman Industries",
+  legalName: "CAPRA",
   domain: "https://www.capra.pk",
   tagline: "Make Life Easy.",
-  description: "Stainless steel vacuum jugs, flasks and insulated bottles, made by Salman Industries in Gujranwala and delivered across Pakistan with cash on delivery.",
+  description: "Stainless steel vacuum jugs, flasks and insulated bottles, made in Gujranwala and delivered across Pakistan with cash on delivery.",
   locale: "en-PK",
   founded: "2019",
+  /** The factory. */
   address: {
-    street: "Makki Road, Jinnah Colony, on Same Nala",
+    street: "Sheikhupura Road",
     city: "Gujranwala",
     region: "Punjab",
     country: "Pakistan",
-    full: "Makki Road, Jinnah Colony, on Same Nala, Gujranwala, Punjab, Pakistan",
+    full: "Sheikhupura Road, Gujranwala",
   },
+  showroom: "Muslim Road, Gujranwala",
   /** Gujranwala city centre, not the factory gate: replace with the exact pin from Google Maps when the profile is set up. */
   geo: { latitude: 32.1877, longitude: 74.1945 },
   /** ponytail: assumed hours (Mon–Sat, 9–6). Confirm with the owner; they feed JSON-LD and llms.txt. */
@@ -26,17 +28,17 @@ export const BRAND = {
 export const CONTACT = {
   phone: "055 4253697",
   phoneTel: "tel:+92554253697",
-  whatsapp: "0311 0075000",
-  whatsappIntl: "+923110075000",
-  whatsappLink: "https://wa.me/923110075000",
-  email: "info@capra.pk",
-} as const;
-
-/** Published trade contact, Dealer Catalogue 2026 pp. 1, 10–11; retail stays in CONTACT. */
-export const TRADE = {
   whatsapp: "0333 3324568",
   whatsappIntl: "+923333324568",
   whatsappLink: "https://wa.me/923333324568",
+  email: "info@capra.pk",
+} as const;
+
+/** Trade contact: the same WhatsApp as retail (owner, 20 Oct 2026). */
+export const TRADE = {
+  whatsapp: CONTACT.whatsapp,
+  whatsappIntl: CONTACT.whatsappIntl,
+  whatsappLink: CONTACT.whatsappLink,
   catalogue: "/documents/capra-dealer-catalogue-2026.pdf",
   catalogueDate: "1 October 2026",
 } as const;
@@ -60,8 +62,8 @@ export const SERVICE_AREAS = [
 export const PROVINCES = ["Punjab", "Sindh", "Khyber Pakhtunkhwa", "Balochistan", "Islamabad Capital Territory", "Gilgit-Baltistan", "Azad Kashmir"] as const;
 
 /**
- * Money and delivery terms. Prices are whole rupees. The owner's choice (19 Oct 2026): the shop sells at the
- * factory list price, so retail = the price list in src/content/products.ts.
+ * Money and delivery terms. Prices are whole rupees. The owner's choice (20 Oct 2026): retail = the factory list
+ * + Rs 200 per size, as written in src/content/products.ts.
  */
 export const COMMERCIAL = {
   currency: "PKR",

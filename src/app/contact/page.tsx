@@ -16,6 +16,7 @@ export default function Page() {
     ["Phone", <a key="p" href={CONTACT.phoneTel} className="hover:underline">{CONTACT.phone}</a>],
     ["Email", <a key="e" href={`mailto:${CONTACT.email}`} className="hover:underline">{CONTACT.email}</a>],
     ["Hours", BRAND.hours.display],
+    ["Showroom", <address key="s" className="not-italic">{BRAND.showroom}</address>],
     ["Factory", <address key="a" className="not-italic">{BRAND.address.full}</address>],
   ];
   return (

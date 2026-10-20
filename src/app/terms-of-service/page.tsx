@@ -11,7 +11,7 @@ export const metadata = pageMeta({
 
 export default function Page() {
   return (
-    <InfoPage crumb="Terms" path="/terms-of-service" eyebrow="Legal" title="Terms of sale." lede={`The terms between you and ${BRAND.legalName} when you order from ${BRAND.name} online.`}>
+    <InfoPage crumb="Terms" path="/terms-of-service" eyebrow="Legal" title="Terms of sale." lede={`The terms between you and ${BRAND.name} when you order online.`}>
       <h2>Prices</h2>
       <p>Prices are in Pakistani rupees and are the price you pay for the goods. Delivery is added at checkout as shown in your basket. If we make a pricing mistake we will tell you before dispatch and you may cancel.</p>
       <h2>Your order</h2>

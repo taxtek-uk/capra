@@ -18,7 +18,7 @@ export const revalidate = 3600;
 export const metadata = pageMeta({
   title: "CAPRA Vacuum Flasks & Thermos Jugs | Pakistan",
   absoluteTitle: true,
-  description: "Stainless steel vacuum jugs, thermos flasks and insulated bottles made in Gujranwala. Shop at factory list prices, with cash on delivery across Pakistan.",
+  description: "Stainless steel vacuum jugs, thermos flasks and insulated bottles made in Gujranwala. Shop at factory prices, with cash on delivery across Pakistan.",
   path: "/",
 });
 
@@ -45,7 +45,7 @@ export default async function Page() {
             ["Cash on delivery", "Pay the courier when it arrives"],
             [`Rs ${COMMERCIAL.deliveryFee} delivery`, `Free over Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}`],
             [`${COMMERCIAL.warrantyMonths / 12}-year warranty`, `Plus ${COMMERCIAL.returnDays}-day returns`],
-            ["Factory prices", `Direct from ${BRAND.legalName}`],
+            ["Factory prices", "Direct from our factory"],
           ].map(([t, d]) => <div key={t}><p className="font-medium">{t}</p><p className="mt-0.5 text-stone-600">{d}</p></div>)}
         </Container>
       </section>
@@ -83,7 +83,7 @@ export default async function Page() {
           { title: "Stainless steel inside and out", body: "304 stainless steel with no glass refill to shatter and no plastic touching your tea." },
           { title: "Double-wall vacuum", body: "Air is pumped out between two walls of steel, so heat has almost nowhere to go: hot stays hot, cold stays cold." },
           { title: "Unbreakable for daily life", body: "Knocked off a table or rolled around a car, a steel flask keeps working where glass ones crack." },
-          { title: "Factory price list", body: "We sell at the same list price we give the trade, so there is no market markup between our factory and your door." },
+          { title: "Factory price list", body: "We sell direct from our own factory, so there is no middleman between the maker and your door." },
           { title: "We call before we send", body: "Every order is confirmed by phone or WhatsApp, so the size, colour and address are right first time." },
           { title: `${COMMERCIAL.warrantyMonths}-month warranty`, body: `Covers manufacturing faults including loss of vacuum, with ${COMMERCIAL.returnDays}-day returns on unused items.` },
         ]}

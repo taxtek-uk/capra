@@ -1,8 +1,8 @@
 /**
  * The CAPRA range and its prices — the shop's pricing source of truth.
  *
- * Every price is the Salman Industries price list dated 1 October 2026 (whole rupees). The owner sells
- * online at that list price (19 Oct 2026). A coloured finish is the "C" model of the same size (CSLD-1 for
+ * Every price is the factory price list dated 1 October 2026 plus Rs 200 per size (whole rupees; owner,
+ * 20 Oct 2026). A coloured finish is the "C" model of the same size (CSLD-1 for
  * SLD-1) at +Rs 100, exactly as the list says. Never write a price anywhere else: pages, emails, JSON-LD and
  * /llms.txt all read from here through src/lib/shop.ts.
  */
@@ -78,9 +78,9 @@ export const SERIES: Series[] = [
     ],
     features: ["Double-wall vacuum keeps tea hot and water cold", "Unbreakable stainless steel, no glass inside", "Screw-in pour lid that seals when closed", "Wide handle and a flat, stable base"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "SLD-1", price: 1480, litres: 1 },
-      { value: "2l", label: "2 litres", model: "SLD-2", price: 1585, litres: 2 },
-      { value: "3l", label: "3 litres", model: "SLD-3", price: 1900, litres: 3 },
+      { value: "1l", label: "1 litre", model: "SLD-1", price: 1680, litres: 1 },
+      { value: "2l", label: "2 litres", model: "SLD-2", price: 1785, litres: 2 },
+      { value: "3l", label: "3 litres", model: "SLD-3", price: 2100, litres: 3 },
     ],
     colours: [STEEL, coloured("copper", "Copper", "#7b3f22", 2)],
     images: [
@@ -96,7 +96,7 @@ export const SERIES: Series[] = [
     bestFor: "Family chai, guests and the office",
     seo: {
       title: "SLD Vacuum Jug 1L, 2L, 3L – Price in Pakistan",
-      description: "CAPRA SLD stainless steel vacuum jug for tea and water, 1, 2 and 3 litres, from Rs 1,480. Steel or copper. Cash on delivery across Pakistan.",
+      description: "CAPRA SLD stainless steel vacuum jug for tea and water, 1, 2 and 3 litres, from Rs 1,680. Steel or copper. Cash on delivery across Pakistan.",
       keywords: ["vacuum jug price in pakistan", "thermos jug for tea", "1 litre thermos", "2 litre thermos", "3 litre thermos", "chai flask"],
     },
     faqs: [
@@ -116,8 +116,8 @@ export const SERIES: Series[] = [
     ],
     features: ["Push-button pour lid, one-hand use", "Lid lifts off for easy filling and washing", "Double-wall vacuum stainless steel", "Steel or deep blue finish"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "RIT-010", price: 1553, litres: 1 },
-      { value: "2l", label: "2 litres", model: "RIT-020", price: 1658, litres: 2 },
+      { value: "1l", label: "1 litre", model: "RIT-010", price: 1753, litres: 1 },
+      { value: "2l", label: "2 litres", model: "RIT-020", price: 1858, litres: 2 },
     ],
     colours: [STEEL, coloured("blue", "Blue", "#1f4fa8", 1)],
     images: [
@@ -134,7 +134,7 @@ export const SERIES: Series[] = [
     bestFor: "Offices, counters and one-hand serving",
     seo: {
       title: "RIT Push-Button Vacuum Flask 1L & 2L – Pakistan",
-      description: "CAPRA RIT push-button vacuum flask: press to pour, 1 or 2 litres, steel or blue, from Rs 1,553. Delivered across Pakistan, cash on delivery.",
+      description: "CAPRA RIT push-button vacuum flask: press to pour, 1 or 2 litres, steel or blue, from Rs 1,753. Delivered across Pakistan, cash on delivery.",
       keywords: ["push button thermos", "vacuum flask price in pakistan", "office thermos", "hot and cold flask"],
     },
     faqs: [
@@ -154,8 +154,8 @@ export const SERIES: Series[] = [
     ],
     features: ["Upright body that fits small tables", "Flat lid with a firm seal", "Brushed or glossy red stainless steel", "Gift box included"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "CPR-010", price: 1858, litres: 1 },
-      { value: "2l", label: "2 litres", model: "CPR-020", price: 1965, litres: 2 },
+      { value: "1l", label: "1 litre", model: "CPR-010", price: 2058, litres: 1 },
+      { value: "2l", label: "2 litres", model: "CPR-020", price: 2165, litres: 2 },
     ],
     colours: [STEEL, coloured("red", "Red", "#b3121b", 1)],
     images: [
@@ -169,7 +169,7 @@ export const SERIES: Series[] = [
     bestFor: "Gifts and small tables",
     seo: {
       title: "CPR Vacuum Pot 1L & 2L – Thermos Price in Pakistan",
-      description: "CAPRA CPR stainless steel vacuum pot, 1 or 2 litres, brushed steel or red, from Rs 1,858. A boxed gift for Eid and weddings. Delivered across Pakistan.",
+      description: "CAPRA CPR stainless steel vacuum pot, 1 or 2 litres, brushed steel or red, from Rs 2,058. A boxed gift for Eid and weddings. Delivered across Pakistan.",
       keywords: ["vacuum pot", "thermos gift", "thermos price in pakistan", "stainless steel tea pot flask"],
     },
     faqs: [
@@ -189,9 +189,9 @@ export const SERIES: Series[] = [
     ],
     features: ["Slim coffee-pot shape with a narrow spout", "Polished steel flip lid", "Double-wall vacuum stainless steel", "Steel or glossy green"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "SKM-1", price: 1858, litres: 1 },
-      { value: "2l", label: "2 litres", model: "SKM-2", price: 1965, litres: 2 },
-      { value: "3l", label: "3 litres", model: "SKM-3", price: 2280, litres: 3 },
+      { value: "1l", label: "1 litre", model: "SKM-1", price: 2058, litres: 1 },
+      { value: "2l", label: "2 litres", model: "SKM-2", price: 2165, litres: 2 },
+      { value: "3l", label: "3 litres", model: "SKM-3", price: 2480, litres: 3 },
     ],
     colours: [STEEL, coloured("green", "Green", "#0f6e5a", 2)],
     images: [
@@ -206,7 +206,7 @@ export const SERIES: Series[] = [
     bestFor: "Coffee, breakfast tables and meetings",
     seo: {
       title: "SKM Coffee Pot Vacuum Flask 1–3L – Pakistan",
-      description: "CAPRA SKM stainless steel coffee pot flask with steel flip lid, 1, 2 or 3 litres, from Rs 1,858. Steel or green, cash on delivery across Pakistan.",
+      description: "CAPRA SKM stainless steel coffee pot flask with steel flip lid, 1, 2 or 3 litres, from Rs 2,058. Steel or green, cash on delivery across Pakistan.",
       keywords: ["coffee flask", "coffee pot thermos", "vacuum flask pakistan", "hot water flask"],
     },
     faqs: [
@@ -226,9 +226,9 @@ export const SERIES: Series[] = [
     ],
     features: ["Flip-top lid with red release tab", "Tall body with a coloured band", "Double-wall vacuum stainless steel", "Steel or bright orange"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "YKC-1", price: 1660, litres: 1 },
-      { value: "2l", label: "2 litres", model: "YKC-2", price: 1765, litres: 2 },
-      { value: "3l", label: "3 litres", model: "YKC-3", price: 2080, litres: 3 },
+      { value: "1l", label: "1 litre", model: "YKC-1", price: 1860, litres: 1 },
+      { value: "2l", label: "2 litres", model: "YKC-2", price: 1965, litres: 2 },
+      { value: "3l", label: "3 litres", model: "YKC-3", price: 2280, litres: 3 },
     ],
     colours: [STEEL, coloured("orange", "Orange", "#e2502d", 1)],
     images: [
@@ -239,7 +239,7 @@ export const SERIES: Series[] = [
     bestFor: "A bright everyday jug",
     seo: {
       title: "YKC Vacuum Jug 1L, 2L, 3L – Thermos Pakistan",
-      description: "CAPRA YKC stainless steel vacuum jug with flip-top lid, 1, 2 or 3 litres, from Rs 1,660. Steel or orange. Cash on delivery anywhere in Pakistan.",
+      description: "CAPRA YKC stainless steel vacuum jug with flip-top lid, 1, 2 or 3 litres, from Rs 1,860. Steel or orange. Cash on delivery anywhere in Pakistan.",
       keywords: ["vacuum jug", "thermos for chai", "stainless steel thermos jug", "hot and cold jug"],
     },
     faqs: [
@@ -259,8 +259,8 @@ export const SERIES: Series[] = [
     ],
     features: ["Double-wall insulated stainless steel", "Carry strap and grip sleeve", "Leak-resistant screw cap", "Five colours"],
     sizes: [
-      { value: "600ml", label: "600 ml", model: "MS-600", price: 685, litres: 0.6 },
-      { value: "750ml", label: "750 ml", model: "MS-750", price: 715, litres: 0.75 },
+      { value: "600ml", label: "600 ml", model: "MS-600", price: 885, litres: 0.6 },
+      { value: "750ml", label: "750 ml", model: "MS-750", price: 915, litres: 0.75 },
     ],
     colours: [pick("black", "Black", "#1b1b1b", 2), pick("blue", "Blue", "#1d3f8f", 0), pick("red", "Red", "#b3121b", 0), pick("gold", "Gold", "#b08d57", 0), pick("silver", "Silver", "#c9ccd1", 0)],
     colourByRequest: true,
@@ -276,7 +276,7 @@ export const SERIES: Series[] = [
     bestFor: "School, gym and travel",
     seo: {
       title: "MS Insulated Sports Bottle 600ml & 750ml – Pakistan",
-      description: "CAPRA MS stainless steel insulated sports bottle with strap, 600 ml or 750 ml, from Rs 685. Hot and cold. Cash on delivery all over Pakistan.",
+      description: "CAPRA MS stainless steel insulated sports bottle with strap, 600 ml or 750 ml, from Rs 885. Hot and cold. Cash on delivery all over Pakistan.",
       keywords: ["sports water bottle", "insulated water bottle price in pakistan", "steel water bottle for school", "750ml bottle"],
     },
     faqs: [
@@ -296,8 +296,8 @@ export const SERIES: Series[] = [
     ],
     features: ["Slim bullet shape for bags and car doors", "Cap doubles as a cup", "Double-wall insulated stainless steel", "Black, blue or silver"],
     sizes: [
-      { value: "600ml", label: "600 ml", model: "BM600", price: 705, litres: 0.6 },
-      { value: "1l", label: "1 litre", model: "BM1000", price: 850, litres: 1 },
+      { value: "600ml", label: "600 ml", model: "BM600", price: 905, litres: 0.6 },
+      { value: "1l", label: "1 litre", model: "BM1000", price: 1050, litres: 1 },
     ],
     colours: [pick("black", "Black", "#2a2b2e", 0), pick("blue", "Blue", "#1e6fc2", 0), pick("silver", "Silver", "#c9ccd1", 0)],
     colourByRequest: true,
@@ -311,7 +311,7 @@ export const SERIES: Series[] = [
     bestFor: "Commuting, office and travel",
     seo: {
       title: "BM Bullet Flask 600ml & 1L – Vacuum Bottle Pakistan",
-      description: "CAPRA BM stainless steel bullet vacuum flask with cup lid, 600 ml or 1 litre, from Rs 705. Black, blue or silver. Cash on delivery in Pakistan.",
+      description: "CAPRA BM stainless steel bullet vacuum flask with cup lid, 600 ml or 1 litre, from Rs 905. Black, blue or silver. Cash on delivery in Pakistan.",
       keywords: ["bullet flask", "vacuum bottle price in pakistan", "1 litre thermos bottle", "tea flask for travel"],
     },
     faqs: [
@@ -327,12 +327,12 @@ export const FAMILIES: Record<Family, { name: string; short: string; path: strin
     short: "Vacuum jugs",
     path: "/vacuum-jugs",
     eyebrow: "1, 2 and 3 litres",
-    lede: "Stainless steel jugs for chai, coffee, kahwa and cold water: five shapes, steel or a colour finish, priced from the factory list.",
+    lede: "Stainless steel jugs for chai, coffee, kahwa and cold water: five shapes, steel or a colour finish, at factory prices.",
     hero: "/images/banners/jugs-dark.webp",
     heroAlt: "CAPRA stainless steel vacuum jugs on a dark background",
     seo: {
       title: "Vacuum Jugs & Thermos Flasks – Price in Pakistan",
-      description: "Buy CAPRA stainless steel vacuum jugs and thermos flasks for tea and water, 1 to 3 litres, from Rs 1,480. Cash on delivery across Pakistan.",
+      description: "Buy CAPRA stainless steel vacuum jugs and thermos flasks for tea and water, 1 to 3 litres, from Rs 1,680. Cash on delivery across Pakistan.",
     },
   },
   "insulated-bottles": {
@@ -345,7 +345,7 @@ export const FAMILIES: Record<Family, { name: string; short: string; path: strin
     heroAlt: "CAPRA bullet flasks in black, blue and silver",
     seo: {
       title: "Insulated Water Bottles & Bullet Flasks – Pakistan",
-      description: "CAPRA insulated stainless steel water bottles and bullet flasks, 600 ml to 1 litre, from Rs 685. Hot and cold, cash on delivery across Pakistan.",
+      description: "CAPRA insulated stainless steel water bottles and bullet flasks, 600 ml to 1 litre, from Rs 885. Hot and cold, cash on delivery across Pakistan.",
     },
   },
 };

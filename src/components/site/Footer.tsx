@@ -23,7 +23,7 @@ export function Footer() {
         <Container className="pb-8 pt-14 sm:pt-20">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-end lg:gap-16">
             <div>
-              <Link href="/" aria-label="CAPRA home" className="inline-block"><Logo /></Link>
+              <Link href="/" aria-label="CAPRA home" className="inline-block"><Logo plain /></Link>
               <p className="mt-8 max-w-xl font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl">
                 Hot chai, cold water, <em className="italic text-clay-700">all day long.</em>
               </p>
@@ -33,7 +33,8 @@ export function Footer() {
               </div>
             </div>
             <div className="glass grid gap-px overflow-hidden rounded-3xl bg-ink-950/[0.06] sm:grid-cols-2">
-              <Detail label="Factory"><address className="not-italic">{BRAND.address.street}<br />{BRAND.address.city}, {BRAND.address.region}</address></Detail>
+              <Detail label="Showroom"><address className="not-italic">{BRAND.showroom}</address></Detail>
+              <Detail label="Factory"><address className="not-italic">{BRAND.address.full}</address></Detail>
               <Detail label="Opening hours">{BRAND.hours.display}</Detail>
               <Detail label="Call or WhatsApp">
                 <a href={CONTACT.phoneTel} className="flex min-h-11 items-center py-2 transition hover:text-clay-700">{CONTACT.phone}</a>
@@ -64,8 +65,8 @@ export function Footer() {
 
           <div className="mt-8 flex flex-col gap-6 border-t border-ink-950/10 pt-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="text-xs leading-relaxed text-ink-950/70">
-              <p>{BRAND.name} is made by {BRAND.legalName}, {BRAND.address.city}, Pakistan, since {BRAND.founded}. Prices in Pakistani rupees.</p>
-              <p className="mt-1.5">© {year} {BRAND.legalName}. All rights reserved.</p>
+              <p>{BRAND.name} is made in {BRAND.address.city}, Pakistan, since {BRAND.founded}. Prices in Pakistani rupees.</p>
+              <p className="mt-1.5">© {year} {BRAND.name}. All rights reserved.</p>
             </div>
             <div className="flex shrink-0 items-center gap-2">
               <a href={CONTACT.whatsappLink} target="_blank" rel="noopener" aria-label={`WhatsApp ${CONTACT.whatsapp}`} className="grid h-10 w-10 place-items-center rounded-full border border-ink-950/15 bg-bone-50/40 text-ink-950 transition duration-300 hover:border-whatsapp hover:bg-whatsapp hover:text-white">

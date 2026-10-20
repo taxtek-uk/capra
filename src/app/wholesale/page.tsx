@@ -24,14 +24,14 @@ export default function Page() {
       <Hero compact image={{ src: "/images/banners/range-wide.webp", alt: "The CAPRA range of vacuum jugs with their gift boxes" }} eyebrow="Distributors, shops and gifting"
         breadcrumbs={[{ name: "Wholesale", path: "/wholesale" }]}
         title={<>Wholesale, <em className="text-gradient-brass italic">direct from the factory.</em></>}
-        lede={`${BRAND.legalName} has made ${BRAND.name} in ${BRAND.address.city} since ${BRAND.founded}. Stock your shop, supply your office or order gifts by the carton.`}
+        lede={`We have made ${BRAND.name} in ${BRAND.address.city} since ${BRAND.founded}. Stock your shop, supply your office or order gifts by the carton.`}
         actions={<><ButtonLink href="#enquiry" variant="brass">Send a wholesale enquiry <Arrow /></ButtonLink><ButtonLink href={TRADE.whatsappLink} variant="ghostLight">WhatsApp {TRADE.whatsapp}</ButtonLink><ButtonLink href="/dealers" variant="ghostLight">Dealer catalogue & terms</ButtonLink></>} />
       <FeatureGrid eyebrow="Why stock CAPRA" title="A range that sells itself on the shelf." items={[
         { title: "Seven designs, 17 models", body: "Vacuum jugs from 1 to 3 litres and bottles from 600 ml to 1 litre cover every price point a customer asks for." },
         { title: "Printed gift boxes", body: "Boxed jugs and pots display well and sell as gifts through Eid, weddings and winter." },
         { title: "Mixed-colour cartons", body: `Bottles come ${COMMERCIAL.cartonPieces} to a carton in four colours, so one carton fills a shelf.` },
         { title: "Made in Pakistan", body: "Made in our own factory, so restocking does not wait on imports." },
-        { title: "One price list", body: "The retail prices on this site are our factory list. Ask us for carton terms." },
+        { title: "Carton terms", body: "The prices on this site are retail. Ask us for carton and dealer terms." },
         { title: "Warranty backed", body: `Every piece carries our ${COMMERCIAL.warrantyMonths}-month warranty against manufacturing faults.` },
       ]} />
       <Section id="enquiry" tone="bone" className="scroll-mt-24">

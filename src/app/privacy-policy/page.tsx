@@ -4,13 +4,13 @@ import { BRAND, CONTACT } from "@/lib/brand";
 
 export const metadata = pageMeta({
   title: "Privacy Policy",
-  description: "How CAPRA (Salman Industries) collects, uses and protects the details you give us when you order, sign in or contact us, and how to ask us to delete them.",
+  description: "How CAPRA collects, uses and protects the details you give us when you order, sign in or contact us, and how to ask us to delete them.",
   path: "/privacy-policy",
 });
 
 export default function Page() {
   return (
-    <InfoPage crumb="Privacy" path="/privacy-policy" eyebrow="Legal" title="Privacy policy." lede={`${BRAND.legalName} runs ${BRAND.domain.replace("https://", "")}. This page explains what we collect and why.`}>
+    <InfoPage crumb="Privacy" path="/privacy-policy" eyebrow="Legal" title="Privacy policy." lede={`${BRAND.name} runs ${BRAND.domain.replace("https://", "")}. This page explains what we collect and why.`}>
       <h2>What we collect</h2>
       <ul><li>Orders: your name, mobile number, delivery address, optional email and what you bought.</li><li>Accounts: your email address and the details you choose to save.</li><li>Messages: what you send us through the contact and wholesale forms.</li><li>Visits: the pages viewed, the device type and the city, from our own first-party counter. We never store your IP address, only a one-way scrambled form of it, and we use no advertising trackers.</li></ul>
       <h2>Why</h2>

@@ -100,8 +100,8 @@ ${opts.preheader ? `<div style="display:none;max-height:0;overflow:hidden;opacit
   </td></tr>
   <tr><td style="background:${BONE};border:1px solid ${LINE};border-top:0;border-radius:0 0 14px 14px;padding:8px 30px 30px">${body}</td></tr>
   <tr><td style="padding:18px 8px 0;font-family:${SANS};font-size:11px;line-height:1.7;color:${STONE};text-align:center">
-    <strong style="color:#6f665c">${BRAND.name}</strong> by ${BRAND.legalName}<br>
-    ${BRAND.address.full}<br>
+    <strong style="color:#6f665c">${BRAND.name}</strong><br>
+    Showroom: ${BRAND.showroom} · Factory: ${BRAND.address.full}<br>
     <a href="${CONTACT.phoneTel}" style="color:${STONE};text-decoration:none">${MAIL.supportPhone}</a> · <a href="${CONTACT.whatsappLink}" style="color:${STONE};text-decoration:none">WhatsApp ${CONTACT.whatsapp}</a> · <a href="mailto:${MAIL.supportEmail}" style="color:${STONE};text-decoration:none">${MAIL.supportEmail}</a> · <a href="${BRAND.domain}" style="color:${STONE};text-decoration:none">capra.pk</a>
   </td></tr>
 </table></td></tr></table></body></html>`;

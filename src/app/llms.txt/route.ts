@@ -19,11 +19,11 @@ export async function GET() {
   const [posts, items] = await Promise.all([publishedJournal(), listed()]);
   const body = `# ${BRAND.name}
 
-> ${BRAND.name} is a Pakistani brand of stainless steel vacuum jugs, thermos flasks and insulated bottles, made by ${BRAND.legalName} in ${BRAND.address.city}, Punjab, since ${BRAND.founded}, and sold online at ${BRAND.domain.replace("https://", "")} with cash on delivery across Pakistan.
+> ${BRAND.name} is a Pakistani brand of stainless steel vacuum jugs, thermos flasks and insulated bottles, made in ${BRAND.address.city}, Punjab, since ${BRAND.founded}, and sold online at ${BRAND.domain.replace("https://", "")} with cash on delivery across Pakistan.
 
 ## Key facts
 
-- Brand: ${BRAND.name} ("${BRAND.tagline}"). Manufacturer: ${BRAND.legalName}, ${BRAND.address.full}.
+- Brand: ${BRAND.name} ("${BRAND.tagline}"). Factory: ${BRAND.address.full}. Showroom: ${BRAND.showroom}.
 - Telephone: ${CONTACT.phone} · WhatsApp: ${CONTACT.whatsapp} (${CONTACT.whatsappIntl}) · Email: ${CONTACT.email}
 - Opening hours: ${BRAND.hours.display}
 - Market: Pakistan. Delivery to every city, including ${SERVICE_AREAS.join(", ")}.
@@ -54,7 +54,7 @@ ${link("Delivery & returns", "/delivery", "charges, timing, cash on delivery and
 ${link("Warranty", "/warranty", `what the ${COMMERCIAL.warrantyMonths}-month warranty covers and how to claim`)}
 ${link("Care guide", "/care-guide", "how to use, clean and store a vacuum flask")}
 ${link("Help", "/help", "answers about ordering, delivery, returns and warranty")}
-${link("About", "/about", `${BRAND.legalName} and the ${BRAND.name} story`)}
+${link("About", "/about", `The ${BRAND.name} story`)}
 ${link("Contact", "/contact", "WhatsApp, phone, email and the factory address")}
 
 ## Products

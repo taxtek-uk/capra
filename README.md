@@ -1,6 +1,6 @@
 # CAPRA — capra.pk
 
-E-commerce store for CAPRA vacuum jugs, thermos flasks and insulated bottles, made by Salman Industries in
+E-commerce store for CAPRA vacuum jugs, thermos flasks and insulated bottles, made by CAPRA in
 Gujranwala and sold across Pakistan with cash on delivery. Built on the same stack and design system as
 thewallshop: Next.js 16 App Router, React 19, Tailwind v4 (`@theme` tokens in `src/app/globals.css`),
 Neon Postgres, Resend, deployed on Vercel.
@@ -9,7 +9,7 @@ Neon Postgres, Resend, deployed on Vercel.
 
 | Where | What |
 | --- | --- |
-| `src/content/products.ts` | The range and **every price** (factory list, 1 Oct 2026). The only place a price is written. |
+| `src/content/products.ts` | The range and **every price** (factory list of 1 Oct 2026 + Rs 200). The only place a price is written. |
 | `src/lib/brand.ts` | Name, contact, address, hours, delivery fee, warranty, payment accounts, service cities. |
 | `src/lib/shop.ts` | Catalogue + server-side basket pricing (`priceWith`), variants, stock. |
 | `src/app/api/order` | Places an order: validates, re-prices, stores, takes stock, emails. |

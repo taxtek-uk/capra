@@ -19,7 +19,7 @@ export default async function Page() {
   const items = await listed();
   return <>
     <JsonLd data={[faqLd(FAQ), itemListLd("CAPRA dealer product range", items.map((i) => ({ name: i.name, path: i.href })))]} />
-    <InfoPage crumb="Dealers & catalogue" path="/dealers" eyebrow="Trade resources" title="Stock CAPRA, direct from the factory." lede={`The 2026 dealer catalogue brings together seven designs, 17 base models and trade ordering information from ${BRAND.legalName}, ${BRAND.address.city}.`}
+    <InfoPage crumb="Dealers & catalogue" path="/dealers" eyebrow="Trade resources" title="Stock CAPRA, direct from the factory." lede={`The 2026 dealer catalogue brings together seven designs, 17 base models and trade ordering information from ${BRAND.name}, ${BRAND.address.city}.`}
       aside={<><p className="font-medium">Trade WhatsApp</p><a href={TRADE.whatsappLink} className="mt-2 inline-flex min-h-11 items-center text-clay-700 underline underline-offset-4">{TRADE.whatsapp}</a><p className="mt-3 text-stone-600">Send your shop name, city, model codes, quantities and required date.</p><div className="mt-5"><ButtonLink href="/wholesale#enquiry">Send an enquiry</ButtonLink></div></>}>
       <h2>Download the dealer catalogue</h2>
       <p><a href={TRADE.catalogue} download>CAPRA Dealer Catalogue 2026 — PDF, 11 pages, 6.3 MB</a>. Includes product specifications, finish options, model codes, a printable order sheet and trade terms. List prices are effective {TRADE.catalogueDate} and are subject to change; check the live price list before ordering.</p>
