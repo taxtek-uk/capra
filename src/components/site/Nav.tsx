@@ -18,7 +18,7 @@ function Chevron({ open }: { open?: boolean }) {
   return <ChevronDown className={cn("h-3.5 w-3.5 opacity-70 transition-transform", open && "rotate-180")} strokeWidth={1.8} aria-hidden />;
 }
 
-/** Announcement bar, floating translucent pill header, white dropdown cards (the reference store's pattern). */
+/** Floating translucent pill header, white dropdown cards (the reference store's pattern). */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -59,14 +59,6 @@ export function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 print:hidden" onMouseLeave={() => setMenu(null)}>
-      <div className={cn("flex h-10 items-center justify-center bg-ink-950 px-4 text-label text-bone-100 transition-all duration-300", scrolled && "-mt-10 opacity-0")}>
-        <Link href={NAV.announcement.href} className="group inline-flex items-center gap-3">
-          <span className="rounded-full bg-brass-400 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-ink-950">{NAV.announcement.badge}</span>
-          <span className="hidden sm:inline">{NAV.announcement.text}</span><span className="sm:hidden">{NAV.announcement.short}</span>
-          <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
-        </Link>
-      </div>
-
       <div className="relative z-50 mx-auto max-w-[96rem] px-3 pt-3 sm:px-6">
         <div className={cn("relative flex h-16 items-center justify-between rounded-full px-4 pr-3 transition-all duration-500 sm:px-6", onDark ? "bg-ink-950/35 text-bone-50 ring-1 ring-bone-50/10 backdrop-blur-xl" : "glass text-ink-950 shadow-lift")}>
           <Link href="/" className="flex shrink-0 items-center" aria-label="CAPRA home"><Logo light={onDark} /></Link>

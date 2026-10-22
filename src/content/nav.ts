@@ -28,5 +28,4 @@ export const NAV = {
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
   legal: [{ label: "Privacy", href: "/privacy-policy" }, { label: "Terms", href: "/terms-of-service" }] satisfies NavItem[],
-  announcement: { badge: "COD", text: "Cash on delivery all over Pakistan · free delivery on orders over Rs 5,000", short: "Cash on delivery · free over Rs 5,000", href: "/delivery" },
 };

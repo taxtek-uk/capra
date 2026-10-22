@@ -1,10 +1,10 @@
 import { Resend } from "resend";
-import { BRAND, CONTACT } from "./brand";
+import { BRAND, COMMERCIAL, CONTACT, SOCIAL } from "./brand";
 
 /** TO_EMAIL is the shop inbox for new orders and enquiries; SEND_CUSTOMER_COPY=false stops the customer copies. */
 export const MAIL = {
   from: process.env.EMAIL_FROM ?? `${BRAND.name} <${CONTACT.email}>`,
-  to: (process.env.TO_EMAIL || CONTACT.email).split(",").map((s) => s.trim()).filter(Boolean),
+  to: (process.env.TO_EMAIL || CONTACT.inbox).split(",").map((s) => s.trim()).filter(Boolean),
   bcc: process.env.BCC_EMAIL ? [process.env.BCC_EMAIL] : undefined,
   sendCustomerCopy: String(process.env.SEND_CUSTOMER_COPY ?? "true").toLowerCase() === "true",
   supportEmail: process.env.SUPPORT_EMAIL || CONTACT.email,
@@ -92,17 +92,45 @@ export function emailShell(title: string, body: string, opts: { meta?: { label: 
 ${opts.preheader ? `<div style="display:none;max-height:0;overflow:hidden;opacity:0">${opts.preheader}</div>` : ""}
 <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;background:${BONE_100}"><tr><td align="center" style="padding:28px 12px">
 <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;border-collapse:separate">
-  <tr><td style="background:${INK};border-radius:14px 14px 0 0;padding:28px 30px 26px">
-    <!-- PNG pre-flattened onto INK: WebP and transparency break in Gmail's image proxy and Outlook. -->
-    <img src="${BRAND.domain}/images/brand/logo-email.png" alt="${BRAND.name}" width="180" height="48" style="display:block;width:180px;height:48px;border:0;outline:none;text-decoration:none">
-    <h1 style="margin:20px 0 0;font-family:${SERIF};font-weight:400;font-size:27px;line-height:1.25;color:${BONE}">${title}</h1>
+  <tr><td style="background:${INK};border-top:4px solid ${BRASS};border-radius:14px 14px 0 0;padding:26px 30px 26px">
+    <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%"><tr>
+      <!-- PNG pre-flattened onto INK: WebP and transparency break in Gmail's image proxy and Outlook. -->
+      <td style="vertical-align:middle"><a href="${BRAND.domain}" style="text-decoration:none"><img src="${BRAND.domain}/images/brand/logo-email.png" alt="${BRAND.name}" width="180" height="48" style="display:block;width:180px;height:48px;border:0;outline:none;text-decoration:none"></a></td>
+      <td style="vertical-align:middle;text-align:right;font-family:${SANS};font-size:10px;line-height:1.6;letter-spacing:.2em;text-transform:uppercase;color:${BRASS}">${BRAND.tagline.replace(/\.$/, "")}<br><span style="color:rgba(250,248,244,.55)">Since ${BRAND.founded}</span></td>
+    </tr></table>
+    <h1 style="margin:22px 0 0;font-family:${SERIF};font-weight:400;font-size:27px;line-height:1.25;color:${BONE}">${title}</h1>
     ${metaStrip}
   </td></tr>
-  <tr><td style="background:${BONE};border:1px solid ${LINE};border-top:0;border-radius:0 0 14px 14px;padding:8px 30px 30px">${body}</td></tr>
-  <tr><td style="padding:18px 8px 0;font-family:${SANS};font-size:11px;line-height:1.7;color:${STONE};text-align:center">
-    <strong style="color:#6f665c">${BRAND.name}</strong><br>
-    Showroom: ${BRAND.showroom} · Factory: ${BRAND.address.full}<br>
-    <a href="${CONTACT.phoneTel}" style="color:${STONE};text-decoration:none">${MAIL.supportPhone}</a> · <a href="${CONTACT.whatsappLink}" style="color:${STONE};text-decoration:none">WhatsApp ${CONTACT.whatsapp}</a> · <a href="mailto:${MAIL.supportEmail}" style="color:${STONE};text-decoration:none">${MAIL.supportEmail}</a> · <a href="${BRAND.domain}" style="color:${STONE};text-decoration:none">capra.pk</a>
+  <tr><td style="background:${BONE};border:1px solid ${LINE};border-top:0;padding:8px 30px 30px">${body}</td></tr>
+  <tr><td style="background:${BONE_100};border:1px solid ${LINE};border-top:0;border-radius:0 0 14px 14px;padding:4px 18px">${promises()}</td></tr>
+  <tr><td style="padding:16px 0 0">${businessCard()}</td></tr>
+  <tr><td style="padding:18px 14px 0;font-family:${SANS};font-size:11px;line-height:1.7;color:${STONE};text-align:center">
+    You are receiving this email because of an order, enquiry or sign-in request at capra.pk. If it reached you by mistake, please delete it and let us know at <a href="mailto:${MAIL.supportEmail}" style="color:${STONE}">${MAIL.supportEmail}</a>.
+    Prices are in Pakistani rupees and delivery times are estimates. Our team will never ask for your sign-in code; before paying by bank, JazzCash or Easypaisa, check the account details against your order email or our WhatsApp ${CONTACT.whatsapp}.<br>
+    <span style="display:inline-block;margin-top:10px">© ${new Date().getFullYear()} ${BRAND.name}. All rights reserved. Made in ${BRAND.address.city}, Pakistan.</span>
   </td></tr>
 </table></td></tr></table></body></html>`;
+}
+
+/** Three short promises under the message, from the commercial terms. */
+function promises() {
+  const cell = (title: string, sub: string) =>
+    `<td style="width:33%;padding:14px 8px;vertical-align:top;text-align:center;font-family:${SANS}"><span style="display:block;font-size:12px;font-weight:600;color:${INK}">${title}</span><span style="display:block;margin-top:2px;font-size:11px;line-height:1.5;color:${STONE}">${sub}</span></td>`;
+  return `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%"><tr>${cell("Cash on delivery", "All over Pakistan")}${cell(`${COMMERCIAL.warrantyMonths}-month warranty`, "Manufacturing faults")}${cell(`${COMMERCIAL.returnDays}-day returns`, "Unused, in the box")}</tr></table>`;
+}
+
+/** Company details on ink: two columns that stack on a phone, then policy links. */
+function businessCard() {
+  const link = `color:${BONE};text-decoration:none`;
+  const item = (label: string, value: string) =>
+    `<p style="margin:0 0 10px;font-family:${SANS};font-size:13px;line-height:1.5;color:${BONE}"><span style="display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,248,244,.55)">${label}</span>${value}</p>`;
+  const col = (heading: string, items: string) =>
+    `<div style="display:inline-block;width:100%;max-width:270px;vertical-align:top;text-align:left"><p style="margin:0 0 12px;font-family:${SERIF};font-size:16px;color:${BRASS}">${heading}</p>${items}</div>`;
+  const policies = [["Delivery &amp; returns", "/delivery"], ["Warranty", "/warranty"], ["Care guide", "/care-guide"], ["Privacy", "/privacy-policy"], ["Terms", "/terms-of-service"]]
+    .map(([l, h]) => `<a href="${BRAND.domain}${h}" style="color:rgba(250,248,244,.7);text-decoration:underline">${l}</a>`)
+    .join(" &nbsp;·&nbsp; ");
+  return `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;background:${INK};border-radius:14px"><tr><td style="padding:24px 30px 6px;font-size:0">
+    ${col("Visit us", item("Showroom", BRAND.showroom) + item("Factory", BRAND.address.full) + item("Hours", BRAND.hours.display))}
+    ${col("Talk to us", item("Phone", `<a href="${CONTACT.phoneTel}" style="${link}">${MAIL.supportPhone}</a>`) + item("WhatsApp", `<a href="${CONTACT.whatsappLink}" style="${link}">${CONTACT.whatsapp}</a>`) + item("Email", `<a href="mailto:${MAIL.supportEmail}" style="${link}">${MAIL.supportEmail}</a>`) + item("Online", `<a href="${BRAND.domain}" style="${link}">capra.pk</a> · <a href="${SOCIAL.facebook}" style="${link}">Facebook</a>`))}
+  </td></tr><tr><td style="padding:4px 30px 22px;border-top:1px solid rgba(250,248,244,.12);font-family:${SANS};font-size:11px;line-height:2;color:rgba(250,248,244,.7)">${policies}</td></tr></table>`;
 }

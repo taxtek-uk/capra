@@ -32,6 +32,8 @@ export const CONTACT = {
   whatsappIntl: "+923333324568",
   whatsappLink: "https://wa.me/923333324568",
   email: "info@capra.pk",
+  /** Where Resend delivers new orders and enquiries (owner, 22 Oct 2026); TO_EMAIL overrides. */
+  inbox: "salmankhanindustries@gmail.com",
 } as const;
 
 /** Trade contact: the same WhatsApp as retail (owner, 20 Oct 2026). */
