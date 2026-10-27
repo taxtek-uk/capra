@@ -119,17 +119,6 @@ function returnPolicyLd() {
   };
 }
 
-const shippingLd = (price: number) => ({
-  "@type": "OfferShippingDetails",
-  shippingRate: { "@type": "MonetaryAmount", value: price >= COMMERCIAL.freeDeliveryFrom ? 0 : COMMERCIAL.deliveryFee, currency: COMMERCIAL.currency },
-  shippingDestination: { "@type": "DefinedRegion", addressCountry: "PK" },
-  deliveryTime: {
-    "@type": "ShippingDeliveryTime",
-    handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 2, unitCode: "DAY" },
-    transitTime: { "@type": "QuantitativeValue", minValue: 2, maxValue: 5, unitCode: "DAY" },
-  },
-});
-
 /**
  * A series with sizes and colours as a ProductGroup of real variants, each with its own SKU and price, so
  * Google can show "Rs 1,480 – Rs 2,000" and the exact model. Ratings and reviews are never invented.
@@ -167,7 +156,6 @@ export const productGroupLd = (p: {
       itemCondition: "https://schema.org/NewCondition",
       url: `${BRAND.domain}${p.path}`,
       seller: { "@id": ORG_ID },
-      shippingDetails: shippingLd(v.price),
       hasMerchantReturnPolicy: returnPolicyLd(),
     },
   })),

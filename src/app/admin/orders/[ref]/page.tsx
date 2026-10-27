@@ -5,7 +5,7 @@ import { getOrder, oneLineAddress, orderPath, ORDER_STATUSES, PAYMENT_LABEL, PAY
 import { customerHref } from "@/lib/customers-admin";
 import { Btn, BtnLink, Card, CardHead, Field, Input, PageHead, Select, StatusPill, Table, Td, Textarea, Tr } from "@/components/admin/ui";
 import { pkr } from "@/lib/utils";
-import { BRAND } from "@/lib/brand";
+import { BRAND, COMMERCIAL } from "@/lib/brand";
 import { updateOrder } from "../actions";
 
 export const dynamic = "force-dynamic";
@@ -52,7 +52,7 @@ export default async function Page({ params }: { params: Promise<{ ref: string }
                 </Tr>
               ))}
             </Table>
-            <Rows rows={[{ label: "Subtotal", value: pkr(Number(t.subtotal)) }, { label: "Delivery", value: Number(t.delivery) ? pkr(Number(t.delivery)) : "Free" }, { label: "Total", value: pkr(Number(t.total)) }]} />
+            <Rows rows={[{ label: "Subtotal", value: pkr(Number(t.subtotal)) }, { label: "Delivery", value: Number(t.delivery) ? pkr(Number(t.delivery)) : COMMERCIAL.deliveryShort }, { label: "Total", value: pkr(Number(t.total)) }]} />
           </Card>
           <Card>
             <CardHead title="Customer" />

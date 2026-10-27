@@ -28,12 +28,12 @@ const itemsTable = (cart: OrderEmailInput["cart"]) =>
   table(
     cart.lines.map((l) => lineRow(`${l.qty} × ${e(l.name)}`, pkr(l.amount), [l.variantLabel, l.sku].filter(Boolean).map(e).join(" · "))).join("") +
       totalRow("Subtotal", pkr(cart.subtotal)) +
-      totalRow("Delivery", cart.delivery ? pkr(cart.delivery) : "Free"),
+      totalRow("Delivery", cart.delivery ? pkr(cart.delivery) : COMMERCIAL.deliveryShort),
   );
 
 /** How to pay, in the customer's email and on the order page. Account numbers come only from brand.ts. */
 export function paymentInstructions(method: PaymentMethod, ref: string, total: number) {
-  if (method === "cod") return `Pay ${pkr(total)} in cash to the courier when your parcel arrives. Please keep the exact amount ready.`;
+  if (method === "cod") return `Pay ${pkr(total)} in cash when your parcel arrives, plus the actual delivery charge. Please keep the amount ready.`;
   const a = method === "bank" ? PAYMENT_ACCOUNTS.bank : method === "jazzcash" ? PAYMENT_ACCOUNTS.jazzcash : PAYMENT_ACCOUNTS.easypaisa;
   const detail = "iban" in a ? (a.iban ? `${a.bank} · ${a.title} · IBAN ${a.iban}` : "") : a.number ? `${a.title} · ${a.number}` : "";
   return detail
@@ -43,7 +43,7 @@ export function paymentInstructions(method: PaymentMethod, ref: string, total: n
 
 export function buildOrderEmails(d: OrderEmailInput) {
   const cod = d.paymentMethod === "cod";
-  const money = grandTotal(cod ? "Pay on delivery" : "Total", pkr(d.cart.total), cod ? "Cash to the courier when it arrives." : `By ${PAYMENT_LABEL[d.paymentMethod]}.`);
+  const money = grandTotal(cod ? "Pay on delivery" : "Total", pkr(d.cart.total), cod ? "Cash when it arrives, plus delivery at actual cost." : `By ${PAYMENT_LABEL[d.paymentMethod]}. Delivery is paid separately at actual cost.`);
 
   const customerHtml = emailShell(
     "We have your order",

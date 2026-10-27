@@ -7,7 +7,7 @@ import { REGIONS, regionPath } from "@/content/markets";
 
 export const metadata = pageMeta({
   title: "Delivery & Returns – Cash on Delivery Pakistan",
-  description: "CAPRA delivers to every city in Pakistan: Rs 250 delivery, free over Rs 5,000, cash on delivery, dispatch in 1–2 working days and 7-day returns.",
+  description: "CAPRA delivers to every city in Pakistan: courier or builty at actual cost, cash on delivery, dispatch in 1–2 working days and 7-day returns.",
   path: "/delivery",
 });
 
@@ -15,10 +15,11 @@ export default function Page() {
   return (
     <>
       <JsonLd data={faqLd([...ORDER_FAQ])} />
-      <InfoPage crumb="Delivery & returns" path="/delivery" eyebrow="Delivery" title="Delivery to every city in Pakistan." lede={`Rs ${COMMERCIAL.deliveryFee} delivery, free on orders of Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more, and cash on delivery wherever you are.`}
+      <InfoPage crumb="Delivery & returns" path="/delivery" eyebrow="Delivery" title="Delivery to every city in Pakistan." lede="Courier or builty to any address, charged at actual cost, and cash on delivery wherever you are."
         aside={<><p className="font-medium">Need it by a date?</p><p className="mt-2 text-stone-600">WhatsApp <a href={CONTACT.whatsappLink} className="text-clay-700 underline underline-offset-4">{CONTACT.whatsapp}</a> before you order and we will tell you honestly whether we can make it.</p></>}>
         <h2>Charges</h2>
-        <p>Delivery is a flat Rs {COMMERCIAL.deliveryFee} per order to any address in Pakistan, whatever its size. Orders of Rs {COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more are delivered free. The charge is shown in your basket before you order.</p>
+        <p>{COMMERCIAL.deliveryTerms} We send by courier or by builty (goods transport), whichever suits your city and order, and tell you the charge when we confirm your order.</p>
+        <p>Vacuum jugs and flasks are sold by the carton: at least {COMMERCIAL.jugCartonPieces} pieces of a model per order. Bottles can be ordered singly.</p>
         <h2>Timing</h2>
         <p>We call or WhatsApp to confirm each order, then pack and dispatch it from our Gujranwala factory within {COMMERCIAL.dispatch}. Parcels usually arrive {COMMERCIAL.deliveryTime}. Large cities are normally quickest; remote areas can take a little longer.</p>
         <p>Once your order is dispatched we send the courier&rsquo;s tracking number by WhatsApp and email, and show it on your order page.</p>

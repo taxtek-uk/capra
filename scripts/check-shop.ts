@@ -25,19 +25,20 @@ assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").unit, 1885);
 // Client-sent prices are ignored; unknown ids are rejected; junk variants fall back to the first option.
 const c1 = priceWith(cat, [{ id: "p:sld-vacuum-jug", qty: 2, variant: "1l/steel", price: 1 }, { id: "p:nope", qty: 1 }, { id: "p:bm-bullet-flask", qty: 1, variant: "x/y" }]);
 assert.deepEqual(c1.rejected, ["p:nope"]);
-assert.equal(c1.subtotal, 2 * 1680 + 905);
-assert.equal(c1.delivery, 250);
-assert.equal(c1.total, c1.subtotal + 250);
+// Jugs sell by the carton of 12 (2 is raised to 12); bottles sell singly. Delivery is never added.
+assert.deepEqual(c1.lines.map((l) => [l.qty, l.min]), [[12, 12], [1, 1]]);
+assert.equal(c1.subtotal, 12 * 1680 + 905);
+assert.equal(c1.delivery, 0);
+assert.equal(c1.total, c1.subtotal);
 
-// Free delivery from Rs 5,000; quantities clamp to stock; sold out is rejected.
-assert.equal(priceWith(cat, [{ id: "p:skm-vacuum-coffee-pot", qty: 3, variant: "3l/steel" }]).delivery, 0);
-const limited = cat.map((i) => (i.slug === "rit-push-button-flask" ? { ...i, stock: 2 } : i.slug === "cpr-vacuum-pot" ? { ...i, stock: 0 } : i));
-const c2 = priceWith(limited, [{ id: "p:rit-push-button-flask", qty: 5 }, { id: "p:cpr-vacuum-pot", qty: 1 }]);
-assert.equal(c2.lines[0].qty, 2);
+// Quantities clamp to stock; sold out, or fewer than a carton left, is rejected.
+const limited = cat.map((i) => (i.slug === "rit-push-button-flask" ? { ...i, stock: 14 } : i.slug === "cpr-vacuum-pot" ? { ...i, stock: 0 } : i.slug === "sld-vacuum-jug" ? { ...i, stock: 11 } : i));
+const c2 = priceWith(limited, [{ id: "p:rit-push-button-flask", qty: 20 }, { id: "p:cpr-vacuum-pot", qty: 12 }, { id: "p:sld-vacuum-jug", qty: 12 }]);
+assert.equal(c2.lines[0].qty, 14);
 assert.ok(c2.lines[0].clamped);
-assert.deepEqual(c2.rejected, ["p:cpr-vacuum-pot"]);
+assert.deepEqual(c2.rejected, ["p:cpr-vacuum-pot", "p:sld-vacuum-jug"]);
 // Two lines for the same variant merge and still respect the cap.
-assert.equal(priceWith(limited, [{ id: "p:rit-push-button-flask", qty: 1, variant: "1l/steel" }, { id: "p:rit-push-button-flask", qty: 1, variant: "1l/steel" }, { id: "p:rit-push-button-flask", qty: 1 }]).lines[0].qty, 2);
+assert.equal(priceWith(limited, [{ id: "p:rit-push-button-flask", qty: 10, variant: "1l/steel" }, { id: "p:rit-push-button-flask", qty: 10, variant: "1l/steel" }, { id: "p:rit-push-button-flask", qty: 1 }]).lines[0].qty, 14);
 assert.equal(priceWith(cat, []).total, 0);
 
 console.log("check:shop passed");

@@ -43,7 +43,7 @@ export default async function Page() {
         <Container className="grid grid-cols-2 gap-6 py-8 text-sm sm:grid-cols-4">
           {[
             ["Cash on delivery", "Pay the courier when it arrives"],
-            [`Rs ${COMMERCIAL.deliveryFee} delivery`, `Free over Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}`],
+            ["Delivery anywhere", "Courier or builty at actual cost"],
             [`${COMMERCIAL.warrantyMonths / 12}-year warranty`, `Plus ${COMMERCIAL.returnDays}-day returns`],
             ["Factory prices", "Direct from our factory"],
           ].map(([t, d]) => <div key={t}><p className="font-medium">{t}</p><p className="mt-0.5 text-stone-600">{d}</p></div>)}

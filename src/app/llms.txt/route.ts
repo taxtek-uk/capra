@@ -28,7 +28,8 @@ export async function GET() {
 - Opening hours: ${BRAND.hours.display}
 - Market: Pakistan. Delivery to every city, including ${SERVICE_AREAS.join(", ")}.
 - Currency: Pakistani rupees (PKR). Prices online are the factory price list dated 1 October 2026.
-- Delivery: Rs ${COMMERCIAL.deliveryFee} per order anywhere in Pakistan; free on orders of Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more. Dispatch within ${COMMERCIAL.dispatch}; arrival usually ${COMMERCIAL.deliveryTime}.
+- Minimum order: vacuum jugs and flasks are sold by the carton, ${COMMERCIAL.jugCartonPieces} pieces minimum per model. Bottles sell singly.
+- Delivery: anywhere in Pakistan by courier or builty; the customer pays the actual charge, which is not included in the prices. Dispatch within ${COMMERCIAL.dispatch}; arrival usually ${COMMERCIAL.deliveryTime}.
 - Payment: cash on delivery, bank transfer, JazzCash or Easypaisa. No account needed to order.
 - Returns: ${COMMERCIAL.returnDays} days for unused items; damaged or wrong items replaced free.
 - Warranty: ${COMMERCIAL.warrantyMonths} months against manufacturing faults, including loss of vacuum not caused by a fall.

@@ -6,7 +6,7 @@ import { MobileActionBar } from "@/components/site/MobileActionBar";
 import { Container, Section, Eyebrow, Heading, Faq } from "@/components/ui/primitives";
 import { ProductBuy } from "./ProductBuy";
 import { ProductCard } from "./ProductCard";
-import { FAMILIES, SERIES, type Family } from "@/content/products";
+import { FAMILIES, SERIES, minQty, type Family } from "@/content/products";
 import { AFTERCARE_FAQ } from "@/content/faqs";
 import { JsonLd, faqLd, pageMeta, productGroupLd } from "@/lib/seo";
 import { listed, shopItem, stockStatus, variantFacts } from "@/lib/shop";
@@ -57,7 +57,7 @@ export async function ProductPage({ family, slug }: { family: Family; slug: stri
             <p className="lede mt-4 max-w-2xl text-base leading-relaxed sm:text-lg">{ov?.blurb || item.summary}</p>
           </div>
           <div className="mt-10">
-            <ProductBuy item={{ id: item.id, name: item.name, sizes: s.sizes, colours: s.colours, images: s.images, stock: item.stock, colourByRequest: s.colourByRequest }} />
+            <ProductBuy item={{ id: item.id, name: item.name, sizes: s.sizes, colours: s.colours, images: s.images, stock: item.stock, colourByRequest: s.colourByRequest, min: minQty(s) }} />
           </div>
           <p className="mt-6 text-sm text-stone-600">
             Prefer to order on WhatsApp? <a href={whatsappWith(`Assalam-o-Alaikum, I would like to order the CAPRA ${s.name}.`)} target="_blank" rel="noopener" className="font-medium text-clay-700 underline underline-offset-4">Message us</a> and we will take it there.

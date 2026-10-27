@@ -6,8 +6,9 @@
  * SLD-1) at +Rs 100, exactly as the list says. Never write a price anywhere else: pages, emails, JSON-LD and
  * /llms.txt all read from here through src/lib/shop.ts.
  */
+import { COMMERCIAL } from "@/lib/brand";
 
-export type Family = "vacuum-jugs" | "insulated-bottles";
+export type Family ="vacuum-jugs" | "insulated-bottles";
 
 export interface Size {
   value: string;
@@ -350,6 +351,8 @@ export const FAMILIES: Record<Family, { name: string; short: string; path: strin
   },
 };
 
-export const seriesHref = (s: Pick<Series, "family" | "slug">) => `${FAMILIES[s.family].path}/${s.slug}`;
+/** The fewest pieces of one model a basket line can hold: a carton of jugs, or a single bottle. */
+export const minQty = (s: Pick<Series, "family">) => (s.family === "vacuum-jugs" ? COMMERCIAL.jugCartonPieces : 1);
+export const seriesHref =(s: Pick<Series, "family" | "slug">) => `${FAMILIES[s.family].path}/${s.slug}`;
 export const fromPrice = (s: Series) => Math.min(...s.sizes.map((z) => z.price));
 export const toPrice = (s: Series) => Math.max(...s.sizes.map((z) => z.price)) + Math.max(...s.colours.map((c) => c.add));

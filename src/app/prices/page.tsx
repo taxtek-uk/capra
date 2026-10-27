@@ -16,7 +16,7 @@ export const metadata = pageMeta({
 
 const FAQ = [
   { q: "What does the C in CSLD or CRIT mean?", a: "C is the colour finish. CSLD-1 is the SLD-1 jug in copper, CRIT-010 the RIT-010 in blue, and so on. Each colour model is Rs 100 more than the steel one." },
-  { q: "Are these the final prices?", a: `Yes. You pay the price shown plus Rs ${COMMERCIAL.deliveryFee} delivery, and delivery is free on orders of Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more.` },
+  { q: "Are these the final prices?", a: `Yes, per piece. ${COMMERCIAL.deliveryTerms} Jugs and flasks are sold by the carton, ${COMMERCIAL.jugCartonPieces} pieces minimum per model.` },
   { q: "Do you give a discount for bulk orders?", a: "Shops, offices and event planners can order by the carton. Send us your quantity on the wholesale page and we will reply with a quote." },
 ];
 
@@ -41,7 +41,7 @@ export default function Page() {
           <div className="mt-6 max-w-3xl">
             <Eyebrow>Price list · updated {new Date().toLocaleDateString("en-PK", { month: "long", year: "numeric" })}</Eyebrow>
             <h1 className="rise font-display text-4xl leading-[1.05] sm:text-5xl">CAPRA price list: every flask, jug and bottle compared.</h1>
-            <p className="lede mt-5 text-base leading-relaxed sm:text-lg">Prices in Pakistani rupees, direct from our factory. Steel is the base price; a colour finish adds Rs 100. Delivery Rs {COMMERCIAL.deliveryFee}, free over Rs {COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}.</p>
+            <p className="lede mt-5 text-base leading-relaxed sm:text-lg">Prices in Pakistani rupees, direct from our factory. Steel is the base price; a colour finish adds Rs 100. Jugs and flasks are sold by the carton ({COMMERCIAL.jugCartonPieces} pieces minimum); delivery is extra, at actual cost.</p>
           </div>
 
           {(["vacuum-jugs", "insulated-bottles"] as const).map((f) => (

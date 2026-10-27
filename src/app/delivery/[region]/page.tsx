@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: Promise<{ region: strin
   const districts = [...new Set(r.localities.map((l) => l.district))].sort();
   const faq = [
     { q: `Can I order a CAPRA thermos in ${r.name}?`, a: `Yes. Order online for delivery from ${BRAND.address.city}. Confirm your complete address with the team for remote locations; a directory entry does not guarantee courier access.` },
-    { q: `What does delivery to ${r.name} cost?`, a: `The published retail delivery fee is Rs ${COMMERCIAL.deliveryFee} per order, free from Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}. Dispatch is normally ${COMMERCIAL.dispatch}; arrival is usually ${COMMERCIAL.deliveryTime}, with extra time possible for remote routes. Trade freight is quoted separately.` },
+    { q: `What does delivery to ${r.name} cost?`, a: `${COMMERCIAL.deliveryTerms} We send by courier or builty and tell you the charge when we confirm your order. Dispatch is normally ${COMMERCIAL.dispatch}; arrival is usually ${COMMERCIAL.deliveryTime}, with extra time possible for remote routes. Trade freight is quoted separately.` },
     { q: `Is there a CAPRA dealer in every listed town?`, a: `The list identifies destinations, not dealers or branches. Contact the trade team for confirmed local availability or order directly from the ${BRAND.address.city} factory.` },
   ];
   return <>
@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ region: strin
       <div className="mt-6 max-w-3xl"><Eyebrow>Delivery destinations</Eyebrow><Heading as="h1">Thermos flasks in {r.name}.</Heading><Lede>{advice.intro}</Lede></div>
       <div className="mt-8 flex flex-wrap gap-3"><ButtonLink href="/thermos-flasks">Choose a thermos</ButtonLink><ButtonLink href={CONTACT.whatsappLink} variant="ghost">Check your address</ButtonLink></div>
       <div className="mt-10 grid gap-6 rounded-2xl bg-bone-100 p-6 md:grid-cols-3">
-        <div><h2 className="text-xl">Delivery and payment</h2><p className="mt-3 text-sm leading-relaxed text-stone-600">Retail delivery is Rs {COMMERCIAL.deliveryFee}, free from Rs {COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}. Pay cash on delivery on supported routes, or by bank transfer, JazzCash or Easypaisa. We confirm your order before dispatch.</p></div>
+        <div><h2 className="text-xl">Delivery and payment</h2><p className="mt-3 text-sm leading-relaxed text-stone-600">Delivery by courier or builty, paid at actual cost. Jugs are sold by the carton, {COMMERCIAL.jugCartonPieces} pieces minimum. Pay cash on delivery on supported routes, or by bank transfer, JazzCash or Easypaisa. We confirm your order before dispatch.</p></div>
         <div><h2 className="text-xl">Your delivery address</h2><p className="mt-3 text-sm leading-relaxed text-stone-600">{advice.address}</p></div>
         <div><h2 className="text-xl">Before ordering</h2><p className="mt-3 text-sm leading-relaxed text-stone-600">{advice.note}</p></div>
       </div>

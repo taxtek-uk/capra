@@ -18,6 +18,8 @@ export interface Buyable {
   images: { src: string; alt: string }[];
   stock: number | null;
   colourByRequest?: boolean;
+  /** Fewest pieces per order (`minQty`). */
+  min: number;
 }
 
 /** Gallery + size + colour + quantity. Picking a colour shows its photo. */
@@ -25,10 +27,10 @@ export function ProductBuy({ item }: { item: Buyable }) {
   const [size, setSize] = useState(item.sizes[0]);
   const [colour, setColour] = useState(item.colours[0]);
   const [shown, setShown] = useState(0);
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(item.min);
   const [added, setAdded] = useState(false);
-  const soldOut = item.stock === 0;
   const cap = Math.min(50, item.stock ?? 50);
+  const soldOut = cap < item.min;
   const unit = size.price + colour.add;
   const label = "mb-2 block text-xs font-medium uppercase tracking-[0.18em] text-stone-600";
 
@@ -110,8 +112,8 @@ export function ProductBuy({ item }: { item: Buyable }) {
         ) : (
           <div className="flex flex-wrap items-center gap-3">
             <div className="flex items-center rounded-full border border-ink-950/15">
-              <button type="button" aria-label="One fewer" disabled={qty <= 1} onClick={() => setQty(qty - 1)} className="grid h-12 w-11 place-items-center disabled:opacity-30"><Minus className="h-4 w-4" /></button>
-              <input aria-label="Quantity" type="number" inputMode="numeric" min={1} max={cap} value={qty} onChange={(e) => setQty(Math.min(cap, Math.max(1, Math.round(Number(e.target.value) || 1))))} className="w-10 bg-transparent text-center text-sm tnum [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none" />
+              <button type="button" aria-label="One fewer" disabled={qty <= item.min} onClick={() => setQty(qty - 1)} className="grid h-12 w-11 place-items-center disabled:opacity-30"><Minus className="h-4 w-4" /></button>
+              <input aria-label="Quantity" type="number" inputMode="numeric" min={item.min} max={cap} value={qty} onChange={(e) => setQty(Math.min(cap, Math.max(item.min, Math.round(Number(e.target.value) || item.min))))} className="w-10 bg-transparent text-center text-sm tnum [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none" />
               <button type="button" aria-label="One more" disabled={qty >= cap} onClick={() => setQty(qty + 1)} className="grid h-12 w-11 place-items-center disabled:opacity-30"><Plus className="h-4 w-4" /></button>
             </div>
             <Button type="button" onClick={onAdd} className="min-h-12 flex-1">{added ? "Added — add another" : `Add to basket · ${pkr(unit * qty)}`}</Button>
@@ -119,8 +121,9 @@ export function ProductBuy({ item }: { item: Buyable }) {
         )}
         {added && <Link href="/checkout" className="text-sm font-medium text-clay-700 underline underline-offset-4">Go to checkout →</Link>}
         <ul className="grid gap-2 border-t border-ink-950/10 pt-6 text-sm text-stone-600">
+          {item.min > 1 && <li>✓ Sold by the carton: {item.min} pieces minimum</li>}
           <li>✓ Cash on delivery anywhere in Pakistan</li>
-          <li>✓ Rs 250 delivery, free on orders over Rs 5,000</li>
+          <li>✓ Delivery (courier or builty) at actual cost</li>
           <li>✓ 2-year warranty · 7-day returns</li>
         </ul>
       </div>
@@ -129,7 +132,7 @@ export function ProductBuy({ item }: { item: Buyable }) {
 }
 
 /** Shop cards: pick a size, add the default finish. The full picker is on the product page. */
-export function QuickAdd({ id, name, sizes, colour, soldOut }: { id: string; name: string; sizes: Size[]; colour: Colour; soldOut: boolean }) {
+export function QuickAdd({ id, name, sizes, colour, soldOut, min }: { id: string; name: string; sizes: Size[]; colour: Colour; soldOut: boolean; min: number }) {
   const [size, setSize] = useState(sizes[0]);
   const [added, setAdded] = useState(false);
   if (soldOut) return <p className="text-sm text-warning">Out of stock</p>;
@@ -139,7 +142,7 @@ export function QuickAdd({ id, name, sizes, colour, soldOut }: { id: string; nam
       <select id={`qa-${id}`} value={size.value} onChange={(e) => { setSize(sizes.find((z) => z.value === e.target.value)!); setAdded(false); }} className="min-h-11 min-w-0 flex-1 rounded-full border border-ink-950/30 bg-bone-50 px-4 text-sm">
         {sizes.map((z) => <option key={z.value} value={z.value}>{z.label} · {pkr(z.price)}</option>)}
       </select>
-      <Button type="button" className="min-h-11 shrink-0 px-5" onClick={() => { addToCart(id, 1, `${size.value}/${colour.value}`); track("add_to_cart", name, { qty: 1, price: size.price }); setAdded(true); }}>{added ? "Added ✓" : "Add"}</Button>
+      <Button type="button" className="min-h-11 shrink-0 px-5" onClick={() => { addToCart(id, min, `${size.value}/${colour.value}`); track("add_to_cart", name, { qty: min, price: size.price }); setAdded(true); }}>{added ? "Added ✓" : min > 1 ? `Add ${min}` : "Add"}</Button>
     </div>
   );
 }

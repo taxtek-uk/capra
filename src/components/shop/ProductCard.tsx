@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/primitives";
 import { stockStatus, type ShopItem } from "@/lib/shop";
 import { pkr } from "@/lib/utils";
+import { minQty } from "@/content/products";
 import { QuickAdd } from "./ProductBuy";
 
 /** One series on a listing: photo, sizes, from-price and a quick add. `eager` for the first row (LCP). */
@@ -24,7 +25,7 @@ export function ProductCard({ item, eager, headingLevel = "h3" }: { item: ShopIt
         <H className="mt-3 text-lg font-medium"><Link href={item.href} className="hover:underline">{item.name}</Link></H>
         <p className="mt-1 flex-1 text-sm text-stone-600">{item.summary}</p>
         <p className="mt-4 font-display text-2xl tnum"><span className="text-sm text-stone-600">from </span>{pkr(item.fromPrice)}</p>
-        <div className="mt-4"><QuickAdd id={item.id} name={item.name} sizes={s.sizes} colour={s.colours[0]} soldOut={item.stock === 0} /></div>
+        <div className="mt-4"><QuickAdd id={item.id} name={item.name} sizes={s.sizes} colour={s.colours[0]} soldOut={status.schema === "OutOfStock"} min={minQty(s)} /></div>
       </div>
     </article>
   );

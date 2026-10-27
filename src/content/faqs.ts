@@ -1,12 +1,10 @@
 import { COMMERCIAL, CONTACT, BRAND } from "@/lib/brand";
 
-const fee = `Rs ${COMMERCIAL.deliveryFee}`;
-const free = `Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")}`;
-
 /** Answers shown on the help, delivery and shop pages, and marked up as FAQPage for search and answer engines. */
 export const ORDER_FAQ = [
   { q: "Do you offer cash on delivery?", a: `Yes. Cash on delivery is available everywhere in Pakistan: pay the courier when your parcel arrives. You can also pay by bank transfer, JazzCash or Easypaisa.` },
-  { q: "How much is delivery?", a: `Delivery is ${fee} to any city in Pakistan, and free on orders of ${free} or more.` },
+  { q: "How much is delivery?", a: `${COMMERCIAL.deliveryTerms} We send by courier or builty to any city in Pakistan and tell you the charge when we confirm your order.` },
+  { q: "Is there a minimum order?", a: `Vacuum jugs and flasks are sold by the carton: at least ${COMMERCIAL.jugCartonPieces} pieces of a model. Bottles can be ordered singly.` },
   { q: "How long does delivery take?", a: `We dispatch from Gujranwala within ${COMMERCIAL.dispatch} of confirming your order. Most parcels arrive ${COMMERCIAL.deliveryTime}; big cities are usually quickest.` },
   { q: "Will you call me before sending?", a: "Yes. We call or WhatsApp every new order to confirm the address and the colours before it is packed." },
   { q: "Do I need an account to order?", a: "No. You can check out as a guest with just your name, phone number and address. An email address is optional, but it gets you an emailed receipt and order tracking." },

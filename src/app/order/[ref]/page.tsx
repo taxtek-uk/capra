@@ -63,7 +63,7 @@ function Receipt({ order }: { order: OrderRow }) {
       </table>
       <dl className="ml-auto mt-4 w-64">
         <div className="flex justify-between py-1"><dt>Subtotal</dt><dd>{pkr(t.subtotal)}</dd></div>
-        <div className="flex justify-between py-1"><dt>Delivery</dt><dd>{t.delivery ? pkr(t.delivery) : "Free"}</dd></div>
+        <div className="flex justify-between py-1"><dt>Delivery</dt><dd>{t.delivery ? pkr(t.delivery) : COMMERCIAL.deliveryShort}</dd></div>
         <div className="mt-1 flex justify-between border-t border-black/40 pt-2 text-sm font-semibold"><dt>Total</dt><dd>{pkr(t.total)}</dd></div>
       </dl>
       <p className="mt-8 border-t border-black/20 pt-4">Every {BRAND.name} product carries a {COMMERCIAL.warrantyMonths}-month warranty against manufacturing faults.</p>
@@ -121,7 +121,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
             </ul>
             <dl className="mt-5 max-w-sm text-sm">
               <div className="flex justify-between gap-4 py-1.5"><dt className="text-stone-600">Subtotal</dt><dd className="tnum">{pkr(t.subtotal)}</dd></div>
-              <div className="flex justify-between gap-4 py-1.5"><dt className="text-stone-600">Delivery</dt><dd className="tnum">{t.delivery ? pkr(t.delivery) : "Free"}</dd></div>
+              <div className="flex justify-between gap-4 py-1.5"><dt className="text-stone-600">Delivery</dt><dd className="tnum">{t.delivery ? pkr(t.delivery) : COMMERCIAL.deliveryShort}</dd></div>
               <div className="mt-1 flex justify-between gap-4 border-t border-ink-950/10 pt-3 text-base font-medium"><dt>Total</dt><dd className="tnum">{pkr(t.total)}</dd></div>
             </dl>
             {order.payment_status !== "paid" && order.status !== "cancelled" && (

@@ -69,14 +69,17 @@ export const PROVINCES = ["Punjab", "Sindh", "Khyber Pakhtunkhwa", "Balochistan"
  */
 export const COMMERCIAL = {
   currency: "PKR",
-  deliveryFee: 250,
-  freeDeliveryFrom: 5000,
+  /** No flat fee: the customer pays the courier or builty charge at actual cost (owner, 27 Oct 2026). */
+  deliveryShort: "At actual cost",
+  deliveryTerms: "Delivery (courier or builty) is not included in our prices: you pay the actual charge for your parcel.",
   dispatch: "1–2 working days",
   deliveryTime: "2–5 working days after dispatch",
   warrantyMonths: 24,
   returnDays: 7,
   /** The wholesale carton for bottles: 36 pieces, four colours mixed. */
   cartonPieces: 36,
+  /** Jugs and flasks are sold by the carton: 12 pieces minimum per model (owner, 27 Oct 2026). */
+  jugCartonPieces: 12,
 } as const;
 
 /**

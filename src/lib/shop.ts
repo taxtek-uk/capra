@@ -1,4 +1,4 @@
-import { SERIES, FAMILIES, seriesHref, type Series } from "@/content/products";
+import { SERIES, FAMILIES, minQty, seriesHref, type Series } from "@/content/products";
 import { COMMERCIAL } from "./brand";
 import { db } from "./db";
 import { overrides, type Override } from "./catalogue";
@@ -45,6 +45,8 @@ export interface PricedLine extends CartItem {
   unit: number;
   amount: number;
   variantLabel: string;
+  /** The fewest this line can hold (`minQty`): asking for less is raised to it. */
+  min: number;
   /** Quantity we could not honour, e.g. asked for 5 with 2 in stock. */
   clamped: boolean;
 }
@@ -55,6 +57,7 @@ export interface PricedCart {
   rejected: string[];
   count: number;
   subtotal: number;
+  /** Always 0 now: delivery is paid at actual cost, outside the order total. Older orders kept their fee. */
   delivery: number;
   total: number;
   note: string;
@@ -138,8 +141,6 @@ export function sanitiseCart(raw: unknown): CartItem[] {
   return out;
 }
 
-export const deliveryFor = (subtotal: number) => (subtotal >= COMMERCIAL.freeDeliveryFrom || subtotal === 0 ? 0 : COMMERCIAL.deliveryFee);
-
 /** The one place a basket turns into money. Pure given a catalogue, so scripts/check-shop.ts can test it. */
 export function priceWith(catalogue: ShopItem[], raw: unknown): PricedCart {
   const lines: PricedLine[] = [];
@@ -147,15 +148,16 @@ export function priceWith(catalogue: ShopItem[], raw: unknown): PricedCart {
 
   for (const c of sanitiseCart(raw)) {
     const item = catalogue.find((i) => i.id === c.id);
-    if (!item || item.stock === 0) {
+    const cap = item?.stock == null ? MAX_QTY : Math.min(MAX_QTY, item.stock);
+    if (!item || cap < minQty(item.series)) {
       rejected.push(c.id);
       continue;
     }
+    const min = minQty(item.series);
     const v = variantFacts(item.series, c.variant);
     const existing = lines.find((l) => l.id === item.id && l.variant === v.key);
-    const cap = item.stock == null ? MAX_QTY : Math.min(MAX_QTY, item.stock);
     const wanted = c.qty + (existing?.qty ?? 0);
-    const qty = Math.min(wanted, cap);
+    const qty = Math.max(min, Math.min(wanted, cap));
     if (existing) {
       existing.qty = qty;
       existing.amount = v.unit * qty;
@@ -164,22 +166,19 @@ export function priceWith(catalogue: ShopItem[], raw: unknown): PricedCart {
     }
     lines.push({
       id: item.id, qty, variant: v.key, name: item.name, href: item.href, image: v.image, sku: v.sku,
-      unit: v.unit, amount: v.unit * qty, variantLabel: v.label, clamped: qty < wanted,
+      unit: v.unit, amount: v.unit * qty, variantLabel: v.label, min, clamped: qty < wanted,
     });
   }
 
   const subtotal = lines.reduce((a, l) => a + l.amount, 0);
-  const delivery = deliveryFor(subtotal);
   return {
     lines,
     rejected,
     count: lines.reduce((a, l) => a + l.qty, 0),
     subtotal,
-    delivery,
-    total: subtotal + delivery,
-    note: delivery
-      ? `Delivery Rs ${COMMERCIAL.deliveryFee} anywhere in Pakistan. Free on orders of Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more.`
-      : subtotal ? "Free delivery anywhere in Pakistan." : "",
+    delivery: 0,
+    total: subtotal,
+    note: subtotal ? COMMERCIAL.deliveryTerms : "",
   };
 }
 
@@ -212,8 +211,8 @@ export const returnStock = (lines: { id: string; qty: number }[]) => moveStock(l
 export const makeOrderRef = () => `CAP-${Date.now().toString(36).toUpperCase().slice(-4)}${Math.random().toString(36).toUpperCase().slice(2, 5)}`;
 
 /** What to tell a shopper about availability; mirrors `availability` in the product's structured data. */
-export function stockStatus(item: Pick<ShopItem, "stock">): { label: string; tone: "success" | "warning" | "danger"; schema: "InStock" | "OutOfStock" } {
-  if (item.stock === 0) return { label: "Out of stock", tone: "danger", schema: "OutOfStock" };
+export function stockStatus(item: Pick<ShopItem, "stock" | "series">): { label: string; tone: "success" | "warning" | "danger"; schema: "InStock" | "OutOfStock" } {
+  if (item.stock != null && item.stock < minQty(item.series)) return { label: "Out of stock", tone: "danger", schema: "OutOfStock" };
   if (item.stock != null && item.stock <= 5) return { label: `${item.stock} left`, tone: "warning", schema: "InStock" };
   return { label: "In stock", tone: "success", schema: "InStock" };
 }

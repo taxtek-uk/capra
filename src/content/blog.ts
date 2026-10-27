@@ -69,7 +69,7 @@ export const POSTS: Post[] = [
       {
         heading: "Delivery and cash on delivery",
         paragraphs: [
-          `Online prices only make sense once delivery is added. We deliver anywhere in Pakistan for Rs ${COMMERCIAL.deliveryFee}, free on orders of Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more, and you can pay the courier in cash when the parcel arrives. Bank transfer, JazzCash and Easypaisa are accepted too.`,
+          `Online prices only make sense once delivery is added. We deliver anywhere in Pakistan by courier or builty, and you pay the actual delivery charge on top of the price. Jugs and flasks are sold by the carton, ${COMMERCIAL.jugCartonPieces} pieces minimum, and you can pay in cash when the parcel arrives. Bank transfer, JazzCash and Easypaisa are accepted too.`,
           "Our prices are the factory price list, so there is no market markup between the factory and your door. If you are buying in bulk for a shop, an office or wedding gifts, the wholesale page explains carton packing and volume orders.",
         ],
       },
@@ -83,7 +83,7 @@ export const POSTS: Post[] = [
     faqs: [
       { q: "How much is a 1 litre thermos in Pakistan?", a: `A stainless steel 1 litre CAPRA vacuum jug costs from ${jugsFrom}, and a 1 litre BM bullet flask is ${price("bm-bullet-flask", "BM1000")}.` },
       { q: "How much is a 3 litre thermos jug?", a: `The CAPRA SLD 3 litre jug is ${price("sld-vacuum-jug", "SLD-3")}, and the SKM 3 litre coffee pot flask is ${price("skm-vacuum-coffee-pot", "SKM-3")}.` },
-      { q: "Is delivery included in the price?", a: `Delivery is Rs ${COMMERCIAL.deliveryFee} anywhere in Pakistan and free on orders of Rs ${COMMERCIAL.freeDeliveryFrom.toLocaleString("en-PK")} or more. You can pay cash on delivery.` },
+      { q: "Is delivery included in the price?", a: `No. ${COMMERCIAL.deliveryTerms} You can pay cash on delivery.` },
     ],
   },
   {

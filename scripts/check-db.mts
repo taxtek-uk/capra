@@ -25,10 +25,10 @@ const sql = query as never;
 setCheckDb(sql);
 
 // Products override + stock.
-await pg.query("insert into products (slug, stock, keywords) values ('rit-push-button-flask', 3, '{a,b}')");
-assert.equal((await overrides()).get("rit-push-button-flask")?.stock, 3);
-const cart = await priceCart([{ id: "p:rit-push-button-flask", qty: 5, variant: "2l/blue" }]);
-assert.equal(cart.lines[0].qty, 3); assert.equal(cart.lines[0].sku, "CRIT-020"); assert.equal(cart.total, 3 * 1758);
+await pg.query("insert into products (slug, stock, keywords) values ('rit-push-button-flask', 13, '{a,b}')");
+assert.equal((await overrides()).get("rit-push-button-flask")?.stock, 13);
+const cart = await priceCart([{ id: "p:rit-push-button-flask", qty: 20, variant: "2l/blue" }]);
+assert.equal(cart.lines[0].qty, 13); assert.equal(cart.lines[0].sku, "CRIT-020"); assert.equal(cart.total, 13 * 1958);
 
 // Order insert exactly as /api/order does, then stock take and give-back on cancel.
 const lines = cart.lines.map((l) => ({ id: l.id, sku: l.sku, name: l.name, qty: l.qty, unit: l.unit, amount: l.amount, variant: l.variant, variantLabel: l.variantLabel }));
@@ -40,7 +40,7 @@ assert.equal(await syncOrderStock(order), false, "replay moves nothing");
 assert.equal((await overrides()).get("rit-push-button-flask")?.stock, 0);
 await pg.query("update orders set status = 'cancelled' where ref = 'CAP-T1'");
 assert.equal(await syncOrderStock((await getOrder("CAP-T1"))!), true);
-assert.equal((await overrides()).get("rit-push-button-flask")?.stock, 3);
+assert.equal((await overrides()).get("rit-push-button-flask")?.stock, 13);
 
 // Customers, consent, account deletion.
 await pg.query("insert into enquiries (ref, kind, name, email, phone) values ('ENQ-1', 'wholesale', 'Sara', 'sara@example.com', '03211234567')");
