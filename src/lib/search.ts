@@ -11,7 +11,7 @@ export type SearchEntry = { t: string; u: string; k: string; d?: string };
 export async function searchIndex(): Promise<SearchEntry[]> {
   const posts = await publishedJournal();
   const all: SearchEntry[] = [
-    ...SERIES.map((s) => ({ t: `CAPRA ${s.name}`, u: seriesHref(s), k: s.sizes.map((z) => z.model).join(" "), d: `${s.summary} ${s.seo.keywords.join(" ")}` })),
+    ...SERIES.map((s) => ({ t: `CAPRA® ${s.name}`, u: seriesHref(s), k: s.sizes.map((z) => z.model).join(" "), d: `${s.summary} ${s.seo.keywords.join(" ")}` })),
     ...NAV.groups.map((g) => ({ t: g.eyebrow, u: g.href, k: "Range" })),
     ...posts.map((p) => ({ t: p.title, u: `/blog/${p.slug}`, k: "Guide", d: p.excerpt })),
     ...COLLECTIONS.map((c) => ({ t: c.label, u: collectionPath(c.slug), k: "Thermos guide", d: `${c.description} ${c.keywords.join(" ")}` })),

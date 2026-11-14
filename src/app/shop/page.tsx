@@ -12,7 +12,7 @@ import { SHOP_FAQ } from "@/content/faqs";
 export const revalidate = 3600;
 export const metadata = pageMeta({
   title: "Shop Thermos Flasks, Vacuum Jugs & Bottles Online",
-  description: "Shop the full CAPRA range: stainless steel vacuum jugs from 1 to 3 litres, sports bottles and bullet flasks. Factory prices, cash on delivery across Pakistan.",
+  description: "Shop the full CAPRA® range: stainless steel vacuum jugs from 1 to 3 litres, sports bottles and bullet flasks. Factory prices, cash on delivery across Pakistan.",
   path: "/shop",
 });
 
@@ -20,7 +20,7 @@ export default async function Page() {
   const items = await listed();
   return (
     <>
-      <JsonLd data={[itemListLd("CAPRA shop", items.map((i) => ({ name: i.name, path: i.href }))), faqLd(SHOP_FAQ)]} />
+      <JsonLd data={[itemListLd("CAPRA® shop", items.map((i) => ({ name: i.name, path: i.href }))), faqLd(SHOP_FAQ)]} />
       <section className="bg-bone-100 pb-4 pt-32 sm:pt-36">
         <Container>
           <Breadcrumbs items={[{ name: "Shop", path: "/shop" }]} />

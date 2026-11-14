@@ -22,7 +22,7 @@ void main(){
   vec2 q=vec2(fbm(p+vec2(0.,T)),fbm(p+vec2(5.2,1.3)-T));
   vec2 w=vec2(fbm(p+3.*q+vec2(1.7,9.2)+.15*T+pull*.5),fbm(p+3.*q+vec2(8.3,2.8)-.12*T-pull*.3));
   float f=fbm(p+2.5*w);
-  vec3 bone=vec3(.980,.973,.957), sand=vec3(.918,.886,.847), clay=vec3(.835,.725,.647), brass=vec3(.890,.800,.612);
+  vec3 bone=vec3(1.,1.,1.), sand=vec3(.894,.894,.890), clay=vec3(.780,.785,.790), brass=vec3(.930,.930,.930);
   vec3 c=mix(bone,sand,smoothstep(.25,.85,f));
   c=mix(c,clay,smoothstep(.6,1.,length(q))*.45);
   c=mix(c,brass,smoothstep(.5,.9,w.x)*.4);

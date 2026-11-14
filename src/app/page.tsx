@@ -16,7 +16,7 @@ import { pkr } from "@/lib/utils";
 
 export const revalidate = 3600;
 export const metadata = pageMeta({
-  title: "CAPRA Vacuum Flasks & Thermos Jugs | Pakistan",
+  title: "CAPRA® Vacuum Flasks & Thermos Jugs | Pakistan",
   absoluteTitle: true,
   description: "Stainless steel vacuum jugs, thermos flasks and insulated bottles made in Gujranwala. Shop at factory prices, with cash on delivery across Pakistan.",
   path: "/",
@@ -30,16 +30,21 @@ export default async function Page() {
 
   return (
     <>
-      <JsonLd data={[itemListLd("CAPRA range", items.map((i) => ({ name: i.name, path: i.href }))), faqLd(FAQ)]} />
+      <JsonLd data={[itemListLd("CAPRA® range", items.map((i) => ({ name: i.name, path: i.href }))), faqLd(FAQ)]} />
       <Hero
-        image={{ src: "/images/banners/range-dark.webp", alt: "CAPRA stainless steel vacuum jugs in red, steel, blue and rose" }}
+        image={{ src: "/images/banners/range-dark.webp", alt: "CAPRA® stainless steel vacuum jugs in red, steel, blue and rose" }}
+        slides={[
+          { src: "/images/banners/jugs-tea.webp", alt: "CAPRA® vacuum jugs beside a cup of tea" },
+          { src: FAMILIES["insulated-bottles"].hero, alt: FAMILIES["insulated-bottles"].heroAlt },
+          { src: FAMILIES["vacuum-jugs"].hero, alt: FAMILIES["vacuum-jugs"].heroAlt },
+        ]}
         eyebrow={`Made in ${BRAND.address.city} since ${BRAND.founded}`}
         title={<>Vacuum flasks and thermos jugs, <em className="text-gradient-brass italic">made in Pakistan.</em></>}
         lede={`Stainless steel jugs for chai and cold water, sports bottles and bullet flasks at the factory price list, from ${pkr(from)}. Cash on delivery to every city.`}
         actions={<><ButtonLink href="/vacuum-jugs" variant="brass">Shop vacuum jugs <Arrow /></ButtonLink><ButtonLink href="/insulated-bottles" variant="ghostLight">Insulated bottles</ButtonLink></>}
       />
 
-      <section aria-label="Why order from CAPRA" className="border-b border-ink-950/10 bg-bone-100">
+      <section aria-label="Why order from CAPRA®" className="border-b border-ink-950/10 bg-bone-100">
         <Container className="grid grid-cols-2 gap-6 py-8 text-sm sm:grid-cols-4">
           {[
             ["Cash on delivery", "Pay the courier when it arrives"],
@@ -53,7 +58,7 @@ export default async function Page() {
       <Section>
         <Container>
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl"><Eyebrow>The range</Eyebrow><Heading>Seven designs, one standard.</Heading><Lede>Every CAPRA is double-wall vacuum stainless steel, inside and out. Choose the shape, the size and the finish.</Lede></div>
+            <div className="max-w-2xl"><Eyebrow>The range</Eyebrow><Heading>Seven designs, one standard.</Heading><Lede>Every CAPRA® is double-wall vacuum stainless steel, inside and out. Choose the shape, the size and the finish.</Lede></div>
             <ButtonLink href="/prices" variant="ghost">Compare every model <Arrow /></ButtonLink>
           </Reveal>
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{items.map((i) => <li key={i.id}><ProductCard item={i} /></li>)}</ul>
@@ -76,7 +81,7 @@ export default async function Page() {
       </Section>
 
       <FeatureGrid
-        eyebrow="Why CAPRA"
+        eyebrow="Why CAPRA®"
         title="Built for chai, built for years."
         lede="A flask is used every day, so we make it to last: steel where cheaper flasks use glass or thin metal, and lids that are easy to take apart and clean."
         items={[

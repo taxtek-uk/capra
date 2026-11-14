@@ -1,4 +1,4 @@
-import { SERIES, fromPrice } from "./products";
+import { SERIES, fromPrice, COLOUR_ADD } from "./products";
 import { COMMERCIAL } from "@/lib/brand";
 import { pkr } from "@/lib/utils";
 
@@ -36,20 +36,20 @@ export const POSTS: Post[] = [
     excerpt: "What a stainless steel thermos, vacuum jug or insulated bottle costs in Pakistan in 2026, size by size, and what you get for the money at each price.",
     category: "Prices",
     date: "2026-10-19",
-    image: { src: "/images/banners/range-light.webp", alt: "The CAPRA range of vacuum jugs in steel and colour finishes", w: 1920, h: 1080 },
+    image: { src: "/images/banners/range-light.webp", alt: "The CAPRA® range of vacuum jugs in steel and colour finishes", w: 1920, h: 1080 },
     keywords: ["thermos price in pakistan", "vacuum flask price in pakistan", "1 litre thermos price", "2 litre thermos price", "thermos jug price"],
     areas: ["Lahore", "Karachi", "Islamabad", "Gujranwala"],
     sections: [
       {
         paragraphs: [
-          "Search for a thermos in Pakistan and you will find prices that run from a few hundred rupees to well over Rs 10,000. The difference is not only the brand on the side. It is what the flask is made of, whether it has a real vacuum between two steel walls, how well the lid seals and how long it lasts. This guide sets out what a good flask costs in 2026 and what to look for, using our own CAPRA price list as the reference point because those are the numbers we can stand behind.",
+          "Search for a thermos in Pakistan and you will find prices that run from a few hundred rupees to well over Rs 10,000. The difference is not only the brand on the side. It is what the flask is made of, whether it has a real vacuum between two steel walls, how well the lid seals and how long it lasts. This guide sets out what a good flask costs in 2026 and what to look for, using our own CAPRA® price list as the reference point because those are the numbers we can stand behind.",
         ],
       },
       {
         heading: "Vacuum jug prices by size",
         paragraphs: [
-          `Table-top vacuum jugs are the thermos most Pakistani homes use for chai. A stainless steel CAPRA jug starts at ${jugsFrom} for 1 litre. Our classic SLD jug is ${price("sld-vacuum-jug", "SLD-1")} for 1 litre, ${price("sld-vacuum-jug", "SLD-2")} for 2 litres and ${price("sld-vacuum-jug", "SLD-3")} for 3 litres. The push-button RIT flask is ${price("rit-push-button-flask", "RIT-010")} for 1 litre and ${price("rit-push-button-flask", "RIT-020")} for 2.`,
-          `The taller designs cost a little more because there is more steel in them and the lids are more involved: the SKM coffee pot runs from ${price("skm-vacuum-coffee-pot", "SKM-1")} to ${price("skm-vacuum-coffee-pot", "SKM-3")}, and the boxed CPR vacuum pot is ${price("cpr-vacuum-pot", "CPR-010")} or ${price("cpr-vacuum-pot", "CPR-020")}. Every jug also comes in a colour finish for Rs 100 more than the steel version.`,
+          `Table-top vacuum jugs are the thermos most Pakistani homes use for chai. A stainless steel CAPRA® jug starts at ${jugsFrom} for 1 litre. Our classic SLD jug is ${price("sld-vacuum-jug", "SLD-1")} for 1 litre, ${price("sld-vacuum-jug", "SLD-2")} for 2 litres and ${price("sld-vacuum-jug", "SLD-3")} for 3 litres. The push-button RIT flask is ${price("rit-push-button-flask", "RIT-010")} for 1 litre and ${price("rit-push-button-flask", "RIT-020")} for 2.`,
+          `The taller designs cost a little more because there is more steel in them and the lids are more involved: the SKM coffee pot runs from ${price("skm-vacuum-coffee-pot", "SKM-1")} to ${price("skm-vacuum-coffee-pot", "SKM-3")}, and the boxed CPR vacuum pot is ${price("cpr-vacuum-pot", "CPR-010")} or ${price("cpr-vacuum-pot", "CPR-020")}. Every jug also comes in a colour finish for ${pkr(COLOUR_ADD)} more than the steel version.`,
         ],
       },
       {
@@ -63,7 +63,7 @@ export const POSTS: Post[] = [
         heading: "Why the cheapest thermos is rarely the cheapest",
         paragraphs: [
           "Low prices usually come from one of three shortcuts. The first is glass refills: older flasks have a mirrored glass inner bottle that breaks the first time the flask falls. The second is thin or low-grade steel, which dents and can rust at the welds. The third is a poor lid, which is where most heat escapes and most leaks start.",
-          "A flask you replace every winter costs more than one that lasts for years. That is why we make every CAPRA jug from stainless steel inside and out, with no glass to break, and why every product carries a " + COMMERCIAL.warrantyMonths + "-month warranty against manufacturing faults.",
+          "A flask you replace every winter costs more than one that lasts for years. That is why we make every CAPRA® jug from stainless steel inside and out, with no glass to break, and why every product carries a " + COMMERCIAL.warrantyMonths + "-month warranty against manufacturing faults.",
         ],
       },
       {
@@ -81,8 +81,8 @@ export const POSTS: Post[] = [
       },
     ],
     faqs: [
-      { q: "How much is a 1 litre thermos in Pakistan?", a: `A stainless steel 1 litre CAPRA vacuum jug costs from ${jugsFrom}, and a 1 litre BM bullet flask is ${price("bm-bullet-flask", "BM1000")}.` },
-      { q: "How much is a 3 litre thermos jug?", a: `The CAPRA SLD 3 litre jug is ${price("sld-vacuum-jug", "SLD-3")}, and the SKM 3 litre coffee pot flask is ${price("skm-vacuum-coffee-pot", "SKM-3")}.` },
+      { q: "How much is a 1 litre thermos in Pakistan?", a: `A stainless steel 1 litre CAPRA® vacuum jug costs from ${jugsFrom}, and a 1 litre BM bullet flask is ${price("bm-bullet-flask", "BM1000")}.` },
+      { q: "How much is a 3 litre thermos jug?", a: `The CAPRA® SLD 3 litre jug is ${price("sld-vacuum-jug", "SLD-3")}, and the SKM 3 litre coffee pot flask is ${price("skm-vacuum-coffee-pot", "SKM-3")}.` },
       { q: "Is delivery included in the price?", a: `No. ${COMMERCIAL.deliveryTerms} You can pay cash on delivery.` },
     ],
   },
@@ -93,7 +93,7 @@ export const POSTS: Post[] = [
     excerpt: "A plain guide to choosing a thermos jug or insulated bottle: which size suits your family, which lid pours best, and how to tell good stainless steel from bad.",
     category: "Buying advice",
     date: "2026-10-12",
-    image: { src: "/images/banners/jugs-colours.webp", alt: "CAPRA vacuum jugs in red, steel, blue and rose finishes", w: 1004, h: 579 },
+    image: { src: "/images/banners/jugs-colours.webp", alt: "CAPRA® vacuum jugs in red, steel, blue and rose finishes", w: 1004, h: 579 },
     keywords: ["best thermos in pakistan", "vacuum flask for tea", "thermos jug for chai", "how to choose a thermos", "stainless steel vacuum flask"],
     sections: [
       {
@@ -118,7 +118,7 @@ export const POSTS: Post[] = [
       {
         heading: "Check the steel and the build",
         paragraphs: [
-          "Look for stainless steel on the inside as well as the outside. Steel inside means there is no glass refill to shatter if the flask falls, and no plastic touching hot tea. Food-grade 304 stainless steel resists rust and does not hold on to flavours, which is why we use it for every CAPRA jug.",
+          "Look for stainless steel on the inside as well as the outside. Steel inside means there is no glass refill to shatter if the flask falls, and no plastic touching hot tea. Food-grade 304 stainless steel resists rust and does not hold on to flavours, which is why we use it for every CAPRA® jug.",
           "Pick the flask up. The base should sit flat, the handle should not flex, and the lid should thread on smoothly without forcing. A flask that rattles or wobbles in the shop will not improve at home.",
         ],
       },
@@ -138,7 +138,7 @@ export const POSTS: Post[] = [
     faqs: [
       { q: "What size thermos is best for a family?", a: "A 2 litre vacuum jug pours about eight cups and suits most family tables. Choose 3 litres for guests or a large household." },
       { q: "Are steel flasks better than glass flasks?", a: "For daily use, yes. A stainless steel inner wall cannot shatter when the flask is knocked over, and it is easier to clean." },
-      { q: "Which lid is best for one-hand pouring?", a: "A push-button lid such as the CAPRA RIT: press the tab with your thumb, pour, and release to close." },
+      { q: "Which lid is best for one-hand pouring?", a: "A push-button lid such as the CAPRA® RIT: press the tab with your thumb, pour, and release to close." },
     ],
   },
   {
@@ -148,7 +148,7 @@ export const POSTS: Post[] = [
     excerpt: "What decides how long a thermos keeps chai hot or water cold, and seven simple habits that make any vacuum flask hold its temperature for longer.",
     category: "Guides",
     date: "2026-10-05",
-    image: { src: "/images/banners/jugs-tea.webp", alt: "CAPRA vacuum jugs beside a cup of tea", w: 1920, h: 668 },
+    image: { src: "/images/banners/jugs-tea.webp", alt: "CAPRA® vacuum jugs beside a cup of tea", w: 1920, h: 668 },
     keywords: ["how long does a thermos keep tea hot", "keep tea hot for hours", "hot and cold flask", "thermos tips"],
     sections: [
       {
@@ -185,7 +185,7 @@ export const POSTS: Post[] = [
       {
         heading: "When a flask stops keeping heat",
         paragraphs: [
-          "If a flask that used to keep tea hot now gets warm on the outside within minutes of filling, the vacuum has probably been lost, usually after a hard fall. That is a fault of the walls, not the lid, and it cannot be repaired at home. A CAPRA product that loses its vacuum through a manufacturing fault within the " + COMMERCIAL.warrantyMonths + "-month warranty is covered; send us a photo and your order number.",
+          "If a flask that used to keep tea hot now gets warm on the outside within minutes of filling, the vacuum has probably been lost, usually after a hard fall. That is a fault of the walls, not the lid, and it cannot be repaired at home. A CAPRA® product that loses its vacuum through a manufacturing fault within the " + COMMERCIAL.warrantyMonths + "-month warranty is covered; send us a photo and your order number.",
         ],
       },
     ],
@@ -201,12 +201,12 @@ export const POSTS: Post[] = [
     excerpt: "How to clean a stainless steel thermos or vacuum jug at home: remove brown tea stains, get rid of smells, clean the lid and seal, and what never to use.",
     category: "Care",
     date: "2026-09-28",
-    image: { src: "/images/banners/jugs-ice.webp", alt: "CAPRA stainless steel vacuum jugs with ice", w: 1004, h: 579 },
+    image: { src: "/images/banners/jugs-ice.webp", alt: "CAPRA® stainless steel vacuum jugs with ice", w: 1004, h: 579 },
     keywords: ["how to clean thermos", "remove tea stains from flask", "thermos smell", "clean vacuum flask"],
     sections: [
       {
         paragraphs: [
-          "Doodh patti leaves a brown film inside any flask, and a lid that is never taken apart starts to smell. The good news is that stainless steel cleans easily with things already in a Pakistani kitchen. Here is how we clean our own CAPRA jugs and bottles.",
+          "Doodh patti leaves a brown film inside any flask, and a lid that is never taken apart starts to smell. The good news is that stainless steel cleans easily with things already in a Pakistani kitchen. Here is how we clean our own CAPRA® jugs and bottles.",
         ],
       },
       {

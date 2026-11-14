@@ -60,7 +60,7 @@ export async function ProductPage({ family, slug }: { family: Family; slug: stri
             <ProductBuy item={{ id: item.id, name: item.name, sizes: s.sizes, colours: s.colours, images: s.images, stock: item.stock, colourByRequest: s.colourByRequest, min: minQty(s) }} />
           </div>
           <p className="mt-6 text-sm text-stone-600">
-            Prefer to order on WhatsApp? <a href={whatsappWith(`Assalam-o-Alaikum, I would like to order the CAPRA ${s.name}.`)} target="_blank" rel="noopener" className="font-medium text-clay-700 underline underline-offset-4">Message us</a> and we will take it there.
+            Prefer to order on WhatsApp? <a href={whatsappWith(`Assalam-o-Alaikum, I would like to order the CAPRA® ${s.name}.`)} target="_blank" rel="noopener" className="font-medium text-clay-700 underline underline-offset-4">Message us</a> and we will take it there.
           </p>
         </Container>
       </Section>

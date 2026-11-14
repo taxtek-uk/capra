@@ -5,7 +5,7 @@ import { Basket } from "@/components/shop/Basket";
 
 /** A basket is personal: rendered on demand and kept out of the index. */
 export const dynamic = "force-dynamic";
-export const metadata = pageMeta({ title: "Your Basket", description: "The CAPRA flasks and bottles you have chosen, priced with delivery before checkout.", path: "/cart", noIndex: true });
+export const metadata = pageMeta({ title: "Your Basket", description: "The CAPRA® flasks and bottles you have chosen, priced with delivery before checkout.", path: "/cart", noIndex: true });
 
 export default function Page() {
   return (

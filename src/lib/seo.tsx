@@ -59,7 +59,7 @@ export const organizationLd = () => ({
   "@type": ["Organization", "OnlineStore", "LocalBusiness"],
   "@id": ORG_ID,
   name: BRAND.name,
-  alternateName: "CAPRA Pakistan",
+  alternateName: "CAPRA® Pakistan",
   legalName: BRAND.legalName,
   description: `${BRAND.name} is a vacuum flask brand made in ${BRAND.address.city}, Pakistan, since ${BRAND.founded}. It makes stainless steel vacuum jugs from 1 to 3 litres, insulated sports bottles and bullet flasks, and sells them online across Pakistan with cash on delivery.`,
   slogan: BRAND.tagline,

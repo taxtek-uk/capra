@@ -4,18 +4,18 @@ import { pageMeta, JsonLd, faqLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Container, Section, Eyebrow } from "@/components/ui/primitives";
-import { FAMILIES, SERIES, seriesHref } from "@/content/products";
+import { FAMILIES, SERIES, seriesHref, COLOUR_ADD } from "@/content/products";
 import { COMMERCIAL } from "@/lib/brand";
 import { pkr } from "@/lib/utils";
 
 export const metadata = pageMeta({
-  title: "Thermos & Vacuum Flask Price List 2026 – CAPRA",
-  description: "Every CAPRA vacuum jug, thermos flask and insulated bottle with model number, size and price in PKR. Compare SLD, RIT, CPR, SKM, YKC, MS and BM side by side.",
+  title: "Thermos & Vacuum Flask Price List 2026 – CAPRA®",
+  description: "Every CAPRA® vacuum jug, thermos flask and insulated bottle with model number, size and price in PKR. Compare SLD, RIT, CPR, SKM, YKC, MS and BM side by side.",
   path: "/prices",
 });
 
 const FAQ = [
-  { q: "What does the C in CSLD or CRIT mean?", a: "C is the colour finish. CSLD-1 is the SLD-1 jug in copper, CRIT-010 the RIT-010 in blue, and so on. Each colour model is Rs 100 more than the steel one." },
+  { q: "What does the C in CSLD or CRIT mean?", a: `C is the colour finish. CSLD-1 is the SLD-1 jug in copper, CRIT-010 the RIT-010 in blue, and so on. Each colour model is ${pkr(COLOUR_ADD)} more than the steel one.` },
   { q: "Are these the final prices?", a: `Yes, per piece. ${COMMERCIAL.deliveryTerms} Jugs and flasks are sold by the carton, ${COMMERCIAL.jugCartonPieces} pieces minimum per model.` },
   { q: "Do you give a discount for bulk orders?", a: "Shops, offices and event planners can order by the carton. Send us your quantity on the wholesale page and we will reply with a quote." },
 ];
@@ -40,8 +40,8 @@ export default function Page() {
           <Breadcrumbs items={[{ name: "Price list", path: "/prices" }]} />
           <div className="mt-6 max-w-3xl">
             <Eyebrow>Price list · updated {new Date().toLocaleDateString("en-PK", { month: "long", year: "numeric" })}</Eyebrow>
-            <h1 className="rise font-display text-4xl leading-[1.05] sm:text-5xl">CAPRA price list: every flask, jug and bottle compared.</h1>
-            <p className="lede mt-5 text-base leading-relaxed sm:text-lg">Prices in Pakistani rupees, direct from our factory. Steel is the base price; a colour finish adds Rs 100. Jugs and flasks are sold by the carton ({COMMERCIAL.jugCartonPieces} pieces minimum); delivery is extra, at actual cost.</p>
+            <h1 className="rise font-display text-4xl leading-[1.05] sm:text-5xl">CAPRA® price list: every flask, jug and bottle compared.</h1>
+            <p className="lede mt-5 text-base leading-relaxed sm:text-lg">Prices in Pakistani rupees, direct from our factory. Steel is the base price; a colour finish adds {pkr(COLOUR_ADD)}. Jugs and flasks are sold by the carton ({COMMERCIAL.jugCartonPieces} pieces minimum); delivery is extra, at actual cost.</p>
           </div>
 
           {(["vacuum-jugs", "insulated-bottles"] as const).map((f) => (

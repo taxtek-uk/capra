@@ -8,8 +8,8 @@ import { SERIES } from "@/content/products";
 import { BRAND, COMMERCIAL } from "@/lib/brand";
 
 export const metadata = pageMeta({
-  title: "About CAPRA – Vacuum Flask Maker, Gujranwala",
-  description: "CAPRA has made flasks in its own Gujranwala, Pakistan factory since 2019: stainless steel vacuum jugs, flasks and bottles sold at factory prices.",
+  title: "About CAPRA® – Vacuum Flask Maker, Gujranwala",
+  description: "CAPRA® has made flasks in its own Gujranwala, Pakistan factory since 2019: stainless steel vacuum jugs, flasks and bottles sold at factory prices.",
   path: "/about",
 });
 
@@ -17,7 +17,7 @@ export default function Page() {
   const models = SERIES.reduce((a, s) => a + s.sizes.length, 0);
   return (
     <>
-      <Hero compact image={{ src: "/images/banners/jugs-dark.webp", alt: "CAPRA stainless steel vacuum jugs" }} eyebrow={`Since ${BRAND.founded}`} breadcrumbs={[{ name: "About", path: "/about" }]}
+      <Hero compact image={{ src: "/images/banners/jugs-dark.webp", alt: "CAPRA® stainless steel vacuum jugs" }} eyebrow={`Since ${BRAND.founded}`} breadcrumbs={[{ name: "About", path: "/about" }]}
         title={<>Make life easy, <em className="text-gradient-brass italic">one cup at a time.</em></>}
         lede={`${BRAND.name} is a flask maker in ${BRAND.address.city}, Punjab.`} />
       <Section>
@@ -33,7 +33,7 @@ export default function Page() {
             <div className="mt-10 grid grid-cols-3 gap-6"><Stat value={BRAND.founded} label="Established" /><Stat value={String(models)} label="Models" /><Stat value={`${COMMERCIAL.warrantyMonths / 12} yrs`} label="Warranty" /></div>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-ink-950">
-            <Image src="/images/brand/capra-logo-square.png" alt="The CAPRA markhor logo" fill sizes="(min-width:1024px) 40vw, 100vw" className="object-contain p-10" />
+            <Image src="/images/brand/capra-logo-square.png" alt="The CAPRA® markhor logo" fill sizes="(min-width:1024px) 40vw, 100vw" className="object-contain p-10" />
           </div>
         </Container>
       </Section>

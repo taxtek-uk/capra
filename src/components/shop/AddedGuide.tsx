@@ -2,12 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Check, X } from "lucide-react";
 import { ButtonLink, Arrow } from "@/components/ui/primitives";
 import { pkr } from "@/lib/utils";
 import { useCart } from "./cart";
-import { usePricedCart, Totals } from "./Basket";
+import { usePricedCart, Totals, LineControls } from "./Basket";
 
 /**
  * "What now?" after an item goes in the basket. It hangs off the store's `capra:added` event
@@ -19,7 +19,6 @@ import { usePricedCart, Totals } from "./Basket";
  */
 export function AddedGuide() {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [last, setLast] = useState<{ id: string; variant?: string } | null>(null);
   const lines = useCart();
   const { cart, failed } = usePricedCart(lines);
   const pathname = usePathname();
@@ -29,8 +28,7 @@ export function AddedGuide() {
 
   useEffect(() => {
     if (off) return;
-    const onAdded = (e: Event) => {
-      setLast((e as CustomEvent<{ id: string; variant?: string }>).detail);
+    const onAdded = () => {
       if (!dialog.current?.open) dialog.current?.showModal();
     };
     window.addEventListener("capra:added", onAdded);
@@ -41,8 +39,6 @@ export function AddedGuide() {
   useEffect(() => {
     dialog.current?.close();
   }, [pathname]);
-
-  const added = cart?.lines.find((l) => l.id === last?.id && (l.variant ?? "") === (last?.variant ?? ""));
 
   return (
     <dialog
@@ -63,32 +59,42 @@ export function AddedGuide() {
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">
-          {added && (
-            <div className="flex gap-4">
-              <Image src={added.image} alt="" width={80} height={80} className="h-20 w-20 shrink-0 rounded-xl bg-bone-100 object-cover" />
-              <div className="min-w-0">
-                <p className="text-sm font-medium">{added.name}</p>
-                {added.variantLabel && <p className="mt-0.5 text-xs text-stone-600">{added.variantLabel}</p>}
-                <p className="mt-1 text-sm text-stone-600 tnum">{added.qty} × {pkr(added.unit)}</p>
+          {!lines.length && <p className="text-sm text-stone-600" role="status">Your basket is empty.</p>}
+          {cart && (
+            <ul className="divide-y divide-ink-950/10">
+              {cart.lines.map((l) => (
+                <li key={`${l.id}:${l.variant}`} className="flex gap-4 py-4 first:pt-0">
+                  <Image src={l.image} alt="" width={80} height={80} className="h-20 w-20 shrink-0 rounded-xl bg-bone-100 object-cover" />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-medium">{l.name}</p>
+                    <p className="mt-0.5 text-xs text-stone-600">{l.variantLabel}</p>
+                    <p className="mt-1 text-sm text-stone-600 tnum">{l.qty} × {pkr(l.unit)}</p>
+                    {l.min > 1 && <p className="mt-1 text-xs text-stone-600">Sold by the carton: {l.min} pieces minimum.</p>}
+                    <LineControls line={l} />
+                  </div>
+                  <p className="shrink-0 text-sm font-medium tnum">{pkr(l.amount)}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {lines.length > 0 && (
+            <div className="mt-6 rounded-2xl border border-ink-950/10 bg-bone-100 p-5">
+              <h2 className="font-display text-lg">Your basket so far</h2>
+              <div className="mt-3">
+                {failed
+                  ? <p className="text-sm text-danger" role="alert">We could not price your basket just now. Open the basket to try again.</p>
+                  : cart
+                    ? <Totals cart={cart} />
+                    : <p className="text-sm text-stone-600" role="status">Pricing your basket…</p>}
               </div>
             </div>
           )}
 
-          <div className="mt-6 rounded-2xl border border-ink-950/10 bg-bone-100 p-5">
-            <h2 className="font-display text-lg">Your basket so far</h2>
-            <div className="mt-3">
-              {failed
-                ? <p className="text-sm text-danger" role="alert">We could not price your basket just now. Open the basket to try again.</p>
-                : cart
-                  ? <Totals cart={cart} />
-                  : <p className="text-sm text-stone-600" role="status">Pricing your basket…</p>}
-            </div>
-          </div>
-
           <h2 className="mt-6 font-display text-lg">What happens next</h2>
           <ol className="mt-3 grid gap-3 text-sm text-stone-600">
             {[
-              "Check the basket: change sizes or quantities any time before you order.",
+              "Check the basket: change quantities here, or sizes and colours on the basket page, any time before you order.",
               "Give us your address and phone. Pay cash on delivery, or by JazzCash, Easypaisa or bank.",
               "We call or WhatsApp to confirm, then dispatch from Gujranwala with tracking.",
             ].map((step, i) => (
@@ -103,7 +109,7 @@ export function AddedGuide() {
         </div>
 
         <div className="safe-bottom border-t border-ink-950/10 bg-bone-50 px-6 pt-5">
-          <ButtonLink href="/checkout" className="w-full">Checkout{cart ? ` · ${pkr(cart.total)}` : ""} <Arrow /></ButtonLink>
+          {lines.length > 0 && <ButtonLink href="/checkout" className="w-full">Checkout{cart ? ` · ${pkr(cart.total)}` : ""} <Arrow /></ButtonLink>}
           <div className="mt-3 flex items-center justify-between gap-4 text-sm">
             <Link href="/cart" className="text-clay-700 underline underline-offset-4">View basket</Link>
             <button type="button" onClick={() => dialog.current?.close()} className="text-stone-600 underline underline-offset-4 hover:text-ink-950">Keep shopping</button>

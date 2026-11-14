@@ -61,7 +61,7 @@ export function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 print:hidden" onMouseLeave={() => setMenu(null)}>
       <div className="relative z-50 mx-auto max-w-[96rem] px-3 pt-3 sm:px-6">
         <div className={cn("relative flex h-16 items-center justify-between rounded-full px-4 pr-3 transition-all duration-500 sm:px-6", onDark ? "bg-ink-950/35 text-bone-50 ring-1 ring-bone-50/10 backdrop-blur-xl" : "glass text-ink-950 shadow-lift")}>
-          <Link href="/" className="flex shrink-0 items-center" aria-label="CAPRA home"><Logo light={onDark} /></Link>
+          <Link href="/" className="flex shrink-0 items-center" aria-label="CAPRA® home"><Logo light={onDark} /></Link>
 
           <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex" aria-label="Primary">
             {NAV.groups.map((g, gi) => (
@@ -128,7 +128,7 @@ export function Nav() {
         <div ref={sheet} id="nav-sheet" role="dialog" aria-modal="true" aria-label="Menu" onKeyDown={trap} className="menu-enter fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-bone-50 text-ink-950 lg:hidden">
           <div className="sticky top-0 z-10 bg-bone-50 px-3 pb-2 pt-3">
             <div className="flex h-16 items-center justify-between rounded-full bg-white px-4 pr-3 shadow-lift ring-1 ring-ink-950/5">
-              <Link href="/" onClick={() => setOpen(false)} aria-label="CAPRA home"><Logo /></Link>
+              <Link href="/" onClick={() => setOpen(false)} aria-label="CAPRA® home"><Logo /></Link>
               <button type="button" autoFocus onClick={() => setOpen(false)} aria-label="Close menu" className="grid h-11 w-11 place-items-center rounded-full ring-1 ring-ink-950/10 transition hover:bg-ink-950/5"><X className="h-5 w-5" strokeWidth={1.6} aria-hidden /></button>
             </div>
           </div>

@@ -9,7 +9,7 @@ import { PROVINCES } from "@/lib/brand";
 
 /** Personal and never the same twice: rendered on demand and kept out of the index. */
 export const dynamic = "force-dynamic";
-export const metadata = pageMeta({ title: "Your Details", description: "Update the name, phone number, delivery address and email preferences saved to your account with CAPRA.", path: "/account/details", noIndex: true });
+export const metadata = pageMeta({ title: "Your Details", description: "Update the name, phone number, delivery address and email preferences saved to your account with CAPRA®.", path: "/account/details", noIndex: true });
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ e?: string }> }) {
   const me = await requireCustomer("/account/details");

@@ -13,13 +13,13 @@ import { BRAND, CONTACT, COMMERCIAL, whatsappWith } from "@/lib/brand";
 
 /** One customer's order: never cached, never indexed, opened by the signed link. */
 export const dynamic = "force-dynamic";
-export const metadata = pageMeta({ title: "Your Order", description: "The status of your CAPRA order: items, delivery address, payment and courier tracking.", path: "/order", noIndex: true });
+export const metadata = pageMeta({ title: "Your Order", description: "The status of your CAPRA® order: items, delivery address, payment and courier tracking.", path: "/order", noIndex: true });
 
 const STATUS_COPY: Record<string, string> = {
   new: "We have your order and will call or WhatsApp you shortly to confirm it.",
   confirmed: "Confirmed, and being packed at our Gujranwala factory.",
   shipped: "On its way to you with the courier.",
-  delivered: "Delivered. Thank you for choosing CAPRA.",
+  delivered: "Delivered. Thank you for choosing CAPRA®.",
   cancelled: "This order was cancelled.",
 };
 

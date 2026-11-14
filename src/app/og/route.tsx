@@ -14,7 +14,7 @@ async function titleOf(origin: string, path: string) {
   const res = await fetch(new URL(path, origin), { headers: { "user-agent": "capra-og" }, redirect: "manual" }).catch(() => null);
   if (!res?.ok) return BRAND.name;
   const t = /<title[^>]*>([^<]*)<\/title>/i.exec(await res.text())?.[1];
-  return t ? decode(t).replace(/\s*\|\s*CAPRA$/, "").trim() || BRAND.name : BRAND.name;
+  return t ? decode(t).replace(/\s*\|\s*CAPRA®$/, "").trim() || BRAND.name : BRAND.name;
 }
 
 const dataUrl = async (origin: string, path: string, type: string) => {
@@ -37,7 +37,7 @@ export async function GET(req: Request) {
       <div style={{ width: "100%", height: "100%", display: "flex", background: "#0b0a09" }}>
         <div style={{ width: 600, height: 630, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 56 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div style={{ display: "flex", alignItems: "center", gap: 18 }}><img src={logo} width={45} height={80} alt="" /><span style={{ fontSize: 34, letterSpacing: 12, color: "#e3cc9c" }}>CAPRA</span></div>
+          <div style={{ display: "flex", alignItems: "center", gap: 18 }}><img src={logo} width={45} height={80} alt="" /><span style={{ fontSize: 34, letterSpacing: 12, color: "#e3cc9c" }}>CAPRA®</span></div>
           <div style={{ display: "flex", fontSize: title.length > 48 ? 46 : 56, lineHeight: 1.1, color: "#faf8f4", letterSpacing: -1 }}>{title}</div>
           <div style={{ display: "flex", fontSize: 22, color: "#d6b982" }}>{BRAND.domain.replace("https://www.", "")}</div>
         </div>

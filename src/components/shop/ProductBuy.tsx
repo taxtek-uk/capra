@@ -6,7 +6,7 @@ import { Check, ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
 import { Button } from "@/components/ui/primitives";
 import { track } from "@/components/site/Tracker";
 import { cn, pkr } from "@/lib/utils";
-import type { Colour, Size } from "@/content/products";
+import { DISCOUNT_PCT, type Colour, type Size } from "@/content/products";
 import { addToCart } from "./cart";
 
 /** The subset of a series the buying panel needs; prices here are display only — /api/cart re-prices. */
@@ -75,7 +75,11 @@ export function ProductBuy({ item }: { item: Buyable }) {
 
       <div className="grid content-start gap-7">
         <div>
-          <p className="font-display text-4xl tnum">{pkr(unit)}</p>
+          <p className="flex flex-wrap items-center gap-x-3 font-display tnum">
+            <span className="text-4xl font-bold text-clay-700">{pkr(unit)}</span>
+            <s className="text-xl font-medium text-ink-950/70"><span className="sr-only">List price </span>{pkr(size.was + colour.addWas)}</s>
+            <span className="rounded-full bg-clay-700 px-2.5 py-0.5 text-base font-bold text-white">-{DISCOUNT_PCT}%</span>
+          </p>
           <p className="mt-1 text-sm text-stone-600">Model <span className="font-medium text-ink-950">{colour.prefix}{size.model}</span> · {size.label} · {colour.label}</p>
         </div>
 

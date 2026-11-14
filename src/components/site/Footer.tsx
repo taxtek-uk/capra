@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { BRAND, CONTACT, SOCIAL } from "@/lib/brand";
 import { NAV } from "@/content/nav";
 import { Container, ButtonLink, Arrow } from "@/components/ui/primitives";
@@ -18,12 +17,11 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-bone-50 p-2 pb-20 sm:p-3 sm:pb-24 print:hidden">
-      <div className="relative isolate overflow-hidden rounded-[1.75rem] text-ink-950 ring-1 ring-ink-950/[0.06] sm:rounded-[2.25rem]" style={{ background: "radial-gradient(80% 60% at 15% 0%, #eae2d8, transparent 70%), radial-gradient(70% 60% at 90% 100%, #ecdcc4, transparent 70%), #f4efe8" }}>
+      <div className="relative isolate overflow-hidden rounded-[1.75rem] text-ink-950 ring-1 ring-ink-950/[0.06] sm:rounded-[2.25rem]" style={{ background: "radial-gradient(80% 60% at 15% 0%, #e4e4e3, transparent 70%), radial-gradient(70% 60% at 90% 100%, #ededed, transparent 70%), #f3f3f3" }}>
         <LiquidShader className="absolute inset-0 -z-10 h-full w-full" />
         <Container className="pb-8 pt-14 sm:pt-20">
-          <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-end lg:gap-16">
-            <div>
-              <Link href="/" aria-label="CAPRA home" className="inline-block"><Logo plain /></Link>
+          <div>
+              <Link href="/" aria-label="CAPRA® home" className="inline-block"><Logo plain /></Link>
               <p className="mt-8 max-w-xl font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl">
                 Hot chai, cold water, <em className="italic text-clay-700">all day long.</em>
               </p>
@@ -31,17 +29,6 @@ export function Footer() {
                 <ButtonLink href="/shop">Shop the range <Arrow /></ButtonLink>
                 <ButtonLink href="/wholesale" variant="ghost" className="bg-bone-50/50 backdrop-blur-sm">Wholesale & bulk orders</ButtonLink>
               </div>
-            </div>
-            <div className="glass grid gap-px overflow-hidden rounded-3xl bg-ink-950/[0.06] sm:grid-cols-2">
-              <Detail label="Showroom"><address className="not-italic">{BRAND.showroom}</address></Detail>
-              <Detail label="Factory"><address className="not-italic">{BRAND.address.full}</address></Detail>
-              <Detail label="Opening hours">{BRAND.hours.display}</Detail>
-              <Detail label="Call or WhatsApp">
-                <a href={CONTACT.phoneTel} className="flex min-h-11 items-center py-2 transition hover:text-clay-700">{CONTACT.phone}</a>
-                <a href={CONTACT.whatsappLink} target="_blank" rel="noopener" className="flex min-h-11 items-center py-2 transition hover:text-clay-700">WhatsApp {CONTACT.whatsapp}</a>
-              </Detail>
-              <Detail label="Email"><a href={`mailto:${CONTACT.email}`} className="break-all transition hover:text-clay-700">{CONTACT.email}</a></Detail>
-            </div>
           </div>
 
           <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-ink-950/10 pt-12 lg:grid-cols-4">
@@ -61,7 +48,7 @@ export function Footer() {
             ))}
           </div>
 
-          <p aria-hidden className="mt-16 select-none whitespace-nowrap font-display text-[clamp(3rem,20vw,16rem)] leading-[0.8] tracking-[0.2em] text-ink-950/[0.07]">CAPRA</p>
+          <p aria-hidden className="mt-16 select-none whitespace-nowrap font-display text-[clamp(3rem,20vw,16rem)] leading-[0.8] tracking-[0.2em] text-ink-950/[0.07]">CAPRA<sup className="align-super text-[0.25em] tracking-normal">®</sup></p>
 
           <div className="mt-8 flex flex-col gap-6 border-t border-ink-950/10 pt-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="text-xs leading-relaxed text-ink-950/70">
@@ -81,14 +68,5 @@ export function Footer() {
         </Container>
       </div>
     </footer>
-  );
-}
-
-function Detail({ label, children }: { label: string; children: ReactNode }) {
-  return (
-    <div className="bg-bone-50/55 p-5 sm:p-6">
-      <p className="text-xs font-medium uppercase tracking-[0.22em] text-clay-700">{label}</p>
-      <div className="mt-2 text-sm leading-relaxed text-ink-950">{children}</div>
-    </div>
   );
 }

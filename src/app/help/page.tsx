@@ -6,7 +6,7 @@ import { CONTACT } from "@/lib/brand";
 
 export const metadata = pageMeta({
   title: "Help & FAQs – Orders, Delivery, Returns",
-  description: "Answers about ordering CAPRA flasks online: cash on delivery, delivery charges and times, returns, warranty and caring for a stainless steel vacuum flask.",
+  description: "Answers about ordering CAPRA® flasks online: cash on delivery, delivery charges and times, returns, warranty and caring for a stainless steel vacuum flask.",
   path: "/help",
 });
 

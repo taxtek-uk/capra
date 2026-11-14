@@ -24,7 +24,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!c) notFound();
   const items = (await listed()).filter((i) => (!c.series || c.series.includes(i.series.series)) && (!c.litres || i.series.sizes.some((z) => z.litres === c.litres))).map((i) => {
     const sizes = i.series.sizes.filter((z) => !c.litres || z.litres === c.litres);
-    return { ...i, series: { ...i.series, sizes }, fromPrice: Math.min(...sizes.map((z) => z.price)) };
+    return { ...i, series: { ...i.series, sizes }, fromPrice: Math.min(...sizes.map((z) => z.price)), fromWas: Math.min(...sizes.map((z) => z.was)) };
   });
   const rows = items.flatMap((item) => item.series.sizes.flatMap((size) => item.series.colours.map((colour) => {
     const v = variantFacts(item.series, `${size.value}/${colour.value}`);
@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <JsonLd data={[itemListLd(c.title, items.map((i) => ({ name: i.name, path: i.href }))), faqLd(c.faq)]} />
     <Section className="pt-32 sm:pt-40"><Container>
       <Breadcrumbs items={[{ name: "Thermos flasks", path: "/thermos-flasks" }, { name: c.label, path: collectionPath(c.slug) }]} />
-      <div className="mt-6 max-w-3xl"><Eyebrow>CAPRA Pakistan</Eyebrow><Heading as="h1">{c.title}</Heading><Lede>{c.intro}</Lede></div>
+      <div className="mt-6 max-w-3xl"><Eyebrow>CAPRA® Pakistan</Eyebrow><Heading as="h1">{c.title}</Heading><Lede>{c.intro}</Lede></div>
       <p className="mt-6 text-sm text-stone-600">Cash on delivery · Jugs sold by the carton, {COMMERCIAL.jugCartonPieces} pieces minimum · Delivery at actual cost</p>
       {items.length ? <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{items.map((i, n) => <li key={`${c.slug}-${i.id}`}><ProductCard item={i} eager={n < 2} headingLevel="h2" /></li>)}</ul> : <p className="mt-8">This selection is currently unavailable. <Link href="/shop" className="underline">Browse the current range</Link>.</p>}
       {!!rows.length && <div className="mt-12 overflow-x-auto rounded-2xl border border-ink-950/15"><table className="w-full text-left text-sm"><caption className="p-5 text-left font-display text-2xl">Compare exact models and prices</caption><thead className="bg-bone-100"><tr>{["Model", "Design", "Capacity", "Finish", "Price (PKR)"].map((t) => <th key={t} scope="col" className="whitespace-nowrap px-5 py-3 font-medium">{t}</th>)}</tr></thead><tbody className="divide-y divide-ink-950/10">{rows.map(({ item, v }) => <tr key={v.variant + item.id}><th scope="row" className="px-5 py-3 font-medium">{v.sku}</th><td className="px-5 py-3"><Link href={item.href} className="text-clay-700 underline underline-offset-4">{item.name}</Link></td><td className="whitespace-nowrap px-5 py-3">{v.size.label}</td><td className="px-5 py-3">{v.colour.label}</td><td className="whitespace-nowrap px-5 py-3 tnum">{pkr(v.price)}</td></tr>)}</tbody></table></div>}

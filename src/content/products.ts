@@ -1,9 +1,10 @@
 /**
  * The CAPRA range and its prices — the shop's pricing source of truth.
  *
- * Every price is the factory price list dated 1 October 2026 plus Rs 200 per size (whole rupees; owner,
- * 20 Oct 2026). A coloured finish is the "C" model of the same size (CSLD-1 for
- * SLD-1) at +Rs 100, exactly as the list says. Never write a price anywhere else: pages, emails, JSON-LD and
+ * Each size carries its list price (`was`): the factory price list dated 1 October 2026 plus Rs 200, raised
+ * 20% (owner, 14 Nov 2026). The shop sells at DISCOUNT_PCT off that, in whole rupees (`price`). A coloured
+ * finish is the "C" model of the same size (CSLD-1 for SLD-1): +Rs 120 on the list, Rs 96 after the discount.
+ * Never write a price anywhere else: pages, emails, JSON-LD and
  * /llms.txt all read from here through src/lib/shop.ts.
  */
 import { COMMERCIAL } from "@/lib/brand";
@@ -15,6 +16,9 @@ export interface Size {
   label: string;
   /** Model code on the price list, without the colour prefix. */
   model: string;
+  /** The list price, shown struck through. */
+  was: number;
+  /** What the customer pays: the list price less DISCOUNT_PCT. */
   price: number;
   /** Litres, for comparison tables and structured data. */
   litres: number;
@@ -27,6 +31,8 @@ export interface Colour {
   hex: string;
   /** Added to the size price. */
   add: number;
+  /** Added to the size's list price (`was`). */
+  addWas: number;
   /** Prepended to the model code: "C" makes SLD-1 into CSLD-1. */
   prefix: string;
   /** Index into `images` that shows this colour. */
@@ -53,11 +59,18 @@ export interface Series {
   faqs: { q: string; a: string }[];
 }
 
+/** Everything sells at this much off its list price, and the cards say so (owner, 14 Nov 2026). */
+export const DISCOUNT_PCT = 20;
+const sale = (list: number) => Math.round(list * (1 - DISCOUNT_PCT / 100));
+/** A colour finish on the list, and what it adds after the discount. */
+const COLOUR_LIST = 120;
+export const COLOUR_ADD = sale(COLOUR_LIST);
+
 const img = (slug: string, n: number | "card", alt: string) => ({ src: `/images/products/${slug}-${n}.webp`, alt });
 
-const STEEL: Colour = { value: "steel", label: "Stainless steel", hex: "#c9ccd1", add: 0, prefix: "", image: 0 };
-const coloured = (value: string, label: string, hex: string, image: number): Colour => ({ value, label, hex, add: 100, prefix: "C", image });
-const pick = (value: string, label: string, hex: string, image = 0): Colour => ({ value, label, hex, add: 0, prefix: "", image });
+const STEEL: Colour = { value: "steel", label: "Stainless steel", hex: "#c9ccd1", add: 0, addWas: 0, prefix: "", image: 0 };
+const coloured = (value: string, label: string, hex: string, image: number): Colour => ({ value, label, hex, add: COLOUR_ADD, addWas: COLOUR_LIST, prefix: "C", image });
+const pick = (value: string, label: string, hex: string, image = 0): Colour => ({ value, label, hex, add: 0, addWas: 0, prefix: "", image });
 
 const JUG_SPECS: [string, string][] = [
   ["Body", "304 stainless steel, inside and out"],
@@ -79,30 +92,30 @@ export const SERIES: Series[] = [
     ],
     features: ["Double-wall vacuum keeps tea hot and water cold", "Unbreakable stainless steel, no glass inside", "Screw-in pour lid that seals when closed", "Wide handle and a flat, stable base"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "SLD-1", price: 1680, litres: 1 },
-      { value: "2l", label: "2 litres", model: "SLD-2", price: 1785, litres: 2 },
-      { value: "3l", label: "3 litres", model: "SLD-3", price: 2100, litres: 3 },
+      { value: "1l", label: "1 litre", model: "SLD-1", was: 2016, price: sale(2016), litres: 1 },
+      { value: "2l", label: "2 litres", model: "SLD-2", was: 2142, price: sale(2142), litres: 2 },
+      { value: "3l", label: "3 litres", model: "SLD-3", was: 2520, price: sale(2520), litres: 3 },
     ],
     colours: [STEEL, coloured("copper", "Copper", "#7b3f22", 2)],
     images: [
-      img("sld", "card", "CAPRA SLD stainless steel vacuum jug with black pour lid and handle"),
-      img("sld", 2, "CAPRA SLD vacuum jug in brushed stainless steel"),
-      img("sld", 3, "CAPRA SLD vacuum jug in copper finish (CSLD)"),
-      img("sld", 4, "CAPRA vacuum jugs beside their gift box with a cup of tea"),
-      img("sld", 5, "CAPRA vacuum jugs in red, steel, blue and rose colours"),
-      img("sld", 1, "CAPRA SLD jug from the handle side, beside its box"),
-      img("sld", 6, "Top view of the CAPRA SLD jug's pour lid"),
+      img("sld", "card", "CAPRA® SLD stainless steel vacuum jug with black pour lid and handle"),
+      img("sld", 2, "CAPRA® SLD vacuum jug in brushed stainless steel"),
+      img("sld", 3, "CAPRA® SLD vacuum jug in copper finish (CSLD)"),
+      img("sld", 4, "CAPRA® vacuum jugs beside their gift box with a cup of tea"),
+      img("sld", 5, "CAPRA® vacuum jugs in red, steel, blue and rose colours"),
+      img("sld", 1, "CAPRA® SLD jug from the handle side, beside its box"),
+      img("sld", 6, "Top view of the CAPRA® SLD jug's pour lid"),
     ],
     specs: [["Sizes", "1, 2 and 3 litres"], ["Lid", "Screw-in pour lid"], ...JUG_SPECS],
     bestFor: "Family chai, guests and the office",
     seo: {
       title: "SLD Vacuum Jug 1L, 2L, 3L – Price in Pakistan",
-      description: "CAPRA SLD stainless steel vacuum jug for tea and water, 1, 2 and 3 litres, from Rs 1,680. Steel or copper. Cash on delivery across Pakistan.",
+      description: "CAPRA® SLD stainless steel vacuum jug for tea and water, 1, 2 and 3 litres, from Rs 1,613. Steel or copper. Cash on delivery across Pakistan.",
       keywords: ["vacuum jug price in pakistan", "thermos jug for tea", "1 litre thermos", "2 litre thermos", "3 litre thermos", "chai flask"],
     },
     faqs: [
       { q: "Which size SLD jug should I buy?", a: "The 1 litre pours about four cups of chai, the 2 litre about eight and the 3 litre about twelve. Most families choose the 2 litre; the 3 litre is for guests and offices." },
-      { q: "What is the difference between SLD and CSLD?", a: "Nothing but the finish. CSLD is the same SLD jug in copper colour and costs Rs 100 more than the steel one in each size." },
+      { q: "What is the difference between SLD and CSLD?", a: "Nothing but the finish. CSLD is the same SLD jug in copper colour and costs Rs 96 more than the steel one in each size." },
     ],
   },
   {
@@ -117,25 +130,25 @@ export const SERIES: Series[] = [
     ],
     features: ["Push-button pour lid, one-hand use", "Lid lifts off for easy filling and washing", "Double-wall vacuum stainless steel", "Steel or deep blue finish"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "RIT-010", price: 1753, litres: 1 },
-      { value: "2l", label: "2 litres", model: "RIT-020", price: 1858, litres: 2 },
+      { value: "1l", label: "1 litre", model: "RIT-010", was: 2104, price: sale(2104), litres: 1 },
+      { value: "2l", label: "2 litres", model: "RIT-020", was: 2230, price: sale(2230), litres: 2 },
     ],
     colours: [STEEL, coloured("blue", "Blue", "#1f4fa8", 1)],
     images: [
-      img("rit", "card", "CAPRA RIT push-button vacuum flask in polished stainless steel"),
-      img("rit", 2, "CAPRA RIT push-button flask in blue (CRIT)"),
-      img("rit", 3, "CAPRA push-button flasks in blue and white"),
-      img("rit", 4, "CAPRA RIT stainless steel flask on a dark background"),
-      img("rit", 5, "CAPRA RIT flask standing on its gift box"),
-      img("rit", 6, "Pressing the red release tab on the CAPRA RIT lid to pour"),
-      img("rit", 7, "The wide opening of the CAPRA RIT flask with the lid off"),
-      img("rit", 8, "The CAPRA RIT push-button lid with its red tab"),
+      img("rit", "card", "CAPRA® RIT push-button vacuum flask in polished stainless steel"),
+      img("rit", 2, "CAPRA® RIT push-button flask in blue (CRIT)"),
+      img("rit", 3, "CAPRA® push-button flasks in blue and white"),
+      img("rit", 4, "CAPRA® RIT stainless steel flask on a dark background"),
+      img("rit", 5, "CAPRA® RIT flask standing on its gift box"),
+      img("rit", 6, "Pressing the red release tab on the CAPRA® RIT lid to pour"),
+      img("rit", 7, "The wide opening of the CAPRA® RIT flask with the lid off"),
+      img("rit", 8, "The CAPRA® RIT push-button lid with its red tab"),
     ],
     specs: [["Sizes", "1 and 2 litres"], ["Lid", "Push-button pour lid with release tab"], ...JUG_SPECS],
     bestFor: "Offices, counters and one-hand serving",
     seo: {
       title: "RIT Push-Button Vacuum Flask 1L & 2L – Pakistan",
-      description: "CAPRA RIT push-button vacuum flask: press to pour, 1 or 2 litres, steel or blue, from Rs 1,753. Delivered across Pakistan, cash on delivery.",
+      description: "CAPRA® RIT push-button vacuum flask: press to pour, 1 or 2 litres, steel or blue, from Rs 1,683. Delivered across Pakistan, cash on delivery.",
       keywords: ["push button thermos", "vacuum flask price in pakistan", "office thermos", "hot and cold flask"],
     },
     faqs: [
@@ -155,27 +168,27 @@ export const SERIES: Series[] = [
     ],
     features: ["Upright body that fits small tables", "Flat lid with a firm seal", "Brushed or glossy red stainless steel", "Gift box included"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "CPR-010", price: 2058, litres: 1 },
-      { value: "2l", label: "2 litres", model: "CPR-020", price: 2165, litres: 2 },
+      { value: "1l", label: "1 litre", model: "CPR-010", was: 2470, price: sale(2470), litres: 1 },
+      { value: "2l", label: "2 litres", model: "CPR-020", was: 2598, price: sale(2598), litres: 2 },
     ],
     colours: [STEEL, coloured("red", "Red", "#b3121b", 1)],
     images: [
-      img("cpr", "card", "CAPRA CPR vacuum pot in brushed stainless steel"),
-      img("cpr", 3, "CAPRA CPR vacuum pot in glossy red (CCPR)"),
-      img("cpr", 1, "CAPRA CPR vacuum pot on a shop shelf"),
-      img("cpr", 4, "CAPRA CPR vacuum pot beside its yellow gift box"),
-      img("cpr", 5, "CAPRA vacuum pot and gift box on a shop shelf"),
+      img("cpr", "card", "CAPRA® CPR vacuum pot in brushed stainless steel"),
+      img("cpr", 3, "CAPRA® CPR vacuum pot in glossy red (CCPR)"),
+      img("cpr", 1, "CAPRA® CPR vacuum pot on a shop shelf"),
+      img("cpr", 4, "CAPRA® CPR vacuum pot beside its yellow gift box"),
+      img("cpr", 5, "CAPRA® vacuum pot and gift box on a shop shelf"),
     ],
     specs: [["Sizes", "1 and 2 litres"], ["Lid", "Flat screw lid with pour spout"], ["Packaging", "Gift box"], ...JUG_SPECS],
     bestFor: "Gifts and small tables",
     seo: {
       title: "CPR Vacuum Pot 1L & 2L – Thermos Price in Pakistan",
-      description: "CAPRA CPR stainless steel vacuum pot, 1 or 2 litres, brushed steel or red, from Rs 2,058. A boxed gift for Eid and weddings. Delivered across Pakistan.",
+      description: "CAPRA® CPR stainless steel vacuum pot, 1 or 2 litres, brushed steel or red, from Rs 1,976. A boxed gift for Eid and weddings. Delivered across Pakistan.",
       keywords: ["vacuum pot", "thermos gift", "thermos price in pakistan", "stainless steel tea pot flask"],
     },
     faqs: [
-      { q: "Does the CPR come in a gift box?", a: "Yes, every CPR vacuum pot comes in its own printed CAPRA box." },
-      { q: "What is CCPR?", a: "CCPR is the CPR pot in glossy red. It is Rs 100 more than the steel CPR of the same size." },
+      { q: "Does the CPR come in a gift box?", a: "Yes, every CPR vacuum pot comes in its own printed CAPRA® box." },
+      { q: "What is CCPR?", a: "CCPR is the CPR pot in glossy red. It is Rs 96 more than the steel CPR of the same size." },
     ],
   },
   {
@@ -190,28 +203,28 @@ export const SERIES: Series[] = [
     ],
     features: ["Slim coffee-pot shape with a narrow spout", "Polished steel flip lid", "Double-wall vacuum stainless steel", "Steel or glossy green"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "SKM-1", price: 2058, litres: 1 },
-      { value: "2l", label: "2 litres", model: "SKM-2", price: 2165, litres: 2 },
-      { value: "3l", label: "3 litres", model: "SKM-3", price: 2480, litres: 3 },
+      { value: "1l", label: "1 litre", model: "SKM-1", was: 2470, price: sale(2470), litres: 1 },
+      { value: "2l", label: "2 litres", model: "SKM-2", was: 2598, price: sale(2598), litres: 2 },
+      { value: "3l", label: "3 litres", model: "SKM-3", was: 2976, price: sale(2976), litres: 3 },
     ],
     colours: [STEEL, coloured("green", "Green", "#0f6e5a", 2)],
     images: [
-      img("skm", "card", "CAPRA SKM stainless steel coffee pot flask with steel lid"),
-      img("skm", 2, "CAPRA SKM flask on a wooden board with lemons"),
-      img("skm", 3, "CAPRA SKM coffee pot flask in green (CSKM)"),
-      img("skm", 4, "Two CAPRA SKM flasks on a breakfast table"),
-      img("skm", 5, "CAPRA SKM flasks in 2 and 1 litre sizes"),
-      img("skm", 6, "The spout and handle of the CAPRA SKM flask"),
+      img("skm", "card", "CAPRA® SKM stainless steel coffee pot flask with steel lid"),
+      img("skm", 2, "CAPRA® SKM flask on a wooden board with lemons"),
+      img("skm", 3, "CAPRA® SKM coffee pot flask in green (CSKM)"),
+      img("skm", 4, "Two CAPRA® SKM flasks on a breakfast table"),
+      img("skm", 5, "CAPRA® SKM flasks in 2 and 1 litre sizes"),
+      img("skm", 6, "The spout and handle of the CAPRA® SKM flask"),
     ],
     specs: [["Sizes", "1, 2 and 3 litres"], ["Lid", "Steel flip lid with press lever"], ...JUG_SPECS],
     bestFor: "Coffee, breakfast tables and meetings",
     seo: {
       title: "SKM Coffee Pot Vacuum Flask 1–3L – Pakistan",
-      description: "CAPRA SKM stainless steel coffee pot flask with steel flip lid, 1, 2 or 3 litres, from Rs 2,058. Steel or green, cash on delivery across Pakistan.",
+      description: "CAPRA® SKM stainless steel coffee pot flask with steel flip lid, 1, 2 or 3 litres, from Rs 1,976. Steel or green, cash on delivery across Pakistan.",
       keywords: ["coffee flask", "coffee pot thermos", "vacuum flask pakistan", "hot water flask"],
     },
     faqs: [
-      { q: "Is the SKM only for coffee?", a: "No. It keeps tea, kahwa and hot water hot, and cold water cold, like every CAPRA jug. The coffee-pot shape just pours neatly into small cups." },
+      { q: "Is the SKM only for coffee?", a: "No. It keeps tea, kahwa and hot water hot, and cold water cold, like every CAPRA® jug. The coffee-pot shape just pours neatly into small cups." },
       { q: "How does the lid open?", a: "Press the lever on the steel flip lid to pour; it closes again when you release it." },
     ],
   },
@@ -227,24 +240,24 @@ export const SERIES: Series[] = [
     ],
     features: ["Flip-top lid with red release tab", "Tall body with a coloured band", "Double-wall vacuum stainless steel", "Steel or bright orange"],
     sizes: [
-      { value: "1l", label: "1 litre", model: "YKC-1", price: 1860, litres: 1 },
-      { value: "2l", label: "2 litres", model: "YKC-2", price: 1965, litres: 2 },
-      { value: "3l", label: "3 litres", model: "YKC-3", price: 2280, litres: 3 },
+      { value: "1l", label: "1 litre", model: "YKC-1", was: 2232, price: sale(2232), litres: 1 },
+      { value: "2l", label: "2 litres", model: "YKC-2", was: 2358, price: sale(2358), litres: 2 },
+      { value: "3l", label: "3 litres", model: "YKC-3", was: 2736, price: sale(2736), litres: 3 },
     ],
     colours: [STEEL, coloured("orange", "Orange", "#e2502d", 1)],
     images: [
-      img("ykc", "card", "CAPRA YKC stainless steel vacuum jug with red release tab"),
-      img("ykc", 2, "CAPRA YKC vacuum jug in orange (CYKC) on a table"),
+      img("ykc", "card", "CAPRA® YKC stainless steel vacuum jug with red release tab"),
+      img("ykc", 2, "CAPRA® YKC vacuum jug in orange (CYKC) on a table"),
     ],
     specs: [["Sizes", "1, 2 and 3 litres"], ["Lid", "Flip-top lid with release tab"], ...JUG_SPECS],
     bestFor: "A bright everyday jug",
     seo: {
       title: "YKC Vacuum Jug 1L, 2L, 3L – Thermos Pakistan",
-      description: "CAPRA YKC stainless steel vacuum jug with flip-top lid, 1, 2 or 3 litres, from Rs 1,860. Steel or orange. Cash on delivery anywhere in Pakistan.",
+      description: "CAPRA® YKC stainless steel vacuum jug with flip-top lid, 1, 2 or 3 litres, from Rs 1,786. Steel or orange. Cash on delivery anywhere in Pakistan.",
       keywords: ["vacuum jug", "thermos for chai", "stainless steel thermos jug", "hot and cold jug"],
     },
     faqs: [
-      { q: "What is CYKC?", a: "CYKC is the YKC jug in orange, Rs 100 more than the steel YKC of the same size." },
+      { q: "What is CYKC?", a: "CYKC is the YKC jug in orange, Rs 96 more than the steel YKC of the same size." },
       { q: "Which is bigger, YKC-2 or YKC-3?", a: "YKC-3 holds 3 litres, YKC-2 holds 2 litres and YKC-1 holds 1 litre." },
     ],
   },
@@ -260,24 +273,24 @@ export const SERIES: Series[] = [
     ],
     features: ["Double-wall insulated stainless steel", "Carry strap and grip sleeve", "Leak-resistant screw cap", "Five colours"],
     sizes: [
-      { value: "600ml", label: "600 ml", model: "MS-600", price: 885, litres: 0.6 },
-      { value: "750ml", label: "750 ml", model: "MS-750", price: 915, litres: 0.75 },
+      { value: "600ml", label: "600 ml", model: "MS-600", was: 1062, price: sale(1062), litres: 0.6 },
+      { value: "750ml", label: "750 ml", model: "MS-750", was: 1098, price: sale(1098), litres: 0.75 },
     ],
     colours: [pick("black", "Black", "#1b1b1b", 2), pick("blue", "Blue", "#1d3f8f", 0), pick("red", "Red", "#b3121b", 0), pick("gold", "Gold", "#b08d57", 0), pick("silver", "Silver", "#c9ccd1", 0)],
     colourByRequest: true,
     images: [
-      img("ms", "card", "CAPRA MS sports bottles in black, red, blue, gold and silver"),
-      img("ms", 1, "CAPRA MS sports bottles in silver, red and navy"),
-      img("ms", 3, "CAPRA MS sports bottles in black and bronze with straps"),
-      img("ms", 4, "Black CAPRA MS insulated sports bottle"),
-      img("ms", 5, "CAPRA MS sports bottles and their boxes in many colours"),
-      img("ms", 6, "Navy CAPRA MS sports bottle with its carry strap"),
+      img("ms", "card", "CAPRA® MS sports bottles in black, red, blue, gold and silver"),
+      img("ms", 1, "CAPRA® MS sports bottles in silver, red and navy"),
+      img("ms", 3, "CAPRA® MS sports bottles in black and bronze with straps"),
+      img("ms", 4, "Black CAPRA® MS insulated sports bottle"),
+      img("ms", 5, "CAPRA® MS sports bottles and their boxes in many colours"),
+      img("ms", 6, "Navy CAPRA® MS sports bottle with its carry strap"),
     ],
     specs: [["Sizes", "600 ml and 750 ml"], ["Body", "Stainless steel, double-wall"], ["Cap", "Screw cap"], ["Carry", "Fabric strap"], ["Wholesale", "36 pieces per carton, 4 colours mixed"]],
     bestFor: "School, gym and travel",
     seo: {
       title: "MS Insulated Sports Bottle 600ml & 750ml – Pakistan",
-      description: "CAPRA MS stainless steel insulated sports bottle with strap, 600 ml or 750 ml, from Rs 885. Hot and cold. Cash on delivery all over Pakistan.",
+      description: "CAPRA® MS stainless steel insulated sports bottle with strap, 600 ml or 750 ml, from Rs 850. Hot and cold. Cash on delivery all over Pakistan.",
       keywords: ["sports water bottle", "insulated water bottle price in pakistan", "steel water bottle for school", "750ml bottle"],
     },
     faqs: [
@@ -297,22 +310,22 @@ export const SERIES: Series[] = [
     ],
     features: ["Slim bullet shape for bags and car doors", "Cap doubles as a cup", "Double-wall insulated stainless steel", "Black, blue or silver"],
     sizes: [
-      { value: "600ml", label: "600 ml", model: "BM600", price: 905, litres: 0.6 },
-      { value: "1l", label: "1 litre", model: "BM1000", price: 1050, litres: 1 },
+      { value: "600ml", label: "600 ml", model: "BM600", was: 1086, price: sale(1086), litres: 0.6 },
+      { value: "1l", label: "1 litre", model: "BM1000", was: 1260, price: sale(1260), litres: 1 },
     ],
     colours: [pick("black", "Black", "#2a2b2e", 0), pick("blue", "Blue", "#1e6fc2", 0), pick("silver", "Silver", "#c9ccd1", 0)],
     colourByRequest: true,
     images: [
-      img("bm", "card", "CAPRA BM bullet flasks in black, blue and silver"),
-      img("bm", 2, "Three CAPRA BM bullet flasks on a wet surface"),
-      img("bm", 3, "CAPRA insulated bottles in black, blue, red and silver with box"),
-      img("bm", 4, "CAPRA silver bullet flasks with their gift boxes"),
+      img("bm", "card", "CAPRA® BM bullet flasks in black, blue and silver"),
+      img("bm", 2, "Three CAPRA® BM bullet flasks on a wet surface"),
+      img("bm", 3, "CAPRA® insulated bottles in black, blue, red and silver with box"),
+      img("bm", 4, "CAPRA® silver bullet flasks with their gift boxes"),
     ],
     specs: [["Sizes", "600 ml and 1 litre"], ["Body", "Stainless steel, double-wall"], ["Cap", "Cup cap and inner stopper"], ["Wholesale", "36 pieces per carton, 4 colours mixed"]],
     bestFor: "Commuting, office and travel",
     seo: {
       title: "BM Bullet Flask 600ml & 1L – Vacuum Bottle Pakistan",
-      description: "CAPRA BM stainless steel bullet vacuum flask with cup lid, 600 ml or 1 litre, from Rs 905. Black, blue or silver. Cash on delivery in Pakistan.",
+      description: "CAPRA® BM stainless steel bullet vacuum flask with cup lid, 600 ml or 1 litre, from Rs 869. Black, blue or silver. Cash on delivery in Pakistan.",
       keywords: ["bullet flask", "vacuum bottle price in pakistan", "1 litre thermos bottle", "tea flask for travel"],
     },
     faqs: [
@@ -330,10 +343,10 @@ export const FAMILIES: Record<Family, { name: string; short: string; path: strin
     eyebrow: "1, 2 and 3 litres",
     lede: "Stainless steel jugs for chai, coffee, kahwa and cold water: five shapes, steel or a colour finish, at factory prices.",
     hero: "/images/banners/jugs-dark.webp",
-    heroAlt: "CAPRA stainless steel vacuum jugs on a dark background",
+    heroAlt: "CAPRA® stainless steel vacuum jugs on a dark background",
     seo: {
       title: "Vacuum Jugs & Thermos Flasks – Price in Pakistan",
-      description: "Buy CAPRA stainless steel vacuum jugs and thermos flasks for tea and water, 1 to 3 litres, from Rs 1,680. Cash on delivery across Pakistan.",
+      description: "Buy CAPRA® stainless steel vacuum jugs and thermos flasks for tea and water, 1 to 3 litres, from Rs 1,613. Cash on delivery across Pakistan.",
     },
   },
   "insulated-bottles": {
@@ -343,10 +356,10 @@ export const FAMILIES: Record<Family, { name: string; short: string; path: strin
     eyebrow: "600 ml to 1 litre",
     lede: "Double-wall stainless steel bottles for school, the gym, the office and the road: the MS sports bottle and the BM bullet flask.",
     hero: "/images/banners/bottles-wet.webp",
-    heroAlt: "CAPRA bullet flasks in black, blue and silver",
+    heroAlt: "CAPRA® bullet flasks in black, blue and silver",
     seo: {
       title: "Insulated Water Bottles & Bullet Flasks – Pakistan",
-      description: "CAPRA insulated stainless steel water bottles and bullet flasks, 600 ml to 1 litre, from Rs 885. Hot and cold, cash on delivery across Pakistan.",
+      description: "CAPRA® insulated stainless steel water bottles and bullet flasks, 600 ml to 1 litre, from Rs 850. Hot and cold, cash on delivery across Pakistan.",
     },
   },
 };

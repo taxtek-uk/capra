@@ -6,7 +6,7 @@ import { overrides, type Override } from "./catalogue";
 /**
  * The shop.
  *
- * Nothing here invents a price: a line costs its size's list price plus its colour's surcharge, both from
+ * Nothing here invents a price: a line costs its size's sale price plus its colour's surcharge, both from
  * src/content/products.ts. The `products` override row adds only what a shopkeeper owns — listed or not,
  * how many are left, and copy. A basket is always re-priced here, server-side; the browser sends ids,
  * variants and quantities and never a number.
@@ -23,6 +23,8 @@ export interface ShopItem {
   href: string;
   group: string;
   fromPrice: number;
+  /** The list price of that same size, struck through beside `fromPrice`. */
+  fromWas: number;
   /** null = no cap; 0 = out of stock. */
   stock: number | null;
   /** Kept out of listings but still sold from its own page. */
@@ -72,12 +74,13 @@ const apply = (s: Series, ov: Override | undefined): ShopItem | null => {
     id: `p:${s.slug}`,
     slug: s.slug,
     series: s,
-    name: ov?.name || `CAPRA ${s.name}`,
+    name: ov?.name || `CAPRA® ${s.name}`,
     summary: ov?.summary || s.summary,
     image: ov?.image || s.images[0].src,
     href: seriesHref(s),
     group: FAMILIES[s.family].name,
     fromPrice: Math.min(...s.sizes.map((z) => z.price)),
+    fromWas: Math.min(...s.sizes.map((z) => z.was)),
     stock: ov?.stock ?? null,
     hidden: Boolean(ov?.hidden),
   };
@@ -115,6 +118,7 @@ export function variantFacts(s: Series, variant: unknown) {
   return {
     key,
     unit: size.price + colour.add,
+    was: size.was + colour.addWas,
     sku: `${colour.prefix}${size.model}`,
     label: `${size.label} · ${colour.label}${s.colourByRequest ? " (preferred)" : ""}`,
     image: s.images[colour.image]?.src ?? s.images[0].src,

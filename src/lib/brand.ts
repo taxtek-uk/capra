@@ -1,6 +1,7 @@
 /** Single source of truth for brand, contact and legal identity. */
 export const BRAND = {
-  name: "CAPRA",
+  /** As shown to customers, with the registered mark. `legalName` is the bare word for headers and structured data. */
+  name: "CAPRA®",
   legalName: "CAPRA",
   domain: "https://www.capra.pk",
   tagline: "Make Life Easy.",
@@ -28,12 +29,12 @@ export const BRAND = {
 export const CONTACT = {
   phone: "055 4253697",
   phoneTel: "tel:+92554253697",
-  whatsapp: "0333 3324568",
-  whatsappIntl: "+923333324568",
-  whatsappLink: "https://wa.me/923333324568",
+  whatsapp: "0321 9700097",
+  whatsappIntl: "+923219700097",
+  whatsappLink: "https://wa.me/923219700097",
   email: "info@capra.pk",
-  /** Where Resend delivers new orders and enquiries (owner, 22 Oct 2026); TO_EMAIL overrides. */
-  inbox: "salmankhanindustries@gmail.com",
+  /** Where Resend delivers new orders and enquiries (owner, 14 Nov 2026); TO_EMAIL overrides. */
+  inbox: "info@capra.pk",
 } as const;
 
 /** Trade contact: the same WhatsApp as retail (owner, 20 Oct 2026). */
@@ -49,7 +50,7 @@ export const TRADE = {
 export const whatsappWith = (text: string) => `${CONTACT.whatsappLink}?text=${encodeURIComponent(text)}`;
 
 export const SOCIAL = {
-  facebook: "https://facebook.com/capra.pk",
+  facebook: "https://www.facebook.com/rizwan.khan.rit",
 } as const;
 
 /**

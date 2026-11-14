@@ -13,7 +13,7 @@ const find = (slug: string) => REGIONS.find((r) => r.slug === slug);
 export async function generateMetadata({ params }: { params: Promise<{ region: string }> }) {
   const r = find((await params).region);
   if (!r) notFound();
-  return pageMeta({ title: `Thermos Flask Delivery in ${r.name}`, description: `Buy CAPRA thermos flasks in ${r.name}. Check city and town addresses, delivery charges, payment options and factory-direct dealer enquiries.`, path: regionPath(r.slug) });
+  return pageMeta({ title: `Thermos Flask Delivery in ${r.name}`, description: `Buy CAPRA® thermos flasks in ${r.name}. Check city and town addresses, delivery charges, payment options and factory-direct dealer enquiries.`, path: regionPath(r.slug) });
 }
 export default async function Page({ params }: { params: Promise<{ region: string }> }) {
   const r = find((await params).region);
@@ -21,9 +21,9 @@ export default async function Page({ params }: { params: Promise<{ region: strin
   const advice = REGION_ADVICE[r.slug];
   const districts = [...new Set(r.localities.map((l) => l.district))].sort();
   const faq = [
-    { q: `Can I order a CAPRA thermos in ${r.name}?`, a: `Yes. Order online for delivery from ${BRAND.address.city}. Confirm your complete address with the team for remote locations; a directory entry does not guarantee courier access.` },
+    { q: `Can I order a CAPRA® thermos in ${r.name}?`, a: `Yes. Order online for delivery from ${BRAND.address.city}. Confirm your complete address with the team for remote locations; a directory entry does not guarantee courier access.` },
     { q: `What does delivery to ${r.name} cost?`, a: `${COMMERCIAL.deliveryTerms} We send by courier or builty and tell you the charge when we confirm your order. Dispatch is normally ${COMMERCIAL.dispatch}; arrival is usually ${COMMERCIAL.deliveryTime}, with extra time possible for remote routes. Trade freight is quoted separately.` },
-    { q: `Is there a CAPRA dealer in every listed town?`, a: `The list identifies destinations, not dealers or branches. Contact the trade team for confirmed local availability or order directly from the ${BRAND.address.city} factory.` },
+    { q: `Is there a CAPRA® dealer in every listed town?`, a: `The list identifies destinations, not dealers or branches. Contact the trade team for confirmed local availability or order directly from the ${BRAND.address.city} factory.` },
   ];
   return <>
     <JsonLd data={faqLd(faq)} />

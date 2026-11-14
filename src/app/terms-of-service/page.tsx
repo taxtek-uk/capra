@@ -5,7 +5,7 @@ import { BRAND, COMMERCIAL } from "@/lib/brand";
 
 export const metadata = pageMeta({
   title: "Terms of Sale",
-  description: "The terms that apply when you buy CAPRA vacuum flasks and bottles online: prices, confirmation, cash on delivery, delivery, returns and warranty.",
+  description: "The terms that apply when you buy CAPRA® vacuum flasks and bottles online: prices, confirmation, cash on delivery, delivery, returns and warranty.",
   path: "/terms-of-service",
 });
 

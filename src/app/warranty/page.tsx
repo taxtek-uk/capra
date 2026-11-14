@@ -3,8 +3,8 @@ import { InfoPage } from "@/components/site/InfoPage";
 import { BRAND, COMMERCIAL, CONTACT } from "@/lib/brand";
 
 export const metadata = pageMeta({
-  title: "2-Year Warranty on CAPRA Flasks & Bottles",
-  description: "Every CAPRA vacuum jug, flask and bottle has a 24-month warranty against manufacturing faults, including loss of vacuum. What it covers and how to claim.",
+  title: "2-Year Warranty on CAPRA® Flasks & Bottles",
+  description: "Every CAPRA® vacuum jug, flask and bottle has a 24-month warranty against manufacturing faults, including loss of vacuum. What it covers and how to claim.",
   path: "/warranty",
 });
 

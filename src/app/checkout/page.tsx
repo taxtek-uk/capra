@@ -5,7 +5,7 @@ import { Checkout } from "@/components/shop/Checkout";
 import { accountsEnabled, currentCustomer, savedDetails } from "@/lib/customer";
 
 export const dynamic = "force-dynamic";
-export const metadata = pageMeta({ title: "Checkout", description: "Complete your CAPRA order: delivery address, then cash on delivery, bank transfer, JazzCash or Easypaisa.", path: "/checkout", noIndex: true });
+export const metadata = pageMeta({ title: "Checkout", description: "Complete your CAPRA® order: delivery address, then cash on delivery, bank transfer, JazzCash or Easypaisa.", path: "/checkout", noIndex: true });
 
 export default async function Page() {
   const me = await currentCustomer();

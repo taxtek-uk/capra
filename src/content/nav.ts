@@ -24,7 +24,7 @@ export const NAV = {
     { label: "Delivery & returns", href: "/delivery" },
     { label: "Warranty", href: "/warranty" },
     { label: "Care guide", href: "/care-guide" },
-    { label: "About CAPRA", href: "/about" },
+    { label: "About CAPRA®", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
   legal: [{ label: "Privacy", href: "/privacy-policy" }, { label: "Terms", href: "/terms-of-service" }] satisfies NavItem[],

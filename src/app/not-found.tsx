@@ -3,7 +3,7 @@ import { Container, Section, Eyebrow, Heading, Lede, ButtonLink, Arrow } from "@
 import { NAV } from "@/content/nav";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({ title: "Page Not Found", description: "That page has moved or no longer exists. Browse CAPRA vacuum jugs and insulated bottles instead.", path: "/404", noIndex: true });
+export const metadata = pageMeta({ title: "Page Not Found", description: "That page has moved or no longer exists. Browse CAPRA® vacuum jugs and insulated bottles instead.", path: "/404", noIndex: true });
 
 export default function NotFound() {
   const popular = [...NAV.groups.flatMap((g) => g.items), ...NAV.links, { label: "Contact", href: "/contact" }];

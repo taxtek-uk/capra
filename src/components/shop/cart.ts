@@ -14,7 +14,7 @@ import type { CartItem } from "@/lib/shop";
 
 const KEY = "capra:cart";
 const MAX_LINES = 20;
-const MAX_QTY = 50;
+export const MAX_QTY = 50;
 
 const listeners = new Set<() => void>();
 const EMPTY: CartItem[] = [];

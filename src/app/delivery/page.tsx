@@ -7,7 +7,7 @@ import { REGIONS, regionPath } from "@/content/markets";
 
 export const metadata = pageMeta({
   title: "Delivery & Returns – Cash on Delivery Pakistan",
-  description: "CAPRA delivers to every city in Pakistan: courier or builty at actual cost, cash on delivery, dispatch in 1–2 working days and 7-day returns.",
+  description: "CAPRA® delivers to every city in Pakistan: courier or builty at actual cost, cash on delivery, dispatch in 1–2 working days and 7-day returns.",
   path: "/delivery",
 });
 

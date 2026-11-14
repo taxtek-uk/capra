@@ -9,7 +9,7 @@ Neon Postgres, Resend, deployed on Vercel.
 
 | Where | What |
 | --- | --- |
-| `src/content/products.ts` | The range and **every price** (factory list of 1 Oct 2026 + Rs 200). The only place a price is written. |
+| `src/content/products.ts` | The range and **every price** (list = factory list of 1 Oct 2026 + Rs 200, raised 20%; sold at 20% off). The only place a price is written. |
 | `src/lib/brand.ts` | Name, contact, address, hours, delivery fee, warranty, payment accounts, service cities. |
 | `src/lib/shop.ts` | Catalogue + server-side basket pricing (`priceWith`), variants, stock. |
 | `src/app/api/order` | Places an order: validates, re-prices, stores, takes stock, emails. |

@@ -8,8 +8,8 @@ import { fieldClass } from "@/components/ui/fields";
 import { pkr } from "@/lib/utils";
 import { COMMERCIAL } from "@/lib/brand";
 import { useSearchString } from "@/lib/use-search-string";
-import type { CartItem, PricedCart } from "@/lib/shop";
-import { useCart, setQty, removeLine, replaceCart } from "./cart";
+import type { CartItem, PricedCart, PricedLine } from "@/lib/shop";
+import { useCart, setQty, removeLine, replaceCart, MAX_QTY } from "./cart";
 
 /** Re-prices the stored basket on the server whenever it changes. Never prices anything itself. */
 export function usePricedCart(lines: CartItem[]) {
@@ -44,6 +44,20 @@ export function Totals({ cart }: { cart: PricedCart }) {
       {row("Delivery", COMMERCIAL.deliveryShort)}
       {row("Total", pkr(cart.total), true)}
       {cart.note && <p className="mt-3 text-xs text-stone-600">{cart.note}</p>}
+    </div>
+  );
+}
+
+/** Fewer, more, remove: the same controls on the basket page and in the "added" panel. */
+export function LineControls({ line: l }: { line: PricedLine }) {
+  return (
+    <div className="mt-3 flex items-center gap-3">
+      <div className="flex items-center rounded-full border border-ink-950/15">
+        <button type="button" aria-label={`One fewer ${l.name}`} disabled={l.qty <= l.min} onClick={() => setQty(l.id, l.qty - 1, l.variant)} className="grid h-10 w-10 place-items-center disabled:opacity-30"><Minus className="h-3.5 w-3.5" /></button>
+        <span className="w-8 text-center text-sm tnum" aria-label="Quantity">{l.qty}</span>
+        <button type="button" aria-label={`One more ${l.name}`} disabled={l.qty >= MAX_QTY} onClick={() => setQty(l.id, l.qty + 1, l.variant)} className="grid h-10 w-10 place-items-center disabled:opacity-30"><Plus className="h-3.5 w-3.5" /></button>
+      </div>
+      <button type="button" onClick={() => removeLine(l.id, l.variant)} className="text-xs text-stone-600 underline underline-offset-4 hover:text-danger">Remove</button>
     </div>
   );
 }
@@ -122,14 +136,7 @@ export function Basket() {
               <p className="mt-2 text-sm text-stone-600 tnum">{pkr(l.unit)} each</p>
               {l.min > 1 && <p className="mt-1 text-xs text-stone-600">Sold by the carton: {l.min} pieces minimum.</p>}
               {l.clamped && <p className="mt-1 text-xs text-clay-700">We only have {l.qty} of these, so the quantity has been reduced.</p>}
-              <div className="mt-3 flex items-center gap-3">
-                <div className="flex items-center rounded-full border border-ink-950/15">
-                  <button type="button" aria-label={`One fewer ${l.name}`} disabled={l.qty <= l.min} onClick={() => setQty(l.id, l.qty - 1, l.variant)} className="grid h-10 w-10 place-items-center disabled:opacity-30"><Minus className="h-3.5 w-3.5" /></button>
-                  <span className="w-8 text-center text-sm tnum" aria-label="Quantity">{l.qty}</span>
-                  <button type="button" aria-label={`One more ${l.name}`} onClick={() => setQty(l.id, l.qty + 1, l.variant)} className="grid h-10 w-10 place-items-center"><Plus className="h-3.5 w-3.5" /></button>
-                </div>
-                <button type="button" onClick={() => removeLine(l.id, l.variant)} className="text-xs text-stone-600 underline underline-offset-4 hover:text-danger">Remove</button>
-              </div>
+              <LineControls line={l} />
             </div>
             <p className="shrink-0 font-display text-lg tnum">{pkr(l.amount)}</p>
           </li>

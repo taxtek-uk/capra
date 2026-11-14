@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { requireAdmin } from "@/lib/admin";
 import { overrides } from "@/lib/catalogue";
-import { FAMILIES, SERIES, seriesHref } from "@/content/products";
+import { FAMILIES, SERIES, seriesHref, COLOUR_ADD } from "@/content/products";
 import { pkr } from "@/lib/utils";
 import { Btn, BtnLink, Card, Field, Input, PageHead, Pill, Textarea } from "@/components/admin/ui";
 import { Counted } from "@/components/admin/Counted";
@@ -39,7 +39,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
           <Card className="p-5">
             <h2 className="text-sm font-semibold text-zinc-900">Prices (read only)</h2>
             <p className="mt-1 text-xs text-zinc-500">From the factory price list in src/content/products.ts. Change them there so the shop, emails, structured data and llms.txt stay in step.</p>
-            <ul className="mt-3 grid gap-1 text-sm">{s.sizes.map((z) => <li key={z.model} className="flex justify-between"><span>{z.model} · {z.label}</span><span className="tnum">{pkr(z.price)}{s.colours.some((c) => c.add) ? ` · colour ${pkr(z.price + 100)}` : ""}</span></li>)}</ul>
+            <ul className="mt-3 grid gap-1 text-sm">{s.sizes.map((z) => <li key={z.model} className="flex justify-between"><span>{z.model} · {z.label}</span><span className="tnum">{pkr(z.price)}{s.colours.some((c) => c.add) ? ` · colour ${pkr(z.price + COLOUR_ADD)}` : ""}</span></li>)}</ul>
           </Card>
         </div>
         <div className="space-y-4">

@@ -13,7 +13,7 @@ export const revalidate = 300;
 
 export const metadata = pageMeta({
   title: "Journal: Thermos Guides, Prices & Care",
-  description: "Guides from CAPRA on choosing, using and cleaning vacuum flasks and thermos jugs, with up-to-date thermos prices in Pakistan.",
+  description: "Guides from CAPRA® on choosing, using and cleaning vacuum flasks and thermos jugs, with up-to-date thermos prices in Pakistan.",
   path: "/blog",
 });
 

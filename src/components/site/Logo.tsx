@@ -10,7 +10,7 @@ export function Logo({ className, light, plain }: { className?: string; light?: 
         <Image src={BRAND.mark} alt="" width={144} height={256} sizes="24px" className="h-10 w-auto" loading="eager" fetchPriority="low" />
       </span>
       <span className="flex flex-col leading-none">
-        <span className={cn("font-display text-[1.7rem] font-semibold tracking-[0.28em]", light ? "text-brass-300" : "text-ink-950")}>CAPRA</span>
+        <span className={cn("font-display text-[1.7rem] font-semibold tracking-[0.28em]", light ? "text-brass-300" : "text-ink-950")}>CAPRA<sup className="-ml-[0.2em] align-super text-[0.45em] font-normal tracking-normal">®</sup></span>
         <span className={cn("mt-1 text-[0.65rem] font-medium uppercase tracking-[0.3em]", light ? "text-bone-100/80" : "text-clay-700")}>{BRAND.tagline.replace(/\.$/, "")}</span>
       </span>
     </span>

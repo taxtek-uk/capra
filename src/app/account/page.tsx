@@ -9,7 +9,7 @@ import { signOut } from "./actions";
 
 /** Personal and never the same twice: rendered on demand and kept out of the index. */
 export const dynamic = "force-dynamic";
-export const metadata = pageMeta({ title: "Your Account", description: "Your orders with CAPRA in one place: status, totals and delivery tracking, plus the details saved for checkout.", path: "/account", noIndex: true });
+export const metadata = pageMeta({ title: "Your Account", description: "Your orders with CAPRA® in one place: status, totals and delivery tracking, plus the details saved for checkout.", path: "/account", noIndex: true });
 
 /** The customer's words for an order's state, most decisive fact first. */
 function statusOf(o: CustomerOrder): { label: string; tone: "clay" | "brass" | "ink" } {

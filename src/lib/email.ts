@@ -3,7 +3,7 @@ import { BRAND, COMMERCIAL, CONTACT, SOCIAL } from "./brand";
 
 /** TO_EMAIL is the shop inbox for new orders and enquiries; SEND_CUSTOMER_COPY=false stops the customer copies. */
 export const MAIL = {
-  from: process.env.EMAIL_FROM ?? `${BRAND.name} <${CONTACT.email}>`,
+  from: process.env.EMAIL_FROM ?? `${BRAND.legalName} <${CONTACT.email}>`,
   to: (process.env.TO_EMAIL || CONTACT.inbox).split(",").map((s) => s.trim()).filter(Boolean),
   bcc: process.env.BCC_EMAIL ? [process.env.BCC_EMAIL] : undefined,
   sendCustomerCopy: String(process.env.SEND_CUSTOMER_COPY ?? "true").toLowerCase() === "true",

@@ -4,30 +4,33 @@
  */
 import assert from "node:assert/strict";
 import { SERIES } from "../src/content/products";
-import { priceWith, type ShopItem } from "../src/lib/shop";
+import { priceWith, variantFacts, type ShopItem } from "../src/lib/shop";
 
-const cat: ShopItem[] = SERIES.map((s) => ({ id: `p:${s.slug}`, slug: s.slug, series: s, name: s.name, summary: "", image: "", href: "", group: "", fromPrice: 0, stock: null, hidden: false }));
+const cat: ShopItem[] = SERIES.map((s) => ({ id: `p:${s.slug}`, slug: s.slug, series: s, name: s.name, summary: "", image: "", href: "", group: "", fromPrice: 0, fromWas: 0, stock: null, hidden: false }));
 const byModel = (id: string, variant: string) => priceWith(cat, [{ id, qty: 1, variant }]).lines[0];
 
-// Every size of every series prices at the list price, and the colour models at +Rs 100.
-const LIST: Record<string, number> = { "SLD-1": 1680, "SLD-2": 1785, "SLD-3": 2100, "RIT-010": 1753, "RIT-020": 1858, "CPR-010": 2058, "CPR-020": 2165, "SKM-1": 2058, "SKM-2": 2165, "SKM-3": 2480, "YKC-1": 1860, "YKC-2": 1965, "YKC-3": 2280, "MS-600": 885, "MS-750": 915, BM600: 905, BM1000: 1050 };
+// Every size lists at LIST and sells at 20% off it; the colour models add Rs 120 on the list, Rs 96 after the discount.
+const sale = (list: number) => Math.round(list * 0.8);
+const LIST: Record<string, number> = { "SLD-1": 2016, "SLD-2": 2142, "SLD-3": 2520, "RIT-010": 2104, "RIT-020": 2230, "CPR-010": 2470, "CPR-020": 2598, "SKM-1": 2470, "SKM-2": 2598, "SKM-3": 2976, "YKC-1": 2232, "YKC-2": 2358, "YKC-3": 2736, "MS-600": 1062, "MS-750": 1098, BM600: 1086, BM1000: 1260 };
 for (const s of SERIES) for (const z of s.sizes) {
-  assert.equal(z.price, LIST[z.model], `${z.model} list price`);
+  assert.equal(z.was, LIST[z.model], `${z.model} list price`);
+  assert.equal(z.price, sale(LIST[z.model]), `${z.model} sale price`);
   for (const c of s.colours) {
     const l = byModel(`p:${s.slug}`, `${z.value}/${c.value}`);
-    assert.equal(l.unit, LIST[z.model] + c.add);
+    assert.equal(l.unit, sale(LIST[z.model]) + (c.prefix ? 96 : 0));
+    assert.equal(variantFacts(s, l.variant).was, LIST[z.model] + (c.prefix ? 120 : 0));
     assert.equal(l.sku, `${c.prefix}${z.model}`);
   }
 }
 assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").sku, "CSLD-2");
-assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").unit, 1885);
+assert.equal(byModel("p:sld-vacuum-jug", "2l/copper").unit, 1810);
 
 // Client-sent prices are ignored; unknown ids are rejected; junk variants fall back to the first option.
 const c1 = priceWith(cat, [{ id: "p:sld-vacuum-jug", qty: 2, variant: "1l/steel", price: 1 }, { id: "p:nope", qty: 1 }, { id: "p:bm-bullet-flask", qty: 1, variant: "x/y" }]);
 assert.deepEqual(c1.rejected, ["p:nope"]);
 // Jugs sell by the carton of 12 (2 is raised to 12); bottles sell singly. Delivery is never added.
 assert.deepEqual(c1.lines.map((l) => [l.qty, l.min]), [[12, 12], [1, 1]]);
-assert.equal(c1.subtotal, 12 * 1680 + 905);
+assert.equal(c1.subtotal, 12 * 1613 + 869);
 assert.equal(c1.delivery, 0);
 assert.equal(c1.total, c1.subtotal);
 

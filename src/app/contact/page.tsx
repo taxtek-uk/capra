@@ -5,8 +5,8 @@ import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { BRAND, CONTACT } from "@/lib/brand";
 
 export const metadata = pageMeta({
-  title: "Contact CAPRA – WhatsApp, Phone & Email",
-  description: "Contact CAPRA in Gujranwala by WhatsApp, phone or email about an order, a product, a warranty claim or wholesale. We reply within one working day.",
+  title: "Contact CAPRA® – WhatsApp, Phone & Email",
+  description: "Contact CAPRA® in Gujranwala by WhatsApp, phone or email about an order, a product, a warranty claim or wholesale. We reply within one working day.",
   path: "/contact",
 });
 

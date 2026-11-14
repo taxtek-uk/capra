@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HUBS = [
-  { match: "price", href: "/prices", label: "See the full CAPRA price list, every model compared" },
+  { match: "price", href: "/prices", label: "See the full CAPRA® price list, every model compared" },
   { match: "choose", href: "/vacuum-jugs", label: "Shop vacuum jugs from 1 to 3 litres" },
   { match: "tea-hot", href: "/vacuum-jugs", label: "Shop stainless steel vacuum jugs for chai" },
-  { match: "clean", href: "/care-guide", label: "The CAPRA care guide: use, clean and store" },
+  { match: "clean", href: "/care-guide", label: "The CAPRA® care guide: use, clean and store" },
 ];
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/site/CtaBand";

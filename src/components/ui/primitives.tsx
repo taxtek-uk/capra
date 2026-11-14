@@ -44,12 +44,12 @@ export function Lede({ className, children }: { className?: string; children: Re
 }
 
 export const btn = {
-  base: "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 ease-out-expo active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50",
-  primary: "bg-ink-950 text-bone-50 hover:bg-ink-800 shadow-lift",
+  base: "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 font-display text-lg font-semibold uppercase leading-6 tracking-wide transition-all duration-300 ease-out-expo active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50",
+  primary: "bg-ink-700 text-bone-50 hover:bg-ink-950 shadow-lift",
   brass: "bg-brass-500 text-ink-950 hover:bg-brass-400 shadow-lift",
   ghost: "border border-ink-950/15 text-ink-900 hover:border-ink-950/40 hover:bg-bone-100",
   ghostLight: "border border-bone-50/25 text-bone-50 hover:border-bone-50/60 hover:bg-bone-50/10",
-  link: "px-0 py-0 text-clay-700 underline-offset-4 hover:underline",
+  link: "px-0 py-0 font-sans text-sm font-medium normal-case tracking-normal text-clay-700 underline-offset-4 hover:underline",
 } as const;
 export type ButtonVariant = keyof Omit<typeof btn, "base">;
 

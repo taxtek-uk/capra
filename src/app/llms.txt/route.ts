@@ -1,7 +1,7 @@
 import { BRAND, CONTACT, COMMERCIAL, SERVICE_AREAS, TRADE } from "@/lib/brand";
 import { COLLECTIONS, collectionPath } from "@/content/collections";
 import { REGIONS, REGION_ADVICE, regionPath } from "@/content/markets";
-import { FAMILIES, seriesHref } from "@/content/products";
+import { FAMILIES, seriesHref, COLOUR_ADD } from "@/content/products";
 import { publishedJournal } from "@/lib/posts";
 import { pkr } from "@/lib/utils";
 import { listed } from "@/lib/shop";
@@ -34,7 +34,7 @@ export async function GET() {
 - Returns: ${COMMERCIAL.returnDays} days for unused items; damaged or wrong items replaced free.
 - Warranty: ${COMMERCIAL.warrantyMonths} months against manufacturing faults, including loss of vacuum not caused by a fall.
 - Materials: double-wall vacuum insulation; jugs are 304 stainless steel inside and out, with no glass refill.
-- Model codes: a "C" prefix is the colour finish of the same model (CSLD-1 is SLD-1 in copper) and costs Rs 100 more.
+- Model codes: a "C" prefix is the colour finish of the same model (CSLD-1 is SLD-1 in copper) and costs ${pkr(COLOUR_ADD)} more.
 - Wholesale: bottles are packed ${COMMERCIAL.cartonPieces} pieces per carton, four colours mixed. Enquiries at /wholesale.
 - Trade WhatsApp: ${TRADE.whatsappIntl}. Dealer catalogue: ${BRAND.domain}${TRADE.catalogue} (list effective ${TRADE.catalogueDate}). This catalogue contains products and terms, not a named dealer directory. Dealer rates and freight are quoted separately.
 - Language: English (Pakistan); the team also answers in Urdu.

@@ -4,7 +4,7 @@ import { BRAND, CONTACT } from "@/lib/brand";
 
 export const metadata = pageMeta({
   title: "Privacy Policy",
-  description: "How CAPRA collects, uses and protects the details you give us when you order, sign in or contact us, and how to ask us to delete them.",
+  description: "How CAPRA® collects, uses and protects the details you give us when you order, sign in or contact us, and how to ask us to delete them.",
   path: "/privacy-policy",
 });
 

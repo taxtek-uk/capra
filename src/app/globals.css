@@ -1,35 +1,36 @@
 @import "tailwindcss";
 
 /* ─── Design tokens ─────────────────────────────────────────────────────────
-   Warm palette: ink for depth, bone for air, brass for the
-   CAPRA markhor gold. Every colour has a job; nothing decorative for its own sake. */
+   Cool neutrals with a red accent and a gold highlight (restyle, 14 Nov 2026). The token names are
+   the original warm palette's, so every class still works: ink = charcoal, bone = white and greys,
+   clay = the red accent, brass = the gold. */
 @theme {
-  --color-ink-950: #0b0a09;
-  --color-ink-900: #141210;
-  --color-ink-800: #1f1c19;
-  --color-ink-700: #2c2824;
-  --color-ink-600: #3d3833;
+  --color-ink-950: #141414;
+  --color-ink-900: #1c1d1d;
+  --color-ink-800: #292c2f;
+  --color-ink-700: #343741;
+  --color-ink-600: #41424e;
 
-  --color-bone-50: #faf8f4;
-  --color-bone-100: #f4efe8;
-  --color-bone-200: #eae2d8;
-  --color-bone-300: #d9cec1;
+  --color-bone-50: #ffffff;
+  --color-bone-100: #f3f3f3;
+  --color-bone-200: #e4e4e3;
+  --color-bone-300: #d9d9d9;
 
-  /* One muted text colour (600) where there were two near-identical ones; 4.7:1 or better on every bone. */
-  --color-stone-400: #a99d90;
-  --color-stone-600: #6a6157;
-  /* Warm, so a stray text-stone-700 no longer falls back to Tailwind's cool default. */
-  --color-stone-700: #4f463e;
+  /* One muted text colour (600): 5.2:1 or better on every bone. */
+  --color-stone-400: #a7a9ac;
+  --color-stone-600: #636466;
+  --color-stone-700: #494b4f;
 
-  --color-clay-300: #d5b9a5;
-  --color-clay-400: #c2a084;
-  --color-clay-500: #ac8968;
-  --color-clay-700: #7a5d4a;
+  /* The accent. 700 is the text and badge red: 5.5:1 on white, 4.9:1 on bone-100. */
+  --color-clay-300: #f0a5a8;
+  --color-clay-400: #e5363d;
+  --color-clay-500: #dc1f26;
+  --color-clay-700: #d2001b;
 
-  --color-brass-300: #e3cc9c;
-  --color-brass-400: #d6b982;
-  --color-brass-500: #c9a96e;
-  --color-brass-600: #a98b56;
+  --color-brass-300: #e2c08a;
+  --color-brass-400: #d4a558;
+  --color-brass-500: #c79140;
+  --color-brass-600: #a8762c;
 
   /* Status colours: each clears 4.9:1 as text on bone and on its own 10% tint. */
   --color-success: #2f6f4e;
@@ -38,8 +39,8 @@
   --color-info: #2b5c7e;
   /* WhatsApp's own green, darkened to #1da851 so the white glyph clears 3:1. */
   --color-whatsapp: #1da851;
-  /* Focus ring: at least 3.4:1 on every bone and ink surface (WCAG 2.4.11 / 1.4.11), unlike brass-500 at 2.1:1. */
-  --color-focus: #94723f;
+  /* Focus ring: brass-600, 3.9:1 on white and 4.6:1 on ink-950 (WCAG 2.4.11 / 1.4.11). */
+  --color-focus: #a8762c;
 
   /* Named steps between Tailwind's own sizes. 12px (text-xs) is the floor; nothing smaller ships.
      No line-height of their own, so each inherits it exactly as the one-off pixel values did. */
@@ -50,11 +51,13 @@
   --text-display-lg: 3.25rem;
   --text-display-xl: 3.5rem;   /* inner-page H1 ceiling */
 
-  --font-display: var(--font-fraunces), "Georgia", serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  /* A DIN-style pair: condensed bold for headings, prices and buttons; the regular width for copy. */
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
 
-  --radius-xl: 1.25rem;
-  --radius-2xl: 1.75rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 1rem;
 
   --shadow-lift: 0 1px 2px rgb(11 10 9 / 0.06), 0 12px 32px -12px rgb(11 10 9 / 0.25);
   --shadow-deep: 0 30px 80px -30px rgb(11 10 9 / 0.55);
@@ -69,21 +72,23 @@
     background: var(--color-bone-50);
     color: var(--color-ink-900);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
   ::selection { background: var(--color-brass-300); color: var(--color-ink-950); }
   :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; border-radius: 4px; }
   /* Programmatic focus targets (skip link, back to top) need no ring of their own. */
   [tabindex="-1"]:focus { outline: none; }
-  h1, h2, h3, .display { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-wrap: balance; }
+  h1, h2, h3, .display { font-family: var(--font-display); font-weight: 700; letter-spacing: 0; text-wrap: balance; }
+  h1, h2 { text-transform: uppercase; }
+  /* The condensed face reads thin at regular weight, so anything set in it starts at semibold. */
+  .font-display { font-weight: 600; }
   p { text-wrap: pretty; }
   img, video { display: block; }
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
   /* Admin dashboard: a neutral product UI rather than the warm editorial site. */
   .dash { background: #fafafa; color: #18181b; font-feature-settings: normal; }
-  .dash h1, .dash h2, .dash h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.011em; }
+  .dash h1, .dash h2, .dash h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.011em; text-transform: none; }
   /* Windows high-contrast: glass panels and icon buttons lose their backgrounds, so give them edges. */
   @media (forced-colors: active) {
     .glass, .glass-dark, button, [role="button"] { border: 1px solid CanvasText; }
@@ -107,7 +112,7 @@
   }
 }
 @utility glass {
-  background: rgb(250 248 244 / 0.72);
+  background: rgb(255 255 255 / 0.8);
   /* Prefixed first: the CSS optimiser keeps only the last of the pair, and Chrome ignores the -webkit- one. */
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);

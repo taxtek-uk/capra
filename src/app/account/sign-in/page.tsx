@@ -8,7 +8,7 @@ import { CONTACT } from "@/lib/brand";
 
 /** Personal and never the same twice: rendered on demand and kept out of the index. */
 export const dynamic = "force-dynamic";
-export const metadata = pageMeta({ title: "Sign In", description: "Sign in to your account with CAPRA using a code sent to your email, to see your orders and check out faster.", path: "/account/sign-in", noIndex: true });
+export const metadata = pageMeta({ title: "Sign In", description: "Sign in to your account with CAPRA® using a code sent to your email, to see your orders and check out faster.", path: "/account/sign-in", noIndex: true });
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const next = safeNext((await searchParams).next);

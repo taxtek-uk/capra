@@ -3,7 +3,7 @@
 Next.js 16 App Router + React 19 + Tailwind v4 (`@theme` tokens in `src/app/globals.css`). Neon Postgres, Resend, Vercel. See README for the map. Mirrors github/thewallshop's patterns; read it when in doubt.
 
 ## Binding rules
-- **Prices live only in `src/content/products.ts`**: whole rupees, the factory list + Rs 200 per size (owner, 20 Oct 2026). A colour model is the "C" prefix of the same size at +Rs 100. Never write a price in a page, email or JSON-LD; read it through `src/lib/shop.ts`. A price change updates `LIST` in `scripts/check-shop.ts`.
+- **Prices live only in `src/content/products.ts`**: whole rupees. Each size has a list price `was` (the factory list + Rs 200, raised 20%; owner, 14 Nov 2026) and sells at `DISCOUNT_PCT` (20%) off it as `price`; cards show both with a -20% bubble. A colour model is the "C" prefix of the same size at +Rs 120 on the list (`COLOUR_ADD`, Rs 96, after the discount). Never write a price in a page, email or JSON-LD; read it through `src/lib/shop.ts`. A price change updates `LIST` in `scripts/check-shop.ts`.
 - The basket holds ids, variants and quantities only. `/api/cart`, `/api/order` and `/api/saved-basket` re-price through `priceWith()`; a client-sent price is never read, stored or emailed. An order row's `lines`/`totals` are read back verbatim, never recalculated.
 - Payments are cash on delivery, bank transfer, JazzCash and Easypaisa (no gateway). Account details come only from `PAYMENT_ACCOUNTS` in `src/lib/brand.ts`; never invent them.
 - Phone is required at checkout and validated as Pakistani (`isPkPhone`); email is optional. An order without email gets no customer email, so the order page (signed link) and WhatsApp confirm it.
@@ -12,7 +12,7 @@ Next.js 16 App Router + React 19 + Tailwind v4 (`@theme` tokens in `src/app/glob
 - /admin owns copy, image, SEO, listing and stock — never a price.
 - SQL only through the neon tagged template; no ORM. Schema changes go in `docs/schema.sql` (idempotent) and must keep `npm run check:db` passing.
 - Zod validates every API body. `escapeHtml()` every user value in email HTML. Rate limit before validation (`rateLimit()`, counted in the database; customer-capturing routes pass `"open"`).
-- Company identity, contact details, delivery terms and service cities come from `src/lib/brand.ts`. One email address in copy: `CONTACT.email`.
+- Company identity, contact details, delivery terms and service cities come from `src/lib/brand.ts`. One email address in copy: `CONTACT.email`. Customer-facing copy writes the brand as `CAPRA®` (`BRAND.name`); `BRAND.legalName` is the bare word for email headers.
 - Never invent reviews, ratings or `aggregateRating`, or retention-hour claims the owner has not given.
 - SEO is gated: `npm run build && npm run check:seo` must pass (title ≤ 60, description 70–160, one H1, canonical, BreadcrumbList/WebSite/LocalBusiness, alt text, sitemap integrity). Every public route sets `pageMeta()`; every page but the homepage has breadcrumbs.
 - Client components must not call `useSearchParams()`; use `useSearchString()`.
