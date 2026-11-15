@@ -18,17 +18,16 @@ export default function Page() {
   return (
     <>
       <Hero compact image={{ src: "/images/banners/jugs-dark.webp", alt: "CAPRA® stainless steel vacuum jugs" }} eyebrow={`Since ${BRAND.founded}`} breadcrumbs={[{ name: "About", path: "/about" }]}
-        title={<>Make life easy, <em className="text-gradient-brass italic">one cup at a time.</em></>}
+        title={<>Don&rsquo;t just drink. <em className="text-gradient-brass italic">Capra it.</em></>}
         lede={`${BRAND.name} is a flask maker in ${BRAND.address.city}, Punjab.`} />
       <Section>
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <Eyebrow>Our story</Eyebrow>
-            <Heading>A Pakistani flask, made in Gujranwala.</Heading>
+            <Heading>About us</Heading>
             <div className="mt-6 space-y-4 leading-relaxed text-stone-700">
-              <p>{BRAND.name} was established in {BRAND.founded} in {BRAND.address.city}, one of Pakistan&rsquo;s great manufacturing cities, to design, make and sell vacuum flasks for Pakistani homes, offices and shops.</p>
-              <p>Our name and our gold mark come from the markhor, <em>Capra falconeri</em>, Pakistan&rsquo;s national animal: tough, at home in the hardest conditions, and unmistakably from here. That is what we want from a flask too.</p>
-              <p>Every {BRAND.name} jug and bottle is double-wall vacuum stainless steel. We sell online at our factory price list and deliver to every city with cash on delivery, so a flask from Gujranwala costs the same in Karachi as it does at our gate.</p>
+              <p>Founded in {BRAND.founded}, <strong>Capra</strong> is a leading Pakistani manufacturer specializing in premium stainless steel double-body vacuum flasks and water bottles. Unlike many brands that outsource, we are a <strong>true self-contained factory</strong>. From raw material processing to final assembly, every step of our production happens under our own roof.</p>
+              <p>We combine durable engineering with modern design to create thermal solutions that last. When you choose Capra, you aren&rsquo;t just buying a bottle; you are investing in our commitment to local manufacturing excellence and international quality standards.</p>
             </div>
             <div className="mt-10 grid grid-cols-3 gap-6"><Stat value={BRAND.founded} label="Established" /><Stat value={String(models)} label="Models" /><Stat value={`${COMMERCIAL.warrantyMonths / 12} yrs`} label="Warranty" /></div>
           </div>

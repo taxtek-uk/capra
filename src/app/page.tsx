@@ -81,9 +81,9 @@ export default async function Page() {
       </Section>
 
       <FeatureGrid
-        eyebrow="Why CAPRA®"
-        title="Built for chai, built for years."
-        lede="A flask is used every day, so we make it to last: steel where cheaper flasks use glass or thin metal, and lids that are easy to take apart and clean."
+        eyebrow="WHY CAPRA"
+        title="Built by the Factory. Backed by Quality."
+        lede="We don't outsource. Every Capra flask and bottle is made, tested, and packed in our own facility in Pakistan."
         items={[
           { title: "Stainless steel inside and out", body: "304 stainless steel with no glass refill to shatter and no plastic touching your tea." },
           { title: "Double-wall vacuum", body: "Air is pumped out between two walls of steel, so heat has almost nowhere to go: hot stays hot, cold stays cold." },

@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 export function Logo({ className, light, plain }: { className?: string; light?: boolean; plain?: boolean }) {
   return (
     <span className={cn("inline-flex items-center gap-3", className)}>
-      <span className={cn("grid h-[3.25rem] w-[3.25rem] shrink-0 place-items-center", !plain && "rounded-full bg-white shadow-sm ring-1 ring-ink-950/10")}>
-        <Image src={BRAND.mark} alt="" width={144} height={256} sizes="24px" className="h-10 w-auto" loading="eager" fetchPriority="low" />
+      <span className={cn("grid h-16 w-16 shrink-0 place-items-center", !plain && "rounded-full bg-white shadow-sm ring-1 ring-ink-950/10")}>
+        <Image src={BRAND.mark} alt="" width={144} height={256} sizes="24px" className="h-12 w-auto" loading="eager" fetchPriority="low" />
       </span>
       <span className="flex flex-col leading-none">
         <span className={cn("font-display text-[1.7rem] font-semibold tracking-[0.28em]", light ? "text-brass-300" : "text-ink-950")}>CAPRA<sup className="-ml-[0.2em] align-super text-[0.45em] font-normal tracking-normal">®</sup></span>

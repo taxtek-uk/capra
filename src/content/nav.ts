@@ -16,6 +16,7 @@ export const NAV = {
     { label: "Price list", href: "/prices" },
     { label: "Wholesale", href: "/wholesale" },
     { label: "Journal", href: "/blog" },
+    { label: "About", href: "/about" },
   ] satisfies NavItem[],
   help: [
     { label: "Choose a thermos", href: "/thermos-flasks" },
@@ -24,7 +25,6 @@ export const NAV = {
     { label: "Delivery & returns", href: "/delivery" },
     { label: "Warranty", href: "/warranty" },
     { label: "Care guide", href: "/care-guide" },
-    { label: "About CAPRA®", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
   legal: [{ label: "Privacy", href: "/privacy-policy" }, { label: "Terms", href: "/terms-of-service" }] satisfies NavItem[],

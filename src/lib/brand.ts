@@ -4,7 +4,7 @@ export const BRAND = {
   name: "CAPRA®",
   legalName: "CAPRA",
   domain: "https://www.capra.pk",
-  tagline: "Make Life Easy.",
+  tagline: "Don't Just Drink. Capra It.",
   description: "Stainless steel vacuum jugs, flasks and insulated bottles, made in Gujranwala and delivered across Pakistan with cash on delivery.",
   locale: "en-PK",
   founded: "2019",

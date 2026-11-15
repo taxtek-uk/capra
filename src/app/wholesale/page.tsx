@@ -1,6 +1,6 @@
 import { pageMeta, JsonLd, faqLd } from "@/lib/seo";
 import { Hero } from "@/components/site/Hero";
-import { FaqSection, FeatureGrid } from "@/components/site/sections";
+import { FaqSection } from "@/components/site/sections";
 import { Container, Section, Eyebrow, Heading, ButtonLink, Arrow } from "@/components/ui/primitives";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { BRAND, COMMERCIAL, TRADE } from "@/lib/brand";
@@ -26,14 +26,6 @@ export default function Page() {
         title={<>Wholesale, <em className="text-gradient-brass italic">direct from the factory.</em></>}
         lede={`We have made ${BRAND.name} in ${BRAND.address.city} since ${BRAND.founded}. Stock your shop, supply your office or order gifts by the carton.`}
         actions={<><ButtonLink href="#enquiry" variant="brass">Send a wholesale enquiry <Arrow /></ButtonLink><ButtonLink href={TRADE.whatsappLink} variant="ghostLight">WhatsApp {TRADE.whatsapp}</ButtonLink><ButtonLink href="/dealers" variant="ghostLight">Dealer catalogue & terms</ButtonLink></>} />
-      <FeatureGrid eyebrow="Why stock CAPRA®" title="A range that sells itself on the shelf." items={[
-        { title: "Seven designs, 17 models", body: "Vacuum jugs from 1 to 3 litres and bottles from 600 ml to 1 litre cover every price point a customer asks for." },
-        { title: "Printed gift boxes", body: "Boxed jugs and pots display well and sell as gifts through Eid, weddings and winter." },
-        { title: "Mixed-colour cartons", body: `Bottles come ${COMMERCIAL.cartonPieces} to a carton in four colours, so one carton fills a shelf.` },
-        { title: "Made in Pakistan", body: "Made in our own factory, so restocking does not wait on imports." },
-        { title: "Carton terms", body: "The prices on this site are retail. Ask us for carton and dealer terms." },
-        { title: "Warranty backed", body: `Every piece carries our ${COMMERCIAL.warrantyMonths}-month warranty against manufacturing faults.` },
-      ]} />
       <Section id="enquiry" tone="bone" className="scroll-mt-24">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div><Eyebrow>Wholesale enquiry</Eyebrow><Heading>Tell us what you need.</Heading><p className="mt-5 text-stone-600">Models, sizes and quantities, and your city. We reply within one working day, usually on WhatsApp.</p></div>
