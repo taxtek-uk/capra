@@ -48,13 +48,28 @@ export function Totals({ cart }: { cart: PricedCart }) {
   );
 }
 
+/** Typed quantity: free typing, clamped to min..max on blur or Enter. */
+export function QtyInput({ value, min, max, label, onCommit, className = "" }: { value: number; min: number; max: number; label: string; onCommit: (qty: number) => void; className?: string }) {
+  const [draft, setDraft] = useState<string | null>(null);
+  const commit = () => {
+    if (draft !== null) onCommit(Math.min(max, Math.max(min, Math.round(Number(draft)) || min)));
+    setDraft(null);
+  };
+  return (
+    <input aria-label={label} type="text" inputMode="numeric" pattern="[0-9]*" value={draft ?? String(value)}
+      onChange={(e) => setDraft(e.target.value.replace(/\D/g, "").slice(0, 3))} onFocus={(e) => e.target.select()} onBlur={commit}
+      onKeyDown={(e) => { if (e.key === "Enter") e.currentTarget.blur(); }}
+      className={`bg-transparent text-center text-sm tnum outline-none ${className}`} />
+  );
+}
+
 /** Fewer, more, remove: the same controls on the basket page and in the "added" panel. */
 export function LineControls({ line: l }: { line: PricedLine }) {
   return (
     <div className="mt-3 flex items-center gap-3">
       <div className="flex items-center rounded-full border border-ink-950/15">
         <button type="button" aria-label={`One fewer ${l.name}`} disabled={l.qty <= l.min} onClick={() => setQty(l.id, l.qty - 1, l.variant)} className="grid h-10 w-10 place-items-center disabled:opacity-30"><Minus className="h-3.5 w-3.5" /></button>
-        <span className="w-8 text-center text-sm tnum" aria-label="Quantity">{l.qty}</span>
+        <QtyInput value={l.qty} min={l.min} max={MAX_QTY} label={`Quantity of ${l.name}`} onCommit={(q) => setQty(l.id, q, l.variant)} className="w-10" />
         <button type="button" aria-label={`One more ${l.name}`} disabled={l.qty >= MAX_QTY} onClick={() => setQty(l.id, l.qty + 1, l.variant)} className="grid h-10 w-10 place-items-center disabled:opacity-30"><Plus className="h-3.5 w-3.5" /></button>
       </div>
       <button type="button" onClick={() => removeLine(l.id, l.variant)} className="text-xs text-stone-600 underline underline-offset-4 hover:text-danger">Remove</button>

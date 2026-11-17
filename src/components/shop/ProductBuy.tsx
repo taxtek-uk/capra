@@ -8,6 +8,7 @@ import { track } from "@/components/site/Tracker";
 import { cn, pkr } from "@/lib/utils";
 import { DISCOUNT_PCT, type Colour, type Size } from "@/content/products";
 import { addToCart } from "./cart";
+import { QtyInput } from "./Basket";
 
 /** The subset of a series the buying panel needs; prices here are display only — /api/cart re-prices. */
 export interface Buyable {
@@ -117,7 +118,7 @@ export function ProductBuy({ item }: { item: Buyable }) {
           <div className="flex flex-wrap items-center gap-3">
             <div className="flex items-center rounded-full border border-ink-950/15">
               <button type="button" aria-label="One fewer" disabled={qty <= item.min} onClick={() => setQty(qty - 1)} className="grid h-12 w-11 place-items-center disabled:opacity-30"><Minus className="h-4 w-4" /></button>
-              <input aria-label="Quantity" type="number" inputMode="numeric" min={item.min} max={cap} value={qty} onChange={(e) => setQty(Math.min(cap, Math.max(item.min, Math.round(Number(e.target.value) || item.min))))} className="w-10 bg-transparent text-center text-sm tnum [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none" />
+              <QtyInput value={qty} min={item.min} max={cap} label="Quantity" onCommit={setQty} className="w-10" />
               <button type="button" aria-label="One more" disabled={qty >= cap} onClick={() => setQty(qty + 1)} className="grid h-12 w-11 place-items-center disabled:opacity-30"><Plus className="h-4 w-4" /></button>
             </div>
             <Button type="button" onClick={onAdd} className="min-h-12 flex-1">{added ? "Added — add another" : `Add to basket · ${pkr(unit * qty)}`}</Button>
